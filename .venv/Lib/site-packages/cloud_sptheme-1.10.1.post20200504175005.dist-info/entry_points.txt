@@ -1,0 +1,5 @@
+[sphinx.html_themes]
+cloud = cloud_sptheme
+greencloud = cloud_sptheme
+redcloud = cloud_sptheme
+
