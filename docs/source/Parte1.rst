@@ -657,15 +657,15 @@ A fim de fixarmos as propriedades apresentadas acima, veremos alguns exemplos re
 1.2. Definição de derivadas
 ---------------------------
 
-No estudo do cálculo, a derivada desempenha um papel central ao analisar como uma função varia à medida que seus inputs mudam. 
-Vamos entender essa ideia intuitiva com uma abordagem mais profunda.
+No estudo do cálculo, a derivada desempenha um papel central ao analisar como uma função se comporta conforme sua variável independente varia.
+Vamos entender essa ideia intuitiva com uma abordagem mais profunda que vai englobar as definições de taxa de variação e inclinação da reta tangente.
 
 
 1.2.1. Taxa de variação e inclinação da reta tangente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Quando um carro se move, estamos, em essência, falando sobre uma mudança em sua posição ao 
-longo do tempo. Mas como podemos medir essa mudança? A resposta a essa pergunta nos introduz ao fascinante mundo das derivadas.
+longo do tempo. Mas como podemos medir essa mudança? A resposta a essa pergunta nos introduz a definição de derivadas.
 
 Imagine que você queira calcular a rapidez com que um carro se move durante uma viagem. A fórmula mais simples seria dividir a 
 distância percorrida pelo tempo que levou, da seguinte maneira:
@@ -680,7 +680,7 @@ momento. Para obter essa informação, precisamos da velocidade instantânea.
 A velocidade instantânea é o que chamamos de taxa de variação instantânea. Em vez de perguntar "a que velocidade o carro estava se movendo durante uma hora?", perguntamos "a que 
 velocidade o carro estava se movendo exatamente neste segundo?". Aqui, estamos diminuindo o intervalo de tempo até que ele se aproxime de um ponto instantâneo.
 
-Isso nos leva a um dos pilares fundamentais do cálculo: o limite. Para encontrar a velocidade instantânea, calculamos a taxa de variação média em intervalos cada vez menores, 
+Isso nos leva ao limite de uma função, tópico abordado na seção anterior. Para encontrar a velocidade instantânea, calculamos a taxa de variação média em intervalos cada vez menores, 
 chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimos isso como:
 
 .. math::
@@ -688,7 +688,7 @@ chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimo
     v(t) = \displaystyle \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t}
 
 
-Porém, essa velocidade instantânea tem mais a oferecer. Se você plotar a trajetória do carro em um gráfico, essa velocidade surge como a inclinação da reta tangente à 
+Porém, essa velocidade instantânea tem mais a oferecer. Se você plotar a trajetória do carro em um gráfico, essa velocidade instantânea surge como a inclinação da reta tangente à 
 curva em um ponto específico. A reta tangente nos dá uma representação visual de como a função se comporta naquele ponto, enquanto sua inclinação nos dá a taxa de variação (em um 
 determinado instante) a qual chamamos de derivada.
 
@@ -701,13 +701,28 @@ determinado instante) a qual chamamos de derivada.
 
         f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}
 
- 
 
-    Assim, a derivada se conecta naturalmente à ideia de velocidade instantânea, taxa de variação e inclinação da reta tangente. Ao estudar derivadas, não estamos apenas explorando 
+    Assim, a derivada conversa com à ideia de velocidade instantânea, taxa de variação e inclinação da reta tangente. Ao estudar derivadas, não estamos apenas explorando 
     um conceito matemático abstrato, mas sim uma ferramenta poderosa que descreve como as coisas mudam e se movem no mundo ao nosso redor.
+
+
+    As notações mais utilizadas para expressarmos a derivada de uma função genérica :math:`f(x)` em relação a sua variável independente :math:`x` são:
+
+    .. math::
+
+        \begin{align}
+        &f'(x) = \frac{d}{dx}f(x)\text{ (Notação de Leibniz) } = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}
+        \end{align}
+
+
+ 
 
 A derivada pode ser calculada em um determinado ponto, ou seja, encontramos a inclinação da reta tangente ao ponto utilizando a definição de limite, ou podemos calcular a derivada
 de uma função que associa a cada ponto da função original o valor da derivada em cada ponto.
+
+
+
+
 
 .. admonition:: Exemplo 
 
@@ -728,42 +743,168 @@ de uma função que associa a cada ponto da função original o valor da derivad
         &f'(2) = 2.2 - 8 = -4\\ \\
         \end{align}
 
-1.2.2. Notação de derivadas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.2.3. Regras de derivação
+1.2.2. Regras de derivação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Falar sobre a função ser diferenciavel ou não
+Podemos calcular a derivada de uma função ou a derivada de uma função em um ponto específico, utilizando a definição formal de limite. 
+Contudo, esta estratégia pode ser um processo excessivamente trabalhoso. Para tornar este cálculo mais eficiente, foram desenvolvidas várias 
+regras de derivação. Estas regras são técnicas que nos permitem encontrar a derivada de funções de maneira mais direta e menos trabalhosa.
 
-1.2.4.1. Soma
-^^^^^^^^^^^^^
+Antes de apresentarmos as principais regras de derivação existentes no cálculo, é essencial compreender que as funções analisadas devem ser 
+diferenciáveis no intervalo de interesse. Uma função é diferenciável em um ponto se ela é contínua e a taxa de variação no ponto é bem definida, 
+o que significa que a função não apresenta "quinas" ou "dobras" nesse ponto. Embora a continuidade seja uma condição necessária para a diferenciabilidade, 
+ela não é suficiente; uma função pode ser contínua em um ponto e ainda assim não ser diferenciável no mesmo ponto, como é o caso de pontos com tangentes 
+verticais ou descontinuidades na primeira derivada.
 
-1.2.4.2. Subtração
-^^^^^^^^^^^^^^^^^^
+.. figure:: images/image_6.png
 
-1.2.4.3. Constantes
-^^^^^^^^^^^^^^^^^^^
+    Figura 6 
 
-1.2.4.4. Funções polinomiais
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ao garantir que uma função é diferenciável em seu domínio, ou em pontos específicos do domínio, estamos assegurando que ela comporta-se de maneira "suave" 
+nesses pontos, permitindo assim a aplicação das regras de derivação para encontrar a taxa de variação instantânea ou a inclinação da reta tangente à curva 
+da função nesses pontos.
 
-1.2.4.5. Funções exponenciais
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4.6. Funções trigonométricas
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.2.4.7. Regra do produto
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. admonition:: Regras de derivação 
 
-1.2.4.8. Regra do quociente
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    **1.  Derivada da soma de funções**
 
-1.2.4.9. Regra da cadeia
-^^^^^^^^^^^^^^^^^^^^^^^^
+        Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
 
-1.2.4.10. Derivada implícita
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    .. math::
+
+        \frac{d}{dx}[f(x)+g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \\ \\
+    
+    **2.  Derivada da subtração de funções**
+
+        Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}[f(x)-g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x) \\ \\
+
+
+
+    **3.  Derivada de uma constante**
+
+        Dada uma função :math:`f(x) = c` onde :math:`c` é uma função constante, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}(c) = 0 \\ \\
+
+    **4.  Derivada de funções polinomiais**
+
+        Dada uma função :math:`f(x) = x^n` onde :math:`n` é um número real qualquer, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}(x^{n}) = nx^{n-1} \\ \\
+
+
+
+    **5.  Derivadas de funções exponenciais**
+
+        Dada uma função :math:`f(x) = e^{x}` onde :math:`e` é o número de Euler, podemos dizer que:
+
+
+    .. math::
+
+        \frac{d}{dx}(e^{x}) = e^{x} \\ \\
+
+    **6.  Funções trigonométricas**
+
+    Dada as funções trigonométricas seno, cosseno, tangente, cotangente, secante e cossecante, podemos dizer que:
+
+    Função seno
+
+    .. math::
+
+        \begin{align}
+        &\frac{d}{dx}[sen(x)] = [cos(x)] \\ \\
+        \end{align}
+
+
+    Função cosseno
+
+    .. math::
+            
+        \begin{align}
+        &\frac{d}{dx}[cos(x)] = -[sen(x)] \\ \\
+        \end{align}
+        
+    Função tangente 
+
+    .. math::
+        \begin{align}
+        &\frac{d}{dx}[tg(x)] = [sec^{2}(x)] \\ \\
+        \end{align}
+
+        
+    Função cossecante
+
+    .. math::
+        \begin{align}
+        &\frac{d}{dx}[cossec(x)] = -[cossec(x)cotg(x)] \\ \\
+        \end{align}
+
+        
+    Função secante
+
+    .. math::
+        \begin{align}
+        &\frac{d}{dx}[sec(x)] = [sec(x)tg(x)] \\ \\
+        \end{align}
+
+        
+    Função cotangente
+
+    .. math::
+        \begin{align}
+        &\frac{d}{dx}[cotg(x)] = -[cossec^{2}(x)] \\ \\
+        \end{align}
+        
+
+    
+    **7.  Derivada do produto de funções(regra do produto)**
+
+    Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}\left[f(x)g(x)\right] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)] \\ \\
+
+
+
+    **8.  Derivada do quociente de funções(regra do quociente)**
+
+    Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^{2}} \\ \\
+
+
+
+    **9.  Regra da cadeia**
+
+    Dada as funções :math:`f(x)` e :math:`g(x)` e a função composta :math:`f \circ g` podemos dizer que:
+
+    .. math::
+
+        F'(x) = f'(g(x)).g'(x)
+        
+    Ou na notação de Leibniz, se :math:`y = f(u)` e :math:`u = g(x)`
+
+    .. math::
+
+        \frac{dy}{dx}= \frac{dy}{du}\frac{du}{dx} \\ \\
+    
+
+
+
+
 
 
