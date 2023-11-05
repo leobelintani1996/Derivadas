@@ -34,7 +34,7 @@ pode se tornar tão próxima quanto quisermos de :math:`L`.
 
 A Figura 1 apresentada abaixo simboliza um exemplo em que a função :math:`x^2 - x + 2` tende a :math:`4` quando :math:`x` tende a :math:`2`.
 
-.. figure:: images/image_1.jpg 
+.. figure:: images/image_1.png
     :align: center
 
     Figura 1
@@ -767,27 +767,9 @@ da função nesses pontos.
 
 
 
-.. admonition:: Regras de derivação 
 
-    **1.  Derivada da soma de funções**
+.. admonition:: **1.  Derivada de uma constante**
 
-        Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
-
-    .. math::
-
-        \frac{d}{dx}[f(x)+g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \\ \\
-    
-    **2.  Derivada da subtração de funções**
-
-        Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
-
-    .. math::
-
-        \frac{d}{dx}[f(x)-g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x) \\ \\
-
-
-
-    **3.  Derivada de uma constante**
 
         Dada uma função :math:`f(x) = c` onde :math:`c` é uma função constante, podemos dizer que:
 
@@ -795,7 +777,46 @@ da função nesses pontos.
 
         \frac{d}{dx}(c) = 0 \\ \\
 
-    **4.  Derivada de funções polinomiais**
+Vamos resolver um exemplo para fixarmos a regra apresentada acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`f(x)= 2`
+
+    Solução:
+
+    Utilizando a regra da derivada de uma função constante, podemos escrever que:
+
+    .. math::
+
+        \begin{align}
+        &f'(x) = 0 \\ \\
+        \end{align}
+
+.. admonition:: **2.  Derivada da soma de funções**
+
+    
+
+    Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}[f(x)+g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \\ \\
+
+
+.. admonition:: **3.  Derivada da subtração de funções**
+    
+    
+
+    Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
+
+    .. math::
+
+        \frac{d}{dx}[f(x)-g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x) \\ \\
+
+            
+
+.. admonition:: **4.  Derivada de funções polinomiais**
 
         Dada uma função :math:`f(x) = x^n` onde :math:`n` é um número real qualquer, podemos dizer que:
 
@@ -803,9 +824,29 @@ da função nesses pontos.
 
         \frac{d}{dx}(x^{n}) = nx^{n-1} \\ \\
 
+Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`f(x)= 3x^2 + x - \sqrt{x}`
+
+    Solução:
+
+    Utilizando a regra da derivada de funções polinomiais e as regras da soma e subtração de derivadas, podemos escrever que:
+
+    .. math::
+
+        \begin{align}
+        &f'(x) = (3x^2)' + (x)' - (x^{1/2})' = \\ \\
+        &f'(x) = 6x + 1 - \frac{1}{2}x^{-1/2} = \\ \\ 
+        &f'(x) = 6x + 1 - \frac{1}{2\sqrt{x}} \\ \\ 
+        \end{align}
 
 
-    **5.  Derivadas de funções exponenciais**
+
+
+
+.. admonition:: **5.  Derivadas de funções exponenciais**
 
         Dada uma função :math:`f(x) = e^{x}` onde :math:`e` é o número de Euler, podemos dizer que:
 
@@ -814,7 +855,25 @@ da função nesses pontos.
 
         \frac{d}{dx}(e^{x}) = e^{x} \\ \\
 
-    **6.  Funções trigonométricas**
+Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`f(x)= e^x - 2e^x`
+
+    Solução:
+
+    Utilizando a regra da derivada de funções exponenciais e a regra subtração de derivadas, podemos escrever que:
+
+    .. math::
+
+        \begin{align}
+        &f'(x) =  (e^x)' - 2(e^x)' = \\ \\
+        &f'(x) = e^x - 2e^x =\\ \\ 
+        &f'(x) = -e^x
+        \end{align}
+
+.. admonition:: **6.  Funções trigonométricas**
 
     Dada as funções trigonométricas seno, cosseno, tangente, cotangente, secante e cossecante, podemos dizer que:
 
@@ -868,7 +927,7 @@ da função nesses pontos.
         
 
     
-    **7.  Derivada do produto de funções(regra do produto)**
+.. admonition:: **7.  Derivada do produto de funções(regra do produto)**
 
     Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
 
@@ -876,9 +935,29 @@ da função nesses pontos.
 
         \frac{d}{dx}\left[f(x)g(x)\right] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)] \\ \\
 
+Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`f(x)= 2e^{x}sen(x)`
+
+    Solução:
+
+    Utilizando a regra da derivada de funções exponenciais, as regras de derivadas de funções trigonométricas e a regra do produto
+    , podemos escrever que:
+
+    .. math::
+
+        \begin{align}
+        &f'(x) =  [2e^{x}sen(x)]' = \\ \\
+        &f'(x) = 2[e^{x}(sen(x)')+(e^{x})'sen(x)] = \\ \\ 
+        &f'(x) = 2[e^{x}cos(x)+e^{x}sen(x)] = \\ \\ 
+        &f'(x) = 2e^{x}[sen(x)+cos(x)]
+        \end{align}
 
 
-    **8.  Derivada do quociente de funções(regra do quociente)**
+
+.. admonition:: **8.  Derivada do quociente de funções(regra do quociente)**
 
     Dada as funções :math:`f(x)` e :math:`g(x)`, podemos dizer que:
 
@@ -886,11 +965,33 @@ da função nesses pontos.
 
         \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^{2}} \\ \\
 
+Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`f(x)= \frac{x^2 + x - 2}{x^3 + 6}`
+
+    Solução:
+
+    Utilizando a regra da derivada de funções polinomiais a regra da soma e subtração de derivadas e a regra do quociente, 
+    podemos escrever que:
 
 
-    **9.  Regra da cadeia**
 
-    Dada as funções :math:`f(x)` e :math:`g(x)` e a função composta :math:`f \circ g` podemos dizer que:
+    .. math::
+
+        \begin{align}
+        &f'(x) =  \left[\frac{x^2 + x - 2}{x^3 + 6}\right]' = \\ \\
+        &f'(x) = \frac{1}{(x^3 + 6)^2}[(x^3 + 6)(x^2 + x - 2)'-(x^2 + x - 2)(x^3 + 6)'] \\ \\ 
+        &f'(x) = \frac{1}{(x^3 + 6)^2}[(x^3 + 6)(2x + 1)-(x^2 + x - 2)(3x^2)] = \\ \\ 
+        &f'(x) = \frac{-x^{4} - 2x^{3} + 6x^{2} + 12x + 6}{(x^3 + 6)^2}
+        \end{align}
+
+
+
+.. admonition:: **9.  Regra da cadeia**
+
+    Dada as funções :math:`f(x)` e :math:`g(x)` e a função composta :math:`F(x) = f \circ g = f(g(x))` podemos dizer que:
 
     .. math::
 
@@ -901,6 +1002,31 @@ da função nesses pontos.
     .. math::
 
         \frac{dy}{dx}= \frac{dy}{du}\frac{du}{dx} \\ \\
+
+Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
+
+.. admonition:: Do it yourself!
+
+    Calcule a derivada da função :math:`F(x) = e^{sen(x)}`
+
+    Solução:
+
+    Utilizando a regra da derivada de funções exponenciais, a regra da derivada de funções trigonométricas e a regra da cadeia, podemos escrever que:
+
+    .. math::
+
+        
+
+        \begin{align}
+        &f(x) = e^{g(x)} \\ \\
+        &g(x) = sen(x) \\ \\
+        &\text{Sabemos que: }F'(x) = [f'(g(x))g'(x)] \\ \\ 
+        &F'(x) = [e^{sen(x)}]' = \\ \\
+        &F'(x) = [e^{g(x)'sen(x)'}] = \\ \\
+        &F'(x) = e^{sen(x)}cos(x) \\ \\ 
+        \end{align}
+
+
     
 
 
