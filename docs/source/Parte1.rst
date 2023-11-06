@@ -3,10 +3,18 @@
 
 
 
-O primeiro capítulo deste material tem como objetivo retomar alguns conceitos básicos de cálculo, 
-de modo a garantir que todos que tiverem acesso ao material relembrem das principais técnicas de 
-derivação analítica, garantindo assim, que ao adentrarmos nos próximos temas de derivação numérica 
-o estudante possa retornar a esta seção e sanar ocasionais dúvidas.
+O primeiro capítulo deste material tem como objetivo retomar alguns conceitos básicos de cálculo, como limites e derivadas,  
+de modo a garantir que todos que tiverem acesso ao material relembrem das principais técnicas de derivação analítica e aplicações de limites, 
+garantindo assim, que ao adentrarmos nos próximos capítulos  o estudante possa retornar a esta seção e sanar ocasionais dúvidas.
+Um curso de cálculo é rico em detalhes, demonstrações e normalmente é acompanhado por diversas disciplinas como cálculo 1, 2, 3, 4, geometria analítica e 
+algebra linear e, este material não tem como objetivo adentrar em todos os possíveis tópicos que tangem o tema.
+A extensão dos conteúdos transcende os objetivos deste material, a imagem abaixo ilustra uma porção de conteúdos cobrados no ciclo básico de uma graduação em física, por exemplo.
+
+
+
+.. figure:: images/image_8.png
+
+    Figura 8 
 
 1.1. A definição de limite e suas propriedades
 ----------------------------------------------
@@ -281,7 +289,7 @@ Ao observarmos o gráfico e as definições acima, podemos concluir que:
 1.1.3. Limites no infinito
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Frequentemente nos deparamos com funções que, à medida que suas variáveis se aproximam do infinito (ou do infinito negativo), tendem a se
+Frequentemente nos deparamos com funções que, à medida que suas variáveis se aproximam do infinito (positivo ou negativo), tendem a se
 estabilizar em determinados valores. Nesses casos, estamos interessados em entender como se dá comportamento dessas funções para valores muito grandes 
 ou muito pequenos de :math:`x`.
 
@@ -516,41 +524,41 @@ Iremos definir abaixo as principais propriedades para cálculo de limites levand
 
         \displaystyle \lim_{x \to a}f(x) = f(a)
 
-    2. Propriedade especial:
+    1. Propriedade especial:
     
     .. math::
         
         \displaystyle \lim_{x \to a}c = c
 
 
-    3. O limite da soma é a soma dos limites:
+    1. O limite da soma é a soma dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x) + g(x)] = \displaystyle \lim_{x \to a}[f(x)] + \displaystyle \lim_{x \to a}[g(x)]
 
     
-    4. O limite da diferença é a diferença dos limites:
+    1. O limite da diferença é a diferença dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x) - g(x)] = \displaystyle \lim_{x \to a}[f(x)] - \displaystyle \lim_{x \to a}[g(x)]
 
     
-    5. O limite de uma constante é a constante mutiplicada pelo limite:
+    1. O limite de uma constante é a constante mutiplicada pelo limite:
 
     .. math::
         
         \displaystyle \lim_{x \to a}[cf(x)] = \displaystyle c\lim_{x \to a}[f(x)]
 
 
-    6. O limite de um produto é o produto dos limites:
+    1. O limite de um produto é o produto dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)]
 
-    7. O limite de quocientes é o quocientes dos limites (desde que o denominador não seja zero):
+    1. O limite de quocientes é o quocientes dos limites (desde que o denominador não seja zero):
 
     .. math::
 
@@ -667,7 +675,7 @@ Vamos entender essa ideia intuitiva com uma abordagem mais profunda que vai engl
 Quando um carro se move, estamos, em essência, falando sobre uma mudança em sua posição ao 
 longo do tempo. Mas como podemos medir essa mudança? A resposta a essa pergunta nos introduz a definição de derivadas.
 
-Imagine que você queira calcular a rapidez com que um carro se move durante uma viagem. A fórmula mais simples seria dividir a 
+Imagine que você queira calcular a velocidade com que um carro se move durante uma viagem. A fórmula mais simples seria dividir a 
 distância percorrida pelo tempo que levou, da seguinte maneira:
 
 .. math:: 
@@ -688,7 +696,7 @@ chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimo
     v(t) = \displaystyle \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t}
 
 
-Porém, essa velocidade instantânea tem mais a oferecer. Se você plotar a trajetória do carro em um gráfico, essa velocidade instantânea surge como a inclinação da reta tangente à 
+Porém, essa velocidade instantânea nos traz mais informações. Se você plotar a trajetória do carro em um gráfico (:math:`[y,t]`), essa velocidade instantânea surge como a inclinação da reta tangente à 
 curva em um ponto específico. A reta tangente nos dá uma representação visual de como a função se comporta naquele ponto, enquanto sua inclinação nos dá a taxa de variação (em um 
 determinado instante) a qual chamamos de derivada.
 
@@ -748,11 +756,12 @@ de uma função que associa a cada ponto da função original o valor da derivad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Podemos calcular a derivada de uma função ou a derivada de uma função em um ponto específico, utilizando a definição formal de limite. 
-Contudo, esta estratégia pode ser um processo excessivamente trabalhoso. Para tornar este cálculo mais eficiente, foram desenvolvidas várias 
+Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculo mais simples, foram desenvolvidas várias 
 regras de derivação. Estas regras são técnicas que nos permitem encontrar a derivada de funções de maneira mais direta e menos trabalhosa.
 
 Antes de apresentarmos as principais regras de derivação existentes no cálculo, é essencial compreender que as funções analisadas devem ser 
-diferenciáveis no intervalo de interesse. Uma função é diferenciável em um ponto se ela é contínua e a taxa de variação no ponto é bem definida, 
+diferenciáveis no intervalo de interesse. 
+Uma função é diferenciável em um ponto se ela é contínua e a taxa de variação no ponto é bem definida, 
 o que significa que a função não apresenta "quinas" ou "dobras" nesse ponto. Embora a continuidade seja uma condição necessária para a diferenciabilidade, 
 ela não é suficiente; uma função pode ser contínua em um ponto e ainda assim não ser diferenciável no mesmo ponto, como é o caso de pontos com tangentes 
 verticais ou descontinuidades na primeira derivada.
@@ -1022,9 +1031,82 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
         &g(x) = sen(x) \\ \\
         &\text{Sabemos que: }F'(x) = [f'(g(x))g'(x)] \\ \\ 
         &F'(x) = [e^{sen(x)}]' = \\ \\
-        &F'(x) = [e^{g(x)'sen(x)'}] = \\ \\
+        &F'(x) = [(e^{g(x)})'sen(x)'] = \\ \\
         &F'(x) = e^{sen(x)}cos(x) \\ \\ 
         \end{align}
+
+
+Os exemplos apresentados acima podem ser resolvidos através de bibliotecas em Python que diferenciam as funções simbolicamente, 
+como é o caso da biblioteca Sympy. Veja abaixo como se dá os exemplos resolvidos acima com o uso da biblioteca.
+
+Entrada:
+
+.. code::
+
+    from sympy import symbols, diff, sqrt, sin, cos, exp
+
+    # Define a variável simbólica
+    x = symbols('x')
+
+    # Define as funções
+    f1 = 2
+    f2 = 3*x**2 + x - sqrt(x)
+    f3 = exp(x) - 2*exp(x)
+    f4 = 2*exp(x)*sin(x)
+    f5 = (x**2 + x - 2) / (x**3 + 6)
+    f6 = exp(sin(x))
+
+    # Calcula as derivadas
+    df1 = diff(f1, x)
+    df2 = diff(f2, x)
+    df3 = diff(f3, x)
+    df4 = diff(f4, x)
+    df5 = diff(f5, x)
+    df6 = diff(f6, x)
+
+    # Mostra os resultados
+    print(f"f'(x) = {df1}")
+    print(f"f'(x) = {df2}")
+    print(f"f'(x) = {df3}")
+    print(f"f'(x) = {df4}")
+    print(f"f'(x) = {df5}")
+    print(f"f'(x) = {df6}")
+
+
+Saída:
+
+.. figure:: images/image_7.png
+
+    Figura 7 
+
+
+
+
+
+
+
+    
+Na primeira parte deste material didático, exploramos os conceitos fundamentais de limites e derivadas. Esses conceitos nos 
+ajudam a entender como as coisas se comportam nos "instantes" — capturando a essência da taxa de variação e da inclinação de tangentes em funções contínuas. 
+
+
+Contudo, nem sempre possuímos de fórmulas fechadas que nos permitam aplicar diretamente as definições e regras do cálculo. Além disso, 
+em muitas situações, lidamos com dados discretos ou funções complexas onde a determinação exata das derivadas é desconhecida ou altamente 
+complexa. É nesse contexto que a diferenciação numérica se torna uma ferramenta essencial.
+
+À medida que avançamos para a próxima fase do material, vamos construir uma ponte entre a teoria analítica das derivadas e a aplicação numérica desses 
+conceitos. A diferenciação numérica nos permite aproximar a derivada de uma função a partir de valores conhecidos da função em pontos discretos. Ela é 
+especialmente útil em análises computacionais e na solução de problemas de engenharia e ciências aplicadas onde modelos matemáticos são implementados em 
+simulações numéricas.
+
+Assim, iremos entender o conceito da diferenciação numérica, suas utilidades e limitações. Aprenderemos 
+sobre métodos como diferenças finitas — avançadas, atrasadas e centrais — e exploraremos como essas abordagens se relacionam com o conceito teórico de 
+derivadas que já conhecemos. Também estaremos atentos aos erros resultantes dos métodos numéricos citados, investigando como os mesmos podem ser minimizados.
+
+A transição do cálculo analítico para o computacional não apenas complementa nosso background, mas também nos equipa com métodos práticos 
+para lidar com problemas do mundo real.
+
+
 
 
     
