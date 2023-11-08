@@ -1,5 +1,12 @@
-Lumache
-=======
+TCC Leonardo Belintani
+======================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers that
-creates recipes mixing random ingredients.
+**Tema**: Diferenciação Numérica e Autodiferenciação
+
+**Autor**: Leonardo Cardoso Belintani
+
+**Orientador**: João Teles de Carvalho Neto
+
+**Instituição**: UFSCar Araras
+
+**Curso**: Física Licenciatura
