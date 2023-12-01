@@ -17,10 +17,12 @@ Curso: Física Licenciatura
 Sumário
 -------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    Parte1
    Parte2
+   Parte3
+   Parte4
 
   
    

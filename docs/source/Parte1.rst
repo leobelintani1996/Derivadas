@@ -2,6 +2,7 @@
 ====================================
 
 
+(Justificar o caminho do trabalho - falar sobre autodif e suas aplicações.)
 
 O primeiro capítulo deste material tem como objetivo retomar alguns conceitos básicos de cálculo, como limites e derivadas,  
 de modo a garantir que todos que tiverem acesso ao material relembrem das principais técnicas de derivação analítica e aplicações de limites, 
