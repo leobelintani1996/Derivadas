@@ -13,6 +13,7 @@ Instituição: UFSCar Araras
 Curso: Física Licenciatura
 
 Introdução:
+===========
 
 O presente trabalho surge no formato de um material didático interativo buscando entrelaçar os conhecimentos da matemática, física e computação. 
 Um dos objetivos principais do trabalho é fornecer o ferramental teórico necessário para o leitor se aproximar de novas tecnologias e métodos matemáticos 
