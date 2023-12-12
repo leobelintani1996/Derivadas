@@ -2,7 +2,8 @@
 ====================================
 
 
-(Justificar o caminho do trabalho - falar sobre autodif e suas aplicações.)
+
+
 
 O primeiro capítulo deste material tem como objetivo retomar alguns conceitos básicos de cálculo, como limites e derivadas,  
 de modo a garantir que todos que tiverem acesso ao material relembrem das principais técnicas de derivação analítica e aplicações de limites, 
@@ -30,7 +31,7 @@ Podemos definir o limite de uma função da seguinte maneira:
 
         .. math::
 
-            \displaystyle\lim_{{x \to a}} f(x) = L
+            \displaystyle\lim_{{x \to a}} f(x) = L \tag{1}
 
 
         Dizemos que o limite de :math:`f(x)` quando :math:`x` tende à :math:`a` é igual a :math:`L`.
@@ -59,7 +60,7 @@ determinado valor por um lado específico, seja pela esquerda ou pela direita. �
 
     .. math::
 
-        \lim_{{x \to a^-}} f(x) 
+        \lim_{{x \to a^-}} f(x) \tag{2}
     
 
     E é chamado de limite lateral à esquerda.
@@ -68,7 +69,7 @@ determinado valor por um lado específico, seja pela esquerda ou pela direita. �
 
     .. math::
 
-        \lim_{{x \to a^+}} f(x) 
+        \lim_{{x \to a^+}} f(x) \tag{3}
 
 
     E é chamado de limite lateral à direita.
@@ -78,7 +79,7 @@ determinado valor por um lado específico, seja pela esquerda ou pela direita. �
 
     .. math::
 
-        \lim_{{x \to a}} f(x) = L \Leftrightarrow \lim_{{x \to a^-}} f(x) = \lim_{{x \to a^+}} f(x) = L
+        \lim_{{x \to a}} f(x) = L \Leftrightarrow \lim_{{x \to a^-}} f(x) = \lim_{{x \to a^+}} f(x) = L \tag{4}
 
 Vamos considerar o exemplo abaixo para ilustrar o conceito.
 
@@ -199,7 +200,7 @@ Nesses casos, dizemos que o limite da função é infinito naquele ponto especí
 
         .. math::
                 
-            \displaystyle \lim_{x \to a} f(x) = \infty
+            \displaystyle \lim_{x \to a} f(x) = \infty \tag{5}
 
 
         Podemos fazer os valores de :math:`f(x)` ficarem tão grande quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
@@ -212,7 +213,7 @@ Nesses casos, dizemos que o limite da função é infinito naquele ponto especí
 
         .. math::
                 
-            \displaystyle \lim_{x \to a} f(x) = - \infty
+            \displaystyle \lim_{x \to a} f(x) = - \infty \tag{6}
 
 
         Podemos fazer os valores de :math:`f(x)` ficarem tão pequenos quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
@@ -304,7 +305,7 @@ ou muito pequenos de :math:`x`.
 
     .. math::
         
-        \displaystyle \lim_{x \to \infty} f(x) = L
+        \displaystyle \lim_{x \to \infty} f(x) = L \tag{7}
 
 
 
@@ -316,7 +317,7 @@ ou muito pequenos de :math:`x`.
 
     .. math::
             
-        \displaystyle \lim_{x \to -\infty} f(x) = L
+        \displaystyle \lim_{x \to -\infty} f(x) = L \tag{8}
 
 
 
@@ -346,10 +347,11 @@ assíntotas: horizontal, vertical e oblíqua (ou inclinada).
     A reta :math:`y = L` é chamada de assíntota horizontal da curva :math:`y = f(x)` se:
 
     .. math:: 
-        
-        \displaystyle \lim_{x \to \infty} f(x) = L 
 
-        \displaystyle \lim_{x \to -\infty} f(x) = L 
+        \begin{align}
+        &\displaystyle \lim_{x \to \infty} f(x) = L \tag{9} \\ \\
+        &\displaystyle \lim_{x \to -\infty} f(x) = L \tag{10} \\ \\
+        \end{align}
 
 
 
@@ -511,59 +513,60 @@ Iremos definir abaixo as principais propriedades para cálculo de limites levand
 
 .. math::
 
-    \displaystyle \lim_{x \to a^{+}}f(x) = L
-
-    \displaystyle \lim_{x \to a^{-}}f(x) = L
+    \begin{align}
+    &\displaystyle \lim_{x \to a^{+}}f(x) = L \tag{11} \\ \\
+    &\displaystyle \lim_{x \to a^{-}}f(x) = L \tag{12} \\ \\
+    \end{align}
 
 
 
 .. admonition:: Propriedades
-
+    
     1. Substituição direta (apenas funções continuas em :math:`a` podem ser substituídas diretamente):
 
     .. math::
 
-        \displaystyle \lim_{x \to a}f(x) = f(a)
+        \displaystyle \lim_{x \to a}f(x) = f(a) \tag{13}
 
     1. Propriedade especial:
     
     .. math::
         
-        \displaystyle \lim_{x \to a}c = c
+        \displaystyle \lim_{x \to a}c = c \tag{14}
 
 
     1. O limite da soma é a soma dos limites:
 
     .. math::
 
-        \displaystyle \lim_{x \to a}[f(x) + g(x)] = \displaystyle \lim_{x \to a}[f(x)] + \displaystyle \lim_{x \to a}[g(x)]
+        \displaystyle \lim_{x \to a}[f(x) + g(x)] = \displaystyle \lim_{x \to a}[f(x)] + \displaystyle \lim_{x \to a}[g(x)] \tag{15}
 
     
     1. O limite da diferença é a diferença dos limites:
 
     .. math::
 
-        \displaystyle \lim_{x \to a}[f(x) - g(x)] = \displaystyle \lim_{x \to a}[f(x)] - \displaystyle \lim_{x \to a}[g(x)]
+        \displaystyle \lim_{x \to a}[f(x) - g(x)] = \displaystyle \lim_{x \to a}[f(x)] - \displaystyle \lim_{x \to a}[g(x)] \tag{16}
 
     
-    1. O limite de uma constante é a constante mutiplicada pelo limite:
+    1. O limite de uma constante é a constante multiplicada pelo limite:
 
     .. math::
         
-        \displaystyle \lim_{x \to a}[cf(x)] = \displaystyle c\lim_{x \to a}[f(x)]
+        \displaystyle \lim_{x \to a}[cf(x)] = \displaystyle c\lim_{x \to a}[f(x)] \tag{17}
 
 
     1. O limite de um produto é o produto dos limites:
 
     .. math::
 
-        \displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)]
+        \displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)] \tag{18}
 
     1. O limite de quocientes é o quocientes dos limites (desde que o denominador não seja zero):
 
     .. math::
 
-        \displaystyle \lim_{x \to a}\left [\frac{f(x)}{g(x)}\right] = \frac{\displaystyle \lim_{x \to a}[f(x)]}{\displaystyle \lim_{x \to a}[g(x)]}
+        \displaystyle \lim_{x \to a}\left [\frac{f(x)}{g(x)}\right] = \frac{\displaystyle \lim_{x \to a}[f(x)]}{\displaystyle \lim_{x \to a}[g(x)]} \tag{19}
 
 
 A fim de fixarmos as propriedades apresentadas acima, veremos alguns exemplos resolvidos abaixo.
@@ -681,7 +684,7 @@ distância percorrida pelo tempo que levou, da seguinte maneira:
 
 .. math:: 
 
-    v_m = \frac{\Delta x}{\Delta t}
+    v_m = \frac{\Delta x}{\Delta t} \tag{20}
 
 Isso nos daria uma velocidade média. No entanto, essa métrica  não nos diz se o carro acelerou ou desacelerou em algum 
 momento. Para obter essa informação, precisamos da velocidade instantânea.
@@ -694,7 +697,7 @@ chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimo
 
 .. math::
 
-    v(t) = \displaystyle \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t}
+    v(t) = \displaystyle \lim_{\Delta t \to 0}\frac{\Delta x}{\Delta t} \tag{21}
 
 
 Porém, essa velocidade instantânea nos traz mais informações. Se você plotar a trajetória do carro em um gráfico (:math:`[y,t]`), essa velocidade instantânea surge como a inclinação da reta tangente à 
@@ -708,7 +711,7 @@ determinado instante) a qual chamamos de derivada.
 
     .. math::
 
-        f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}
+        f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \tag{22}
 
 
     Assim, a derivada conversa com à ideia de velocidade instantânea, taxa de variação e inclinação da reta tangente. Ao estudar derivadas, não estamos apenas explorando 
@@ -719,8 +722,9 @@ determinado instante) a qual chamamos de derivada.
 
     .. math::
 
+
         \begin{align}
-        &f'(x) = \frac{d}{dx}f(x)\text{ (Notação de Leibniz) } = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}
+        &f'(x) = \frac{d}{dx}f(x)\text{ (Notação de Leibniz) } = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \tag{23}
         \end{align}
 
 
@@ -742,12 +746,12 @@ de uma função que associa a cada ponto da função original o valor da derivad
     .. math:: 
 
         \begin{align}
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} = \\
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} =\\
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{[(x+h)^2 - 8(x+h)+9]-(x^2 - 8x +9)}{h} =\\
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{x^2 + 2xh + h^2 - 8x - 8h + 9 - x^2 + 8x -9}{h} =\\
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{2xh + h^2 -8h}{h} =\\
-        &f'(x) = \displaystyle \lim_{h \to 0} 2x + h -8 =\\
+        &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}  \\
+        &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \\
+        &f'(x) = \displaystyle \lim_{h \to 0}\frac{[(x+h)^2 - 8(x+h)+9]-(x^2 - 8x +9)}{h} \\
+        &f'(x) = \displaystyle \lim_{h \to 0}\frac{x^2 + 2xh + h^2 - 8x - 8h + 9 - x^2 + 8x -9}{h} \\
+        &f'(x) = \displaystyle \lim_{h \to 0}\frac{2xh + h^2 -8h}{h} \\
+        &f'(x) = \displaystyle \lim_{h \to 0} 2x + h -8 \\
         &f'(x) = 2x - 8\\
         &f'(2) = 2.2 - 8 = -4\\ \\
         \end{align}
@@ -781,11 +785,13 @@ da função nesses pontos.
 .. admonition:: **1.  Derivada de uma constante**
 
 
-        Dada uma função :math:`f(x) = c` onde :math:`c` é uma função constante, podemos dizer que:
+    Dada uma função :math:`f(x) = c` onde :math:`c` é uma função constante, podemos dizer que:
 
     .. math::
 
-        \frac{d}{dx}(c) = 0 \\ \\
+        \begin{align}
+        &\frac{d}{dx}(c) = 0  \tag{24}   \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
@@ -811,7 +817,9 @@ Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
     .. math::
 
-        \frac{d}{dx}[f(x)+g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \\ \\
+        \begin{align}
+        &\frac{d}{dx}[f(x)+g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \tag{25} \\ \\
+        \end{align}
 
 
 .. admonition:: **3.  Derivada da subtração de funções**
@@ -822,7 +830,9 @@ Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
     .. math::
 
-        \frac{d}{dx}[f(x)-g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x) \\ \\
+        \begin{align}
+        &\frac{d}{dx}[f(x)-g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x) \tag{26} \\ \\
+        \end{align}
 
             
 
@@ -832,7 +842,9 @@ Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
     .. math::
 
-        \frac{d}{dx}(x^{n}) = nx^{n-1} \\ \\
+        \begin{align}
+        &\frac{d}{dx}(x^{n}) = nx^{n-1} \tag{27} \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
@@ -847,8 +859,8 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
     .. math::
 
         \begin{align}
-        &f'(x) = (3x^2)' + (x)' - (x^{1/2})' = \\ \\
-        &f'(x) = 6x + 1 - \frac{1}{2}x^{-1/2} = \\ \\ 
+        &f'(x) = (3x^2)' + (x)' - (x^{1/2})'  \\ \\
+        &f'(x) = 6x + 1 - \frac{1}{2}x^{-1/2}  \\ \\ 
         &f'(x) = 6x + 1 - \frac{1}{2\sqrt{x}} \\ \\ 
         \end{align}
 
@@ -863,7 +875,9 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
     .. math::
 
-        \frac{d}{dx}(e^{x}) = e^{x} \\ \\
+        \begin{align}
+        &\frac{d}{dx}(e^{x}) = e^{x} \tag{28} \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
@@ -878,8 +892,8 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
     .. math::
 
         \begin{align}
-        &f'(x) =  (e^x)' - 2(e^x)' = \\ \\
-        &f'(x) = e^x - 2e^x =\\ \\ 
+        &f'(x) =  (e^x)' - 2(e^x)'  \\ \\
+        &f'(x) = e^x - 2e^x \\ \\ 
         &f'(x) = -e^x
         \end{align}
 
@@ -887,52 +901,56 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
     Dada as funções trigonométricas seno, cosseno, tangente, cotangente, secante e cossecante, podemos dizer que:
 
-    Função seno
+    **Função seno**
 
     .. math::
 
         \begin{align}
-        &\frac{d}{dx}[sen(x)] = [cos(x)] \\ \\
+        &\frac{d}{dx}[sen(x)] = [cos(x)] \tag{29} \\ \\
         \end{align}
 
 
-    Função cosseno
+    **Função cosseno**
 
     .. math::
             
         \begin{align}
-        &\frac{d}{dx}[cos(x)] = -[sen(x)] \\ \\
+        &\frac{d}{dx}[cos(x)] = -[sen(x)] \tag{30} \\ \\
         \end{align}
         
-    Função tangente 
+    **Função tangente**
 
     .. math::
-        \begin{align}
-        &\frac{d}{dx}[tg(x)] = [sec^{2}(x)] \\ \\
-        \end{align}
 
-        
-    Função cossecante
-
-    .. math::
         \begin{align}
-        &\frac{d}{dx}[cossec(x)] = -[cossec(x)cotg(x)] \\ \\
+        &\frac{d}{dx}[tg(x)] = [sec^{2}(x)] \tag{31} \\ \\
         \end{align}
 
         
-    Função secante
+    **Função cossecante**
 
     .. math::
+
         \begin{align}
-        &\frac{d}{dx}[sec(x)] = [sec(x)tg(x)] \\ \\
+        &\frac{d}{dx}[cossec(x)] = -[cossec(x)cotg(x)] \tag{32} \\ \\
         \end{align}
 
         
-    Função cotangente
+    **Função secante**
 
     .. math::
+
         \begin{align}
-        &\frac{d}{dx}[cotg(x)] = -[cossec^{2}(x)] \\ \\
+        &\frac{d}{dx}[sec(x)] = [sec(x)tg(x)] \tag{33} \\ \\
+        \end{align}
+
+        
+    **Função cotangente**
+
+    .. math::
+
+        \begin{align}
+        &\frac{d}{dx}[cotg(x)] = -[cossec^{2}(x)] \tag{34} \\ \\
         \end{align}
         
 
@@ -943,7 +961,9 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
     .. math::
 
-        \frac{d}{dx}\left[f(x)g(x)\right] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)] \\ \\
+        \begin{align}
+        &\frac{d}{dx}\left[f(x)g(x)\right] = f(x)\frac{d}{dx}[g(x)] + g(x)\frac{d}{dx}[f(x)] \tag{35} \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
@@ -959,9 +979,9 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
     .. math::
 
         \begin{align}
-        &f'(x) =  [2e^{x}sen(x)]' = \\ \\
-        &f'(x) = 2[e^{x}(sen(x)')+(e^{x})'sen(x)] = \\ \\ 
-        &f'(x) = 2[e^{x}cos(x)+e^{x}sen(x)] = \\ \\ 
+        &f'(x) =  [2e^{x}sen(x)]'  \\ \\
+        &f'(x) = 2[e^{x}(sen(x)')+(e^{x})'sen(x)]  \\ \\ 
+        &f'(x) = 2[e^{x}cos(x)+e^{x}sen(x)]  \\ \\ 
         &f'(x) = 2e^{x}[sen(x)+cos(x)]
         \end{align}
 
@@ -973,7 +993,9 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
     .. math::
 
-        \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^{2}} \\ \\
+        \begin{align}
+        &\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^{2}} \tag{36} \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
@@ -991,9 +1013,9 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
     .. math::
 
         \begin{align}
-        &f'(x) =  \left[\frac{x^2 + x - 2}{x^3 + 6}\right]' = \\ \\
+        &f'(x) =  \left[\frac{x^2 + x - 2}{x^3 + 6}\right]'  \\ \\
         &f'(x) = \frac{1}{(x^3 + 6)^2}[(x^3 + 6)(x^2 + x - 2)'-(x^2 + x - 2)(x^3 + 6)'] \\ \\ 
-        &f'(x) = \frac{1}{(x^3 + 6)^2}[(x^3 + 6)(2x + 1)-(x^2 + x - 2)(3x^2)] = \\ \\ 
+        &f'(x) = \frac{1}{(x^3 + 6)^2}[(x^3 + 6)(2x + 1)-(x^2 + x - 2)(3x^2)]  \\ \\ 
         &f'(x) = \frac{-x^{4} - 2x^{3} + 6x^{2} + 12x + 6}{(x^3 + 6)^2}
         \end{align}
 
@@ -1005,13 +1027,17 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
     .. math::
 
-        F'(x) = f'(g(x)).g'(x)
-        
+        \begin{align}
+        &F'(x) = f'(g(x)).g'(x) \tag{36} \\ \\
+        \end{align}
+
     Ou na notação de Leibniz, se :math:`y = f(u)` e :math:`u = g(x)`
 
     .. math::
 
-        \frac{dy}{dx}= \frac{dy}{du}\frac{du}{dx} \\ \\
+        \begin{align}
+        &\frac{dy}{dx}= \frac{dy}{du}\frac{du}{dx} \tag{37} \\ \\
+        \end{align}
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
@@ -1031,8 +1057,8 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
         &f(x) = e^{g(x)} \\ \\
         &g(x) = sen(x) \\ \\
         &\text{Sabemos que: }F'(x) = [f'(g(x))g'(x)] \\ \\ 
-        &F'(x) = [e^{sen(x)}]' = \\ \\
-        &F'(x) = [(e^{g(x)})'sen(x)'] = \\ \\
+        &F'(x) = [e^{sen(x)}]' \\ \\
+        &F'(x) = [(e^{g(x)})'sen(x)'] \\ \\
         &F'(x) = e^{sen(x)}cos(x) \\ \\ 
         \end{align}
 
@@ -1084,8 +1110,6 @@ Saída:
 
 
 
-
-
     
 Na primeira parte deste material didático, exploramos os conceitos fundamentais de limites e derivadas. Esses conceitos nos 
 ajudam a entender como as coisas se comportam nos "instantes" — capturando a essência da taxa de variação e da inclinação de tangentes em funções contínuas. 
@@ -1096,7 +1120,7 @@ em muitas situações, lidamos com dados discretos ou funções complexas onde a
 complexa. É nesse contexto que a diferenciação numérica se torna uma ferramenta essencial.
 
 À medida que avançamos para a próxima fase do material, vamos construir uma ponte entre a teoria analítica das derivadas e a aplicação numérica desses 
-conceitos. A diferenciação numérica nos permite aproximar a derivada de uma função a partir de valores conhecidos da função em pontos discretos. Ela é 
+conceitos. A diferenciação numérica nos permite aproximar a derivada de uma função a partir de valores conhecidos da função em pontos na sua vizinhança. Ela é 
 especialmente útil em análises computacionais e na solução de problemas de engenharia e ciências aplicadas onde modelos matemáticos são implementados em 
 simulações numéricas.
 
