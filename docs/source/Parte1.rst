@@ -1,5 +1,5 @@
-1. Derivadas analíticas e definições
-====================================
+1. **Derivadas analíticas e definições**
+========================================
 
 
 
@@ -18,8 +18,8 @@ A extensão dos conteúdos transcende os objetivos deste material, a imagem abai
 
     Figura 8 
 
-1.1. A definição de limite e suas propriedades
-----------------------------------------------
+1.1. **A definição de limite e suas propriedades**
+--------------------------------------------------
 
 A principal motivação para se entender o limite de uma função se dá devido ao estudo do comportamento de uma função matemática
 à medida que sua variável independente (geralmente denotada pela letra :math:`x` ) se aproxima de um determinado valor.
@@ -49,8 +49,8 @@ A Figura 1 apresentada abaixo simboliza um exemplo em que a função :math:`x^2 
 
     Figura 1
 
-1.1.1. Limites laterais
-~~~~~~~~~~~~~~~~~~~~~~~
+1.1.1. **Limites laterais**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 No estudo de limites, muitas vezes queremos saber como uma função se comporta à medida que a variável independente se aproxima de um 
 determinado valor por um lado específico, seja pela esquerda ou pela direita. É aqui que entra o conceito de limites laterais.
 
@@ -189,8 +189,8 @@ verticais e para compreender o comportamento de funções em intervalos abertos.
 Em resumo, limites laterais fornecem uma ferramenta poderosa para examinar o comportamento local de uma função à medida que
 a variável independente se aproxima de um valor específico a partir de uma direção particular.
 
-1.1.2. Limites infinitos
-~~~~~~~~~~~~~~~~~~~~~~~~
+1.1.2. **Limites infinitos**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Frequentemente nos deparamos com funções que, em determinados pontos, "explodem" para valores muito grandes (positivos ou negativos).
 Nesses casos, dizemos que o limite da função é infinito naquele ponto específico.
@@ -288,8 +288,8 @@ Ao observarmos o gráfico e as definições acima, podemos concluir que:
 :math:`x` tende à :math:`0`.
 
 
-1.1.3. Limites no infinito
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.1.3. **Limites no infinito**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Frequentemente nos deparamos com funções que, à medida que suas variáveis se aproximam do infinito (positivo ou negativo), tendem a se
 estabilizar em determinados valores. Nesses casos, estamos interessados em entender como se dá comportamento dessas funções para valores muito grandes 
@@ -505,8 +505,8 @@ propriedades que regem o cálculo de limites, não nos deixando tão dependentes
 
 
 
-1.1.4. Propriedades de limites 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.1.4. **Propriedades de limites** 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Iremos definir abaixo as principais propriedades para cálculo de limites levando em consideração que :math:`c` seja uma constante. 
 :math:`f(x)` e :math:`g(x)` sejam funções definidas na vizinhança de :math:`a`, ou seja:
@@ -666,15 +666,15 @@ A fim de fixarmos as propriedades apresentadas acima, veremos alguns exemplos re
 
 
 
-1.2. Definição de derivadas
----------------------------
+1.2. **Definição de derivadas**
+-------------------------------
 
 No estudo do cálculo, a derivada desempenha um papel central ao analisar como uma função se comporta conforme sua variável independente varia.
 Vamos entender essa ideia intuitiva com uma abordagem mais profunda que vai englobar as definições de taxa de variação e inclinação da reta tangente.
 
 
-1.2.1. Taxa de variação e inclinação da reta tangente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.2.1. **Taxa de variação e inclinação da reta tangente**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Quando um carro se move, estamos, em essência, falando sobre uma mudança em sua posição ao 
 longo do tempo. Mas como podemos medir essa mudança? A resposta a essa pergunta nos introduz a definição de derivadas.
@@ -757,8 +757,8 @@ de uma função que associa a cada ponto da função original o valor da derivad
         \end{align}
 
 
-1.2.2. Regras de derivação
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.2.2. **Regras de derivação**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Podemos calcular a derivada de uma função ou a derivada de uma função em um ponto específico, utilizando a definição formal de limite. 
 Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculo mais simples, foram desenvolvidas várias 

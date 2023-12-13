@@ -1,6 +1,6 @@
 
-Derivadas: do básico ao avançado.
----------------------------------
+**Derivadas: do básico ao avançado.**
+-------------------------------------
 
 Trabalho de conclusão de curso abordando os temas de derivadas analíticas, numéricas e diferenciação automática.
 
@@ -12,8 +12,10 @@ Instituição: UFSCar Araras
 
 Curso: Física Licenciatura
 
-Introdução:
-===========
+----------------------------------------------------------------------------------------------------
+
+**Motivação inicial**
+=====================
 
 O presente trabalho surge no formato de um material didático interativo buscando entrelaçar os conhecimentos da matemática, física e computação. 
 Um dos objetivos principais do trabalho é fornecer o ferramental teórico necessário para o leitor se aproximar de novas tecnologias e métodos matemáticos 
@@ -29,6 +31,8 @@ percorrendo temas como limites e derivadas, apresentando recursos computacionais
 teórico a respeito das principais técnicas de diferenças finitas envolvendo as diferenças avançadas, atrasadas e centrais – assim como um entendimento do erro numérico 
 associado a estas técnicas, e por fim a apresentação da elegante técnica da diferenciação automática incluindo como se dá seu funcionamento e implementação, contabilizando os 
 3 pilares da derivação – analítica/simbólica, numérica e automática.
+
+----------------------------------------------------------------------------------------------------
 
 
 

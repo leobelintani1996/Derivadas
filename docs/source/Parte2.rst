@@ -1,8 +1,8 @@
-2. Diferenciação Numérica
-=========================
+2. **Diferenciação Numérica**
+=============================
 
-2.1. Motivação 
---------------
+2.1. **Motivação** 
+------------------
 
 Em diversos cenários, somos capazes de derivar funções analiticamente para entender seu comportamento. 
 No entanto, na prática encontramos situações onde a função não é conhecida, e o que temos são conjuntos de pontos discretos, a função não é diferenciável 
@@ -26,8 +26,8 @@ O equilíbrio entre esses erros apresenta um papel importante na determinação 
 essas técnicas.
 
 
-2.2. Diferença Finita
----------------------
+2.2. **Diferença Finita**
+-------------------------
 
 A técnica de diferença finita é amplamente utilizada para aproximar a derivada de uma função quando a abordagem analítica é impraticável 
 ou impossível. Ao invés de depender de incrementos infinitesimais, que são conceituais e não computacionalmente viáveis, a diferença finita 
@@ -97,8 +97,8 @@ utiliza incrementos finitos para calcular uma aproximação da taxa de variaçã
     As expressões para os erros de truncamento e arredondamento serão apresentadas nas subseções abaixo. Os erros relacionados ao truncamento variam conforme mudamos
     o método de diferença finita, enquanto o erro de arredondamento não se altera.
 
-2.2.1. Método da Diferença Avançada e Atrasada
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.2.1. **Método da Diferença Avançada e Atrasada**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Os métodos apresentados abaixo podem ser chamados de métodos de diferenças não centrais, uma vez que são métodos em que se estima o limite um passo a frente(avançada)
 ou atrás(atrasado).
@@ -414,8 +414,8 @@ Vamos estimá-lo abaixo para os dois métodos apresentados.
 A depender do tipo de precisão que sua aplicação exigir, um erro absoluto da ordem de :math:`10^{-7}` não é algo tão bom quanto parece. Afim de melhoramos isso, 
 iremos apresentar abaixo o método da diferença central, que traz em sua proposição a ideia de se utilizar um valor médio para o cálculo numérico da derivada.
 
-2.2.3. Método da Diferença Central
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.2.3. **Método da Diferença Central**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O método apresentado abaixo pode ser chamado de método da diferença central, uma vez que estamos tratando de um método 
 em que se estima o limite um passo a frente de  :math:`h` e em um passo atrás de :math:`h` .
@@ -675,8 +675,8 @@ são apenas conjuntos de pontos :math:`(x_{i}, y_{i})` onde :math:`y_{i}` é o v
 
 
 
-2.3. Pontos em uma grade
-------------------------
+2.3. **Pontos em uma grade**
+----------------------------
 
 Em cenários experimentais muitas vezes não possuímos expressões do tipo :math:`f(x)` a nossa disposição para calcularmos a sua derivada em um ponto específico. O que de fato possuímos
 são os chamados pontos em uma grade(ou malha - quando estes pontos são igualmente espaçados) - que são essencialmente dados discretos do tipo :math:`(x_{i}, y_{i})` onde :math:`y_{i}` é o valor da função no ponto :math:`x_{i}` .
