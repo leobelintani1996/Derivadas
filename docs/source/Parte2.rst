@@ -562,6 +562,7 @@ Podemos resolver a aplicação que resolvemos anteriormente com o método da dif
     Dada a função :math:`f(x) = x^{2}e^{(sen(2x)cos(2x))}` calcule sua derivada no ponto :math:`x = 2` .
 
     Primeiro vamos encontrar a derivada analítica da função acima. Para isso podemos utilizar as técnicas de derivação ou podemos utilizar a biblioteca Sympy e derivar simbolicamente.
+    Logo depois podemos utilizar a técnica da diferença central e comparar os resultados através do erro absoluto.
 
     Utilizando a biblioteca Sympy:
 

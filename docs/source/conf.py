@@ -28,12 +28,13 @@ html_title = "Página Inicial"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "pydata_sphinx_theme"
+#html_theme = "pydata_sphinx_theme"
 html_static_path = ['_static']
 
-html_css_files = [
-    'custom.css',
-]
+extensions.append("sphinx_wagtail_theme")
+html_theme = 'sphinx_wagtail_theme'
+
+#html_css_files = ['custom.css',]
 
 
 
