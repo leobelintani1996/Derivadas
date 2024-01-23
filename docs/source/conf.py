@@ -28,13 +28,30 @@ html_title = "Página Inicial"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-#html_theme = "pydata_sphinx_theme"
-html_static_path = ['_static']
+
 
 extensions.append("sphinx_wagtail_theme")
 html_theme = 'sphinx_wagtail_theme'
 
-#html_css_files = ['custom.css',]
+
+
+html_theme_options = dict(
+    github_url = "https://github.com/leobelintani1996/Derivadas"
+)
+
+# This is used by Sphinx in many places, such as page title tags.
+project = "Monografia"
+
+# These are options specifically for the Wagtail Theme.
+html_theme_options = dict(
+    project_name = "TCC - Leonardo Belintani",
+    logo = "Logomarca_UFSCAR.svg",
+    logo_alt = "",
+    logo_height = 150,
+    logo_url = "",
+    logo_width = 150,
+)
+
 
 
 
