@@ -18,7 +18,8 @@ A diferenciação analítica nos permite derivar uma determinada função e ao f
 matemática que vai simbolizar a derivada da função. Podemos calcular a derivada em um determinado ponto simplesmente ao substituirmos o ponto na expressão.
 Já a derivação numérica vai nos fornecer uma aproximação da derivada em um ponto, não nos fornecendo uma forma fechada da derivada, ou seja, estamos estimando o limite da função em um determinado ponto quando nosso passo
 :math:`h` tende a um valor estabelecido por nós.
-Por fim, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na area de machine learning).
+
+De acordo com :ref:`Baydin [2018]<4. Referências>`, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na area de machine learning).
 A diferenciação automática baseia-se na decomposição de funções em operações básicas, cujas derivadas são conhecidas. Essas podem ser combinadas em um algoritmo para derivar a função em um determinado ponto. No resultado final vamos obter um valor 
 numérico da derivada em um determinado ponto, nunca uma forma fechada da derivada, como a diferenciação analítica. Por não se basear em cálculos utilizando diferenças finitas, a diferenciação automática não possui erros de aproximação significativos, melhorando  muito a precisão do cálculo executado, contudo ainda
 temos os erros de arredondamento presentes, visto que estes são inerentes aos cálculos computacionais.
@@ -563,7 +564,7 @@ Este modo funciona de maneira oposta ao modo direto. A diferenciação é realiz
 
 Em resumo, a escolha entre o modo direto e o modo reverso depende da estrutura da função e do número de variáveis independentes. O modo direto é mais eficiente para funções com poucas variáveis independentes, enquanto o modo reverso é mais adequado para funções com muitas variáveis independentes.
 
-A grande maioria das bibliotecas de diferenciação automática escolhem por conta se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si.
+A grande maioria das bibliotecas de diferenciação automática escolhem por conta se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências :ref:`4 e 5<4. Referências>` que tratam de forma mais aprofundada a implementação do modo reverso e direto.
 
 
 3.5. **Bibliotecas de diferenciação automática**
@@ -732,7 +733,7 @@ Logo, se trata de um problema um pouco mais complexo, uma vez que estamos de fat
 PINNS (Physics Informed Neural Networks) , ou seja, "informamos" a Física do problema via função custo para a rede neural afim de que após o treinamento ela possa nos dar uma solução para a equação diferencial apresentada.
 
 Não estamos interessados em tratar de equações diferenciais, nem de criarmos nenhuma rede neural artificial neste trabalho, visto que a abordagem teórica adotada nos capítulos anteriores não trata de fato de equações diferenciais, contudo, podemos trazer um exemplo em que simulamos o processo
-de aprendizado de uma rede neural artificial, com o objetivo de elucidarmos o uso da autodiferenciação para minimizar uma função custo.
+de aprendizado de uma rede neural artificial, com o objetivo de elucidarmos o uso da autodiferenciação para minimizar uma função custo. (Entretanto, caso haja interesse pelo tema, fica a cargo do leitor o estudo das referências :ref:`6 e 7<4. Referências>` ).
 
 
 Através de um algoritmo em Python e da biblioteca JAX, iremos minimizar uma função custo que vai depender do peso sináptico (:math:`w` ) e do bias (:math:`b` ).
@@ -818,5 +819,5 @@ esse custo. Embora o exemplo seja simplificado e não esteja ligado a uma aplica
 conceitual para entender a otimização de parâmetros em contextos mais complexos.
 
 
-#Falar sobre objetivo didático e ressalva sobre o aprofundamento do tema.
+#Falar sobre objetivo didático e ressalva sobre o aprofundamento do tema. link :ref:`Aqui<4. Referências>`
 

@@ -17,6 +17,7 @@ release = '1'
 
 
 extensions = ['sphinx.ext.mathjax']
+extensions = ['sphinx.ext.autosectionlabel']
 
 
 templates_path = ['_templates']
