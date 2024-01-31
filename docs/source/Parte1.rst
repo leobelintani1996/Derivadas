@@ -95,7 +95,7 @@ Imagine a função definida por:
         4 & \text{se } x > 2
     \end{cases}
 
-Repare que a função não é definida no ponto :math:`x=0` , gerando o que chamamos de singularidade, ou seja,
+Repare que a função não é definida no ponto :math:`x=0` **[corrigir para x=2]**, gerando o que chamamos de singularidade, ou seja,
 uma indeterminação no ponto.
 
 Podemos visualizar o exemplo acima dentro de um ambiente que tenha suporte a linguagem Python.
@@ -203,7 +203,7 @@ Nesses casos, dizemos que o limite da função é infinito naquele ponto especí
             \displaystyle \lim_{x \to a} f(x) = \infty \tag{5}
 
 
-        Podemos fazer os valores de :math:`f(x)` ficarem tão grande quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
+        Podemos fazer os valores de :math:`f(x)` ficarem tão grandes quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
 
         Dizemos que o limite de :math:`f(x)` quando :math:`x` tende à :math:`a` é igual a :math:`\infty`.
 
@@ -292,7 +292,7 @@ Ao observarmos o gráfico e as definições acima, podemos concluir que:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Frequentemente nos deparamos com funções que, à medida que suas variáveis se aproximam do infinito (positivo ou negativo), tendem a se
-estabilizar em determinados valores. Nesses casos, estamos interessados em entender como se dá comportamento dessas funções para valores muito grandes 
+estabilizar em determinados valores. Nesses casos, estamos interessados em entender como se dá o comportamento dessas funções para valores muito grandes 
 ou muito pequenos de :math:`x`.
 
 .. admonition:: Definição
@@ -309,7 +309,7 @@ ou muito pequenos de :math:`x`.
 
 
 
-    Analogamente, À medida que :math:`x` decresce indefinidamente (aproximando-se do infinito negativo), :math:`f(x)` tende ao valor :math:`L`.
+    Analogamente, à medida que :math:`x` decresce indefinidamente (aproximando-se do infinito negativo), :math:`f(x)` tende ao valor :math:`L`.
 
     Dizemos que o limite de :math:`f(x)` quando :math:`x` tende ao infinito negativo é :math:`L`.
 
@@ -484,7 +484,7 @@ Repare que a função apresentada no exemplo acima possui uma assintotas horizon
 Podemos encontrar os limites laterais simplesmente ao analisarmos o gráfico e os limites laterais.
 
 Quando :math:`x \to \infty^{-}` , :math:`f(x) \to 1` e quando :math:`x \to \infty^{+}` , :math:`f(x) \to 1` nos mostrando que os limites laterais
-são iguais e portanto o limite da função existe e é igual a 1.
+são iguais e portanto o limite da função existe e é igual a 1. **[Léo, tem certeza que dá para aplicar o conceito pela esquerda e pela direita com o infinito? Pois o infinito não é um número. Vir pela esquerda e pela direita nesse caso é se distanciar cada vez mais um limite do outro. Faz sentido isso?]**
 
 Podemos escrever que:
 
@@ -494,12 +494,12 @@ Podemos escrever que:
 
 
 
-A importância de se encontrar as assintotas verticais e horizontais se dá exatamente na analise gráfica de funções descontinuas e complexas, mas nem sempre é fácil de 
+A importância de se encontrar as assíntotas verticais e horizontais se dá exatamente na análise gráfica de funções descontínuas e complexas, mas nem sempre é fácil de 
 plotarmos um gráfico. 
-Como você pode ter percebido, conforme as descontinuidades se tornam mais presentes, os gráficos vão se tornando mais elaborados devido a complexidade
+Como você pode ter percebido, conforme as descontinuidades se tornam mais presentes, os gráficos vão se tornando mais elaborados devido à complexidade
 em se segmentar o domínio da função de forma coerente com a linguagem de programação utilizada.
 
-Podemos então utilizar de argumentos matemáticos para calcularmos o limite de qualquer função matemática e por isso, a próxima subseção vem para nos munir de
+Podemos então utilizar de argumentos matemáticos para calcularmos o limite de qualquer função matemática e, por isso, a próxima subseção vem para nos munir de
 propriedades que regem o cálculo de limites, não nos deixando tão dependentes da análise gráfica em si.
 
 
@@ -562,7 +562,7 @@ Iremos definir abaixo as principais propriedades para cálculo de limites levand
 
         \displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)] \tag{18}
 
-    1. O limite de quocientes é o quocientes dos limites (desde que o denominador não seja zero):
+    1. O limite de quocientes é o quociente dos limites (desde que o denominador não seja zero):
 
     .. math::
 
@@ -658,8 +658,8 @@ A fim de fixarmos as propriedades apresentadas acima, veremos alguns exemplos re
 
             \begin{align}
             &f(x) = \sqrt{x^2 + 9} - 3 \\
-            &g(x) = x^2 \text{   Não podemos aplicar a regra do quociente pois quando } x_ {\to 0}, g(0) = 0\\ \\ 
-            &\text{Multiplicando e expressão pelo seu conjugado e aplicando a propriedade da substituição direta:} \\
+            &g(x) = x^2 \text{   Não podemos aplicar a regra do quociente pois quando } x {\to 0}, g(0) = 0\\ \\ 
+            &\text{Multiplicando a expressão pelo seu conjugado e aplicando a propriedade da substituição direta:} \\
             &\lim_{x \to 0}\frac{\sqrt{x^2 + 9} - 3}{x^2} = \lim_{x \to 0}\frac{\sqrt{x^2 + 9} - 3}{x^2}\frac{\sqrt{x^2 + 9} + 3}{\sqrt{x^2 + 9} + 3} \\
             &= \lim_{x \to 0}\frac{1}{\sqrt{x^2 + 9}+3} = \frac{1}{\sqrt{9}+3}= \frac{1}{6}
             \end{align}
@@ -714,7 +714,7 @@ determinado instante) a qual chamamos de derivada.
         f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \tag{22}
 
 
-    Assim, a derivada conversa com à ideia de velocidade instantânea, taxa de variação e inclinação da reta tangente. Ao estudar derivadas, não estamos apenas explorando 
+    Assim, a derivada conversa com a ideia de velocidade instantânea, taxa de variação e inclinação da reta tangente. Ao estudar derivadas, não estamos apenas explorando 
     um conceito matemático abstrato, mas sim uma ferramenta poderosa que descreve como as coisas mudam e se movem no mundo ao nosso redor.
 
 
@@ -863,10 +863,6 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
         &f'(x) = 6x + 1 - \frac{1}{2}x^{-1/2}  \\ \\ 
         &f'(x) = 6x + 1 - \frac{1}{2\sqrt{x}} \\ \\ 
         \end{align}
-
-
-
-
 
 .. admonition:: **5.  Derivadas de funções exponenciais**
 
@@ -1116,7 +1112,7 @@ ajudam a entender como as coisas se comportam nos "instantes" — capturando a e
 
 
 Contudo, nem sempre possuímos de fórmulas fechadas que nos permitam aplicar diretamente as definições e regras do cálculo. Além disso, 
-em muitas situações, lidamos com dados discretos ou funções complexas onde a determinação exata das derivadas é desconhecida ou altamente 
+em muitas situações, lidamos com dados discretos ou funções complexas **[use o termo "complicado" ao invés de "complexa", pois em matemática o termo "complexo" possui uma definição própria como sabemos]** onde a determinação exata das derivadas é desconhecida ou altamente 
 complexa. É nesse contexto que a diferenciação numérica se torna uma ferramenta essencial.
 
 À medida que avançamos para a próxima fase do material, vamos construir uma ponte entre a teoria analítica das derivadas e a aplicação numérica desses 

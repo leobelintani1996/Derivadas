@@ -4,7 +4,7 @@
 2.1. **Motivação** 
 ------------------
 
-Em diversos cenários, somos capazes de derivar funções analiticamente para entender seu comportamento. 
+Em diversos cenários somos capazes de derivar funções analiticamente para entender seu comportamento. 
 No entanto, na prática encontramos situações onde a função não é conhecida, e o que temos são conjuntos de pontos discretos, a função não é diferenciável 
 em algum ponto, por exemplo, ou a sua derivada não é trivial.
 É aqui que as derivadas numéricas nos auxiliam, servindo como uma ferramenta para aproximar numericamente a derivada 
@@ -22,7 +22,7 @@ Além disso, duas fontes principais de erro são intrínsecas à diferenciação
 aproximação da derivada, e o erro de arredondamento, que resulta das limitações(números de dígitos significativos) de cada máquina. 
 O equilíbrio entre esses erros apresenta um papel importante na determinação de um passo ótimo para a diferenciação numérica.
 
-À medida que avançamos para um estudo mais detalhado da diferenciação numérica, vamos explorar esses métodos, aprender a otimizar os erros e aplicar 
+À medida que avançamos para um estudo mais detalhado da diferenciação numérica vamos explorar esses métodos, aprender a otimizar os erros e aplicar 
 essas técnicas.
 
 
@@ -223,10 +223,10 @@ valores ótimos para :math:`h` .
         \end{align}
 
 
-
+**[Este quadro de diferença atrasada ficou muito repetitivo. Parece um copia e cola e dá uma sensação de deja vu ruim para o leitor. Tente dar uma quebrada nisso. Por exemplo, dizendo algo: da mesma forma como na diferença adiantada, podemos expandir em série de Taylor que resulta em ... e pular o passo intermediário que é idêntico.]**
 
 É importante notar que a aproximação de primeira ordem dos dois métodos acima possuem um erro de truncamento da ordem de :math:`O(h)\approx \frac{h}{2}f''(x)` .
-O resultado acima nos induz a pensar que quanto menor o parâmetro :math:`h` menor o erro associado e por consequência o resultado da derivada numérica tende a ser 
+O resultado acima nos induz a pensar que quanto menor o parâmetro :math:`h` menor o erro associado e, por consequência, o resultado da derivada numérica tende a ser 
 mais preciso, contudo, isso só é verdade até certo ponto. Isso ocorre devido ao erro de arredondamento compor o erro total. 
 Vamos estimá-lo abaixo para os dois métodos apresentados.
 
@@ -245,6 +245,9 @@ Vamos estimá-lo abaixo para os dois métodos apresentados.
 
     Por fim, o que buscamos é estimar um valor razoável para :math:`h` de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
     que existe um :math:`h` que minimiza o erro total.
+
+
+**[Em várias partes está faltando indicação de referências, mas no quadro acima em especial por apresentar uma expressão sem demonstração]**
 
 .. admonition:: Minimizando :math:`E_{total}`
 
@@ -303,8 +306,8 @@ Vamos estimá-lo abaixo para os dois métodos apresentados.
     Você deve se perguntar: Bom, temos os valores de :math:`h_{ótimo}` e :math:`E_{ótimo}` , mas e agora? O que 
     faremos com estes valores?
 
-    A resposta é simples. Vamos chutar ordens de grandeza para :math:`f(x)` e :math:`f''(x)` de modo que iremos encontrar estimativas para :math:`h_{ótimo}` e :math:`E_{ótimo}` 
-    que quando de fato utilizarmos o método para calcular a derivada numérica por diferença finita, tenhamos de fato um ponto de partida para estes parâmetros.
+    A resposta é simples. Vamos "chutar" ordens de grandeza para :math:`f(x)` e :math:`f''(x)` de modo que iremos encontrar estimativas para :math:`h_{ótimo}` e :math:`E_{ótimo}` 
+    tal que, quando de fato utilizarmos o método para calcular a derivada numérica por diferença finita, tenhamos de fato um ponto de partida para estes parâmetros.
 
     Surge a seguinte dúvida: Mas porque precisamos deste ponto de partida? 
 
@@ -517,6 +520,8 @@ Vamos estimá-lo abaixo para o método da diferença central.
     Por fim, o que buscamos é estimar um valor razoável para :math:`h` de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
     que existe um :math:`h` que minimiza o erro total.
 
+**[Esse quadro de cima também é idêntico ao da diferença avançada. Então é bo mdar uma qubrada nisso. Por exemplo, mencionando "da mesma forma que na equação x" ou simplesmente mencionando que a mesma equação se aplica na diferença central sem precisar criar um quadro só para isso.]**
+
 .. admonition:: Minimizando :math:`E_{total}`
 
     Podemos sintetizar os erros obtidos acima em uma única expressão:
@@ -527,8 +532,7 @@ Vamos estimá-lo abaixo para o método da diferença central.
         &E_{tot} = E_{aprox} + E_{arred} = \frac{h^{2}}{12}f'''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \tag{67} \\ \\
         \end{align}
     
-    Mas o que buscamos de fato é um valor de :math:`h` que minimiza o erro total. Ao derivarmos a expressão do erro total em relação a :math:`h` igual a zero, 
-    , seguirmos o mesmo caminho algébrico dos outros métodos apresentados acima e assumirmos que :math:`f(x)` e :math:`f'''(x)` são de ordem 1,
+    Mas o que buscamos de fato é um valor de :math:`h` que minimiza o erro total. Ao derivarmos a expressão do erro total em relação a :math:`h` igual a zero, seguirmos o mesmo caminho algébrico dos outros métodos apresentados acima e assumirmos que :math:`f(x)` e :math:`f'''(x)` são de ordem 1,
     obtemos a seguinte expressão para :math:`h_{ótimo}` e :math:`E_{ótimo}` :
 
     .. math::
@@ -561,7 +565,7 @@ Podemos resolver a aplicação que resolvemos anteriormente com o método da dif
 
     Dada a função :math:`f(x) = x^{2}e^{(sen(2x)cos(2x))}` calcule sua derivada no ponto :math:`x = 2` .
 
-    Primeiro vamos encontrar a derivada analítica da função acima. Para isso podemos utilizar as técnicas de derivação ou podemos utilizar a biblioteca Sympy e derivar simbolicamente.
+    Primeiro vamos encontrar a derivada analítica da função acima. Para isso, podemos utilizar as técnicas de derivação ou podemos utilizar a biblioteca Sympy e derivar simbolicamente.
     Logo depois podemos utilizar a técnica da diferença central e comparar os resultados através do erro absoluto.
 
     Utilizando a biblioteca Sympy:
@@ -663,11 +667,11 @@ Saída:
         Figura 15
 
 
-É importante analisarmos que o erro cai quase que linearmente com :math:`h` até certo ponto. Essa diminuição se da devido ao erro de aproximação que é diretamente proporcional a :math:`h`.
+É importante analisarmos que o erro cai quase que linearmente com :math:`h` até certo ponto. **[Não sei se dá para afirmar que o gráfico apresenta comportamento linear, pois você está usando uma escala dilog.]** Essa diminuição se da devido ao erro de aproximação que é diretamente proporcional a :math:`h`.
 A partir deste valor mínimo do erro, o mesmo começa a subir devido a contribuição do erro de arredondamento que é inversamente proporcional ao parâmetro :math:`h` .
 
 
-Mais uma vez, a depender da sua aplicação o valor do erro ser aceitável ou não vai depender do rigor numérico que você busca em seus resultados. 
+Mais uma vez, a depender da sua aplicação, o valor do erro ser aceitável ou não vai depender do rigor numérico que você busca em seus resultados. 
 Você pode seguir o mesmo caminho algébrico apresentado nesta seção e encontrar erros de ordens superiores simplesmente truncando a série infinita proveniente da expansão em série de Taylor nos próximos termos. 
 Isso vai nos fornecer erros menores, contudo o custo computacional vai aumentar significativamente. Um caminho algébrico similar pode ser adotado para o cálculo numérico de derivadas de segunda ou terceira ordem.
 
@@ -679,8 +683,8 @@ são apenas conjuntos de pontos :math:`(x_{i}, y_{i})` onde :math:`y_{i}` é o v
 2.3. **Pontos em uma grade**
 ----------------------------
 
-Em cenários experimentais muitas vezes não possuímos expressões do tipo :math:`f(x)` a nossa disposição para calcularmos a sua derivada em um ponto específico. O que de fato possuímos
-são os chamados pontos em uma grade(ou malha - quando estes pontos são igualmente espaçados) - que são essencialmente dados discretos do tipo :math:`(x_{i}, y_{i})` onde :math:`y_{i}` é o valor da função no ponto :math:`x_{i}` .
+Em cenários experimentais, muitas vezes não possuímos expressões do tipo :math:`f(x)` a nossa disposição para calcularmos a sua derivada em um ponto específico. O que de fato possuímos
+são os chamados pontos em uma grade (ou malha -- quando estes pontos são igualmente espaçados) -- que são essencialmente dados discretos do tipo :math:`(x_{i}, y_{i})` onde :math:`y_{i}` é o valor da função no ponto :math:`x_{i}` .
 
 
 .. admonition:: Grade igualmente espaçada 
@@ -696,11 +700,11 @@ são os chamados pontos em uma grade(ou malha - quando estes pontos são igualme
     Onde :math:`h=\frac{x_{f}-x_{0}}{n-1}` e :math:`x_{i}` é o seu domínio,  :math:`x_{0}` é seu ponto inicial,  :math:`x_{f}` é seu ponto final,  :math:`i` é um número inteiro que vai de 
     :math:`0` até :math:`n-1` ,  :math:`h` é o passo e  :math:`n` é o número total de pontos disponíveis.
 
-    Já os pontos relacionados a imagem da função, são os pontos discretos obtidos na sua aplicação(seja ela experimental ou não).
+    Já os pontos relacionados à imagem da função, são os pontos discretos obtidos na sua aplicação (seja ela experimental ou não).
 
     Vamos demonstrar um exemplo para fixarmos o conceito. 
 
-    Imagine que realizamos diversas medidas em um laboratório e obtivemos os seguintes dados
+    Imagine que realizamos diversas medidas em um laboratório e obtivemos os seguintes dados:
  
     .. list-table::
         :widths: 45 45
@@ -879,7 +883,7 @@ Como sabemos que :math:`h=0.05` , podemos simplesmente substituir o parâmetro n
         Figura 16    
     
     Para fins didáticos e de comparação, os dados relacionados ao eixo :math:`y` foram gerados utilizando-se a função :math:`f(x)=sen(x)` de modo que no final possamos comparar 
-    o resultado analítico com o resultado obtido. Repare que na maioria das vezes isso não vai ser possível de ser feito, visto que nem sempre teremos a função em sua forma explícita a nossa disposição.
+    o resultado analítico com o resultado obtido. Repare que na maioria das vezes isso não vai ser possível de ser feito, visto que nem sempre teremos a função em sua forma explícita à nossa disposição.
 
     Cientes do fato apresentado, podemos calcular o erro absoluto para cada método.
 
@@ -915,7 +919,7 @@ Como sabemos que :math:`h=0.05` , podemos simplesmente substituir o parâmetro n
         
         Figura 17  
     
-    Podemos por fim calcular o erro absoluto uma vez que conhecemos a função analítica - lembre-se que fizemos isso somente para fins didáticos e para mostrarmos que o erro absoluto é da ordem de grandeza do erro total. Em exemplos práticos
+    Podemos, por fim, calcular o erro absoluto uma vez que conhecemos a função analítica -- lembre-se que fizemos isso somente para fins didáticos e para mostrarmos que o erro absoluto é da ordem de grandeza do erro total. Em exemplos práticos
     a função não é fornecida e só teremos em mãos os dados discretizados.
 
     O Script abaixo faz o cálculo do erro absoluto com base nos métodos de diferença finitas em relação a derivada analítica.
@@ -951,20 +955,20 @@ Como sabemos que :math:`h=0.05` , podemos simplesmente substituir o parâmetro n
         * - Diferença central: :math:`E_{abs}  \approx 10^{-4}`
           - Diferença central: :math:`E_{tot}  \approx 10^{-5}`
 
-    O resultado apresentado acima nos sugere que nossa estimativa é boa, por mais que a diferença de 10x entre o erro absoluto e o total para o método da diferença central esteja evidente, podemos atribuir
+    O resultado apresentado acima nos sugere que nossa estimativa é boa, por mais que a diferença de 10x entre o erro absoluto e o total para o método da diferença central esteja evidente. Podemos atribuir
     a esta diferença o fato de assumirmos que :math:`f(x)` e :math:`f'''(x)` possuem ordem de grandeza igual a um.
 
 No segundo capítulo deste material, aprofundamos nosso conhecimento nos fundamentos das diferenças finitas. Exploramos as técnicas de diferença avançada, atrasada e 
 central, compreendendo suas aplicações. Além disso, realizamos importantes estimativas a respeito dos erros numéricos, nos mostrando como cada tipo de erro se 
 comporta em relação aos cálculos computacionais realizados. 
 
-Ao estudarmos diferenciação numérica, torna-se nítido a relevância desta técnica em diversas aplicações. Ela é uma ferramenta muito útil para aplicações que envolvam o cálculo de derivadas de funções complexas ou de pontos discretos, contudo, precisamos nos atentar para como o erro numérico se comporta em função do custo computacional envolvido.
+Ao estudarmos diferenciação numérica, torna-se nítido a relevância desta técnica em diversas aplicações. Ela é uma ferramenta muito útil para aplicações que envolvam o cálculo de derivadas de funções complexas **[novamente, substituir o termo "funções complexas" por outra coisa, exemplo "funções complicadas ou de muitos termos"]** ou de pontos discretos, contudo, precisamos nos atentar para como o erro numérico se comporta em função do custo computacional envolvido.
 
-A capacidade de se estimar derivadas de funções complexas ou desconhecidas, trabalhando com dados discretos e deixando para trás as limitações dos métodos analíticos nos introduz a uma importante área localizada na fronteira do conhecimento entre a matemática e a computação.
-Por fim, no capítulo seguinte, veremos que a diferenciação se torna ainda mais integrada devido aos avanços teóricos computacionais que possibilitaram o desenvolvimento de uma outro técnica, que revolucionou o cálculo numérico. A diferenciação automática. 
-Essencial no universo da computação e aprendizado de máquina, essa técnica nos possibilita calcular derivadas de funções complexas com grande precisão e eficácia, ultrapassando diversos obstáculos encontrados na diferenciação numérica.
+A capacidade de se estimar derivadas de funções complexas ou desconhecidas, trabalhando com dados discretos e deixando para trás as limitações dos métodos analíticos, nos introduz a uma importante área localizada na fronteira do conhecimento entre a matemática e a computação.
+Por fim, no capítulo seguinte, veremos que a diferenciação se torna ainda mais integrada devido aos avanços teóricos computacionais que possibilitaram o desenvolvimento de uma outro técnica, que revolucionou **[eu evitaria termos muito fortes como "revolucionou" e substituiria por algo como "impactou grandemente"]** o cálculo numérico: a diferenciação automática. 
+Essencial no universo da computação e aprendizado de máquina, essa técnica nos possibilita calcular derivadas de funções complexas **[a vida é complexa, possui parte real e imaginária (:]** com grande precisão e eficácia, ultrapassando diversos obstáculos encontrados na diferenciação numérica.
 
-Assim, iremos entender conceitos como números duais, gradientes, algoritmos de autodiferenciação e aplicações na area de machine learning.
+Assim, iremos entender **[eu seria mais modesto e substituíria "entender" por "introduzir"]** conceitos como números duais, gradientes numéricos, algoritmos de autodiferenciação e aplicações na area de machine learning.
 
 
 

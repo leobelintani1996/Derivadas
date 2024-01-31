@@ -19,7 +19,7 @@ matemática que vai simbolizar a derivada da função. Podemos calcular a deriva
 Já a derivação numérica vai nos fornecer uma aproximação da derivada em um ponto, não nos fornecendo uma forma fechada da derivada, ou seja, estamos estimando o limite da função em um determinado ponto quando nosso passo
 :math:`h` tende a um valor estabelecido por nós.
 
-De acordo com :ref:`Baydin [2018]<4. Referências>`, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na area de machine learning).
+De acordo com :ref:`Baydin [2018]<4. Referências>`, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na área de machine learning).
 A diferenciação automática baseia-se na decomposição de funções em operações básicas, cujas derivadas são conhecidas. Essas podem ser combinadas em um algoritmo para derivar a função em um determinado ponto. No resultado final vamos obter um valor 
 numérico da derivada em um determinado ponto, nunca uma forma fechada da derivada, como a diferenciação analítica. Por não se basear em cálculos utilizando diferenças finitas, a diferenciação automática não possui erros de aproximação significativos, melhorando  muito a precisão do cálculo executado, contudo ainda
 temos os erros de arredondamento presentes, visto que estes são inerentes aos cálculos computacionais.
@@ -33,7 +33,7 @@ A base teórica por trás de todo o método se baseia em o que chamamos de núme
 O conceito por trás da diferenciação automática parte da definição dos números duais. Através dos números duais podemos escrever o valor de uma função em um ponto e sua derivada no ponto.
 
 Os números duais são uma extensão dos números reais, similares aos números complexos, contudo possuem suas particularidades.
-Os números complexos por exemplo são expressos no seguinte formato 
+Os números complexos, por exemplo, são expressos no seguinte formato: 
 
 .. admonition:: Definição
 
@@ -56,7 +56,7 @@ Os números complexos por exemplo são expressos no seguinte formato
     Onde :math:`a` é uma função avaliada em um determinado ponto, :math:`a'` é a derivada da função avaliada no ponto e :math:`d` é a unidade dual e é definida como :math:`d^2 = 0` .
 
 
-    As regras aritméticas que regem o cálculo envolvendo números duais podem ser definidas como
+    As regras aritméticas que regem o cálculo envolvendo números duais podem ser definidas como:
 
  
 
@@ -116,8 +116,8 @@ Logo podemos escrever
         * - :math:`c = (c,0)` 
           - :math:`x = (x,1)` 
 
-    Repare que, o valor de uma variável constante avaliada em um determinado ponto é a própria variável, e o valor de sua derivada é zero - como vimos no primeiro capítulo deste material.
-    Para o caso da variável independente a mesma lógica é utilizada.
+    Repare que, o valor de uma variável constante avaliada em um determinado ponto é a própria variável, e o valor de sua derivada é zero -- como vimos no primeiro capítulo deste material.
+    Para o caso da variável independente, a mesma lógica é utilizada.
 
 .. admonition:: Exemplo 
 
@@ -156,8 +156,7 @@ Podemos ainda definir as regras de derivação por números duais para outras fu
 
 .. admonition:: Regra da cadeia e funções conhecidas 
 
-    Iremos definir abaixo a regra da cadeia assim como a derivada de outras conhecidas funções
-    através do uso dos números duais.
+    Iremos definir abaixo a regra da cadeia assim como a derivada de outras funções conhecidas através do uso dos números duais.
 
     .. list-table::
         :widths: 45 45
@@ -177,8 +176,9 @@ Podemos ainda definir as regras de derivação por números duais para outras fu
         &g(a) = g((a,a'))=(g(a,a'g'(a)))
         \end{align}
 
+**[Não lembro se você já introduziu a regra da cadeia nas seções anteriores. Se não, é importante dizer aqui que a regra da cadeia é uma propriedade básica da derivada das funções analíticas que continua válida na derivação automática. Senão fica parecendo que é algo novo que surgiu somente com a derivação automática.]**
 
-Podemos por fim resolver um exemplo um pouco mais elaborado afim de fixarmos as definições apresentadas acima.
+Podemos, por fim, resolver um exemplo um pouco mais elaborado afim de fixarmos as definições apresentadas acima.
 
 .. admonition:: Exemplo 
 
@@ -197,9 +197,9 @@ Podemos por fim resolver um exemplo um pouco mais elaborado afim de fixarmos as 
 
 
 
-Podemos ainda extrapolar o cálculo de uma variável praticado até o presente momento justificado por fins didáticos. Vamos considerar uma função de várias variáveis do tipo :math:`f(x,y,z)` e ao aplicarmos as mesmas regras apresentadas obtemos os mesmos resultados
-discutidos.
-A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que pode ser definido como
+Podemos ainda extrapolar o cálculo de uma variável praticado até o presente momento justificado por fins didáticos. Vamos considerar uma função de várias variáveis do tipo :math:`f(x,y,z)` e, ao aplicarmos as mesmas regras apresentadas, obtemos os mesmos resultados discutidos.
+
+A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que pode ser definido como:
 
 .. math::
 
@@ -209,6 +209,7 @@ A diferença é que não estamos mais calculando derivadas totais sob as parcela
 
 Por fim, a derivação via números duais ainda não é de fato a diferenciação automática em sua essência. Para diferenciarmos a função em um determinado ponto automaticamente precisamos de fato automatizar o processo.
 É nítido que para expressões complexas o esforço matemático (para diferenciar uma determinada função utilizando os números duais) vai ser algo extremamente custoso, logo, visamos automatizar o processo de modo que um algoritmo em Python seja capaz de realizar as tarefas apresentadas acima sem grandes problemas.
+
 Na seção apresentada a seguir iremos criar nosso algoritmo de diferenciação automática.
 
 3.3. **Implementando a autodiferenciação** 
@@ -217,9 +218,9 @@ Na seção apresentada a seguir iremos criar nosso algoritmo de diferenciação 
 Podemos implementar um código em Python de forma que as operações das derivadas via números duais possam ser de fato automatizadas.
 A ideia central é "quebrar" uma determinada função matemática em várias partes cuja derivada possa ser escrita com as regras apresentadas acima.
 
-O código apresentado carrega consigo alguns conceitos um pouco mais avançados dentro da area da programação, como é o caso do uso de classes e objetos. 
-Uma tentativa de didatizar o conteúdo é através de comentários no corpo do código e de uma breve explicação ao final. 
-De qualquer forma: não se preocupe caso tenha alguma dúvida. O objetivo deste material não é ensinar programação de fato.
+O código apresentado carrega consigo alguns conceitos um pouco mais avançados dentro da área da programação, como é o caso do uso de classes, objetos e sobrecarga de operadores (operators overloading).
+
+Uma tentativa de didatizar o conteúdo é através de comentários no corpo do código e de uma breve explicação ao final. De qualquer forma, não se preocupe caso tenha alguma dúvida. O objetivo deste material não é ensinar programação de fato.
 
 
 Por fim, podemos apresentar o algoritmo abaixo, onde a autodiferenciação foi implementada de fato.
@@ -368,11 +369,10 @@ Métodos Auxiliares - constante e variável:
 -  Constante(a): Cria uma variável diferencial que representa uma constante (derivada zero).
 -  Variável(x): Cria uma variável diferencial que representa uma variável independente (derivada um).
 
-Por fim o código define uma função :math:`f(x)` que calcula :math:`f(x) = (x^5 + 1)` . Em seguida, cria objetos Dif para :math:`x`  com 
+Por fim, o código define uma função :math:`f(x)` que calcula :math:`f(x) = (x^5 + 1)` . Em seguida, cria objetos Dif para :math:`x`  com 
 valores específicos e calcula o valor da função :math:`f`  e sua derivada nesses pontos. Finalmente, imprime o valor da função (resultado.p) e o valor da derivada (resultado.d) para os valores dados de :math:`x` .
 
-Podemos ainda calcular a derivada simbólica da função afim de compararmos o resultado obtido. É importante entendermos que nem sempre isso será possível. Caso a função seja complexa demais, 
-podemos utilizar como métrica a própria derivada numérica, apresentada no capítulo 2 deste material.
+Podemos ainda calcular a derivada simbólica da função afim de compararmos o resultado obtido. É importante entendermos que nem sempre isso será possível. Caso a função seja complexa demais, podemos utilizar como métrica a própria derivada numérica, apresentada no capítulo 2 deste material.
 
 Entrada:
 
@@ -402,13 +402,11 @@ Saída:
 
     Figura 20
 
-Podemos observar que o resultado obtido com o uso do nosso algoritmo para diferenciar automaticamente a função é exatamente o mesmo que a derivação simbólica nos fornece, 
-nos mostrando que, de fato, ao calcularmos derivadas em pontos específicos, a autodiferenciação surge como uma forte alternativa para essa tarefa.
+Podemos observar que o resultado obtido com o uso do nosso algoritmo para diferenciar automaticamente a função é exatamente o mesmo que a derivação simbólica nos fornece, nos mostrando que, de fato, ao calcularmos derivadas em pontos específicos, a autodiferenciação surge como uma forte alternativa para essa tarefa.
 
-Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato :math:`f(x,y) = y(x^5 + 1)` , onde buscamos encontrar 
-o gradiente da função, ou seja, :math:`\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}` nos pontos :math:`x = 1 e y = 3`.
+Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato :math:`f(x,y) = y(x^5 + 1)` , onde buscamos encontrar o gradiente da função, ou seja, :math:`\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}` nos pontos :math:`x = 1 e y = 3`.
 
-O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis.
+O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis. **[Léo, não vejo sentido em repetir a criação da classe Dif. Ela continua a mesma. Você só está aplicando ela em um caso novo. Portanto, é interessante mostrar o código somente a partir de #Função de exemplo que aceita múltiplas ...]**
 
 Entrada:
 
@@ -535,11 +533,12 @@ Saída:
 
 
 
-É nítido que nosso algoritmo é uma implementação simplificada. Você pode notar que não definimos funções auxiliares como seno, cosseno, tangente, exponencial ou logaritmo, por exemplo, logo, estamos limitados dentro das possibilidades de funções existentes. 
-Isso foi feito como uma medida de simplificar o algoritmo em si, o tornando mais didático e menos denso. Outro ponto interessante é que para derivadas de ordens superiores a implementação não é tão simples, logo, 
+É nítido que nosso algoritmo é uma implementação simplificada. Você pode notar que não definimos funções auxiliares como seno, cosseno, tangente, exponencial ou logaritmo, por exemplo, logo, estamos limitados dentro das possibilidades de funções existentes.
+
+Isso foi feito como uma medida de simplificar o algoritmo em si, tornando-o mais didático e menos denso. Outro ponto interessante é que para derivadas de ordens superiores a implementação não é tão simples, logo, 
 é necessário o uso de bibliotecas especializadas em diferenciação automática.
 
-Dentro do grande universo da linguagem Python, existem bibliotecas que diferenciam automaticamente funções, onde estes algoritmos já estão implementados. Na seção 3.5 iremos falar melhor sobre as bibliotecas mais utilizadas, como é o caso da biblioteca JAX.
+Dentro do grande universo da linguagem Python, existem bibliotecas que diferenciam automaticamente funções, onde estes algoritmos já estão implementados. Na seção 3.5 iremos falar melhor sobre uma das bibliotecas utilizadas: a biblioteca JAX.
 
 Vamos ainda discutir os dois principais modos de diferenciação automática. A diferenciação automática apresentada acima é conhecida como modo direto, 
 na seção abaixo iremos entender a diferença entre os modos direto e reverso e quais suas consequências.
@@ -564,7 +563,7 @@ Este modo funciona de maneira oposta ao modo direto. A diferenciação é realiz
 
 Em resumo, a escolha entre o modo direto e o modo reverso depende da estrutura da função e do número de variáveis independentes. O modo direto é mais eficiente para funções com poucas variáveis independentes, enquanto o modo reverso é mais adequado para funções com muitas variáveis independentes.
 
-A grande maioria das bibliotecas de diferenciação automática escolhem por conta se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências :ref:`4 e 5<4. Referências>` que tratam de forma mais aprofundada a implementação do modo reverso e direto.
+A grande maioria das bibliotecas de diferenciação automática escolhem por conta própria (automaticamente) se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências :ref:`4 e 5<4. Referências>` **[o link para essas seções não está funcionando]** que tratam de forma mais aprofundada a implementação do modo reverso e direto.
 
 
 3.5. **Bibliotecas de diferenciação automática**
@@ -573,7 +572,7 @@ A grande maioria das bibliotecas de diferenciação automática escolhem por con
 Como já discutido, a diferenciação automática é uma técnica crucial em aprendizado de máquina, especialmente em redes neurais artificiais, 
 permitindo o cálculo eficiente de gradientes e derivadas. 
 
-Podemos citar três bibliotecas populares que implementam essa técnica. São elas: TensorFlow, PyTorch e JAX. Cada qual possui características únicas que as tornam adequadas para diferentes tipos de tarefas e abordagens. O objetivo aqui é apresentar a sintaxe da bibliotecas JAX, além 
+Podemos citar três bibliotecas populares que implementam essa técnica. São elas: TensorFlow, PyTorch e JAX. Cada qual possui características únicas que as tornam adequadas para diferentes tipos de tarefas e abordagens. O objetivo aqui é apresentar a sintaxe da biblioteca JAX, além 
 de discorrer um pouco sobre as funcionalidades da mesma.
 
 
@@ -589,7 +588,7 @@ Durante essa conversão, ela aplica várias transformações, como fusão de ope
 
 Após a transformação, ela utiliza o XLA (Accelerated Linear Algebra) para compilar este formato intermediário em código de máquina de alto desempenho. O XLA é um compilador avançado que otimiza o código para execução específica em CPUs, GPUs ou TPUs.
 Essa compilação é feita de forma Just-In-Time (JIT), ou seja, ocorre em tempo de execução, permitindo que a JAX otimize o código com base no contexto específico em que está sendo executado.
-O resultado final é uma versão da função original que pode ser executada muito mais rapidamente do que o código Python puro. Isso pode ser bastante útil para operações com muitos cálculos, como as que em machine learning, processamento de grandes conjuntos de dados e simulações.
+O resultado final é uma versão da função original que pode ser executada muito mais rapidamente do que o código Python puro. Isso pode ser bastante útil para operações com muitos cálculos, como em machine learning e em processamento de grandes conjuntos de dados e simulações.
 O XLA e a compilação JIT são particularmente úteis quando a função é executada em um hardware especializado, como GPUs e TPUs, que são projetados para lidar eficientemente com operações de alta intensidade computacional.
 
 Para o usuário final, isso significa que é possível escrever funções em Python, uma linguagem de alto nível e fácil de usar, e ainda assim aproveitar o desempenho de baixo nível que normalmente requereria programação em uma linguagem mais complexa e de baixo nível, como C, por exemplo.
@@ -670,7 +669,8 @@ Saída:
 
     Figura 23
 
-A diferença ao calcularmos o gradiente de funções de 1, 2 até quantas variáveis quisermos vai ser evidente na linha em que chamamos a função 
+A diferença ao calcularmos o gradiente de funções de uma, duas ou até quantas variáveis quisermos, vai ser evidente na linha em que chamamos a função:
+
 .. code::
 
     jax.grad(f, argnums = (0,1))
@@ -681,9 +681,8 @@ Se estivermos tratando de 3 variáveis por exemplo, utilizaríamos
     
     jax.grad(f, argnums = (0, 1, 2))
 
-Uma vez que entendemos como a técnica da diferenciação automática funciona e como podemos utilizar a biblioteca JAX para o cálculo de gradientes 
-, podemos de fato nos debruçar sobre suas aplicações dentro da area do machine learning, onde eu e meus orientadores, durante a minha graduação
-utilizamos destas ferramentas para resolver alguns conhecidos problemas da Física.
+
+Uma vez que entendemos como a técnica da diferenciação automática funciona e como podemos utilizar a biblioteca JAX para o cálculo de gradientes, podemos de fato mostrar suas aplicações dentro da área do machine learning, onde eu e meus orientadores **[acho válido citar explicitamente o nome do Daniel, caso ele concorde, pois não aparece o nome dele na página inicial]**, durante a minha graduação utilizamos destas ferramentas para resolver alguns conhecidos problemas da Física.
 
 A próxima sessão surge com a ideia de tocarmos de forma suave na definição de redes neurais artificiais e de algumas propriedades que a tangem, como: 
 função custo, taxa de aprendizagem, pesos sinápticos, bias, etc,  e então apresentar um exemplo menos sofisticado, onde vamos de fato poder enxergar o potencial desta
