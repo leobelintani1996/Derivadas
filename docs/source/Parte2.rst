@@ -223,7 +223,6 @@ valores ótimos para :math:`h` .
         \end{align}
 
 
-**[Este quadro de diferença atrasada ficou muito repetitivo. Parece um copia e cola e dá uma sensação de deja vu ruim para o leitor. Tente dar uma quebrada nisso. Por exemplo, dizendo algo: da mesma forma como na diferença adiantada, podemos expandir em série de Taylor que resulta em ... e pular o passo intermediário que é idêntico.]**
 
 É importante notar que a aproximação de primeira ordem dos dois métodos acima possuem um erro de truncamento da ordem de :math:`O(h)\approx \frac{h}{2}f''(x)` .
 O resultado acima nos induz a pensar que quanto menor o parâmetro :math:`h` menor o erro associado e, por consequência, o resultado da derivada numérica tende a ser 
@@ -241,13 +240,12 @@ Vamos estimá-lo abaixo para os dois métodos apresentados.
         \end{align}
     
     Onde :math:`\epsilon_{m}` é chamado de erro da máquina e é uma característica do hardware do computador e do software do sistema operacional, e é geralmente o mesmo para qualquer computador 
-    e vale cerca de :math:`\epsilon_{m} = 2.220446049250313.10^{-16}` .
+    e vale cerca de :math:`\epsilon_{m} = 2.220446049250313.10^{-16}` . Caso o leitor se interesse, a expressão acima é apresentada com mais detalhes em :ref:`[2]<ref2>` .
 
     Por fim, o que buscamos é estimar um valor razoável para :math:`h` de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
     que existe um :math:`h` que minimiza o erro total.
 
 
-**[Em várias partes está faltando indicação de referências, mas no quadro acima em especial por apresentar uma expressão sem demonstração]**
 
 .. admonition:: Minimizando :math:`E_{total}`
 
@@ -520,7 +518,6 @@ Vamos estimá-lo abaixo para o método da diferença central.
     Por fim, o que buscamos é estimar um valor razoável para :math:`h` de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
     que existe um :math:`h` que minimiza o erro total.
 
-**[Esse quadro de cima também é idêntico ao da diferença avançada. Então é bo mdar uma qubrada nisso. Por exemplo, mencionando "da mesma forma que na equação x" ou simplesmente mencionando que a mesma equação se aplica na diferença central sem precisar criar um quadro só para isso.]**
 
 .. admonition:: Minimizando :math:`E_{total}`
 
@@ -667,7 +664,7 @@ Saída:
         Figura 15
 
 
-É importante analisarmos que o erro cai quase que linearmente com :math:`h` até certo ponto. **[Não sei se dá para afirmar que o gráfico apresenta comportamento linear, pois você está usando uma escala dilog.]** Essa diminuição se da devido ao erro de aproximação que é diretamente proporcional a :math:`h`.
+É importante analisarmos que o erro cai com :math:`h` até certo ponto (repare que a escala adotada é a dilog). Essa diminuição se da devido ao erro de aproximação que é diretamente proporcional a :math:`h`.
 A partir deste valor mínimo do erro, o mesmo começa a subir devido a contribuição do erro de arredondamento que é inversamente proporcional ao parâmetro :math:`h` .
 
 
@@ -962,13 +959,13 @@ No segundo capítulo deste material, aprofundamos nosso conhecimento nos fundame
 central, compreendendo suas aplicações. Além disso, realizamos importantes estimativas a respeito dos erros numéricos, nos mostrando como cada tipo de erro se 
 comporta em relação aos cálculos computacionais realizados. 
 
-Ao estudarmos diferenciação numérica, torna-se nítido a relevância desta técnica em diversas aplicações. Ela é uma ferramenta muito útil para aplicações que envolvam o cálculo de derivadas de funções complexas **[novamente, substituir o termo "funções complexas" por outra coisa, exemplo "funções complicadas ou de muitos termos"]** ou de pontos discretos, contudo, precisamos nos atentar para como o erro numérico se comporta em função do custo computacional envolvido.
+Ao estudarmos diferenciação numérica, torna-se nítido a relevância desta técnica em diversas aplicações. Ela é uma ferramenta muito útil para aplicações que envolvam o cálculo de derivadas de funções complicadas ou de pontos discretos, contudo, precisamos nos atentar para como o erro numérico se comporta em função do custo computacional envolvido.
 
 A capacidade de se estimar derivadas de funções complexas ou desconhecidas, trabalhando com dados discretos e deixando para trás as limitações dos métodos analíticos, nos introduz a uma importante área localizada na fronteira do conhecimento entre a matemática e a computação.
-Por fim, no capítulo seguinte, veremos que a diferenciação se torna ainda mais integrada devido aos avanços teóricos computacionais que possibilitaram o desenvolvimento de uma outro técnica, que revolucionou **[eu evitaria termos muito fortes como "revolucionou" e substituiria por algo como "impactou grandemente"]** o cálculo numérico: a diferenciação automática. 
-Essencial no universo da computação e aprendizado de máquina, essa técnica nos possibilita calcular derivadas de funções complexas **[a vida é complexa, possui parte real e imaginária (:]** com grande precisão e eficácia, ultrapassando diversos obstáculos encontrados na diferenciação numérica.
+Por fim, no capítulo seguinte, veremos que a diferenciação se torna ainda mais integrada devido aos avanços teóricos computacionais que possibilitaram o desenvolvimento de uma outro técnica, que impactou grandemente o cálculo numérico: a diferenciação automática. 
+Essencial no universo da computação e aprendizado de máquina, essa técnica nos possibilita calcular derivadas de funções complicadas com grande precisão e eficácia, ultrapassando diversos obstáculos encontrados na diferenciação numérica.
 
-Assim, iremos entender **[eu seria mais modesto e substituíria "entender" por "introduzir"]** conceitos como números duais, gradientes numéricos, algoritmos de autodiferenciação e aplicações na area de machine learning.
+Assim, iremos introduzir  conceitos como números duais, gradientes numéricos, algoritmos de autodiferenciação e aplicações na area de machine learning.
 
 
 

@@ -36,9 +36,6 @@ html_theme = 'sphinx_wagtail_theme'
 
 
 
-html_theme_options = dict(
-    github_url = "https://github.com/leobelintani1996/Derivadas"
-)
 
 # This is used by Sphinx in many places, such as page title tags.
 project = "Monografia"
@@ -51,6 +48,7 @@ html_theme_options = dict(
     logo_height = 150,
     logo_url = "",
     logo_width = 150,
+    github_url = "https://github.com/leobelintani1996/Derivadas",
 )
 
 

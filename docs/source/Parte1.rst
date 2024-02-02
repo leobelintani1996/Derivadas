@@ -16,7 +16,7 @@ A extensão dos conteúdos transcende os objetivos deste material, a imagem abai
 
 .. figure:: images/image_8.png
 
-    Figura 8 
+    Figura 0 
 
 1.1. **A definição de limite e suas propriedades**
 --------------------------------------------------
@@ -95,12 +95,12 @@ Imagine a função definida por:
         4 & \text{se } x > 2
     \end{cases}
 
-Repare que a função não é definida no ponto :math:`x=0` **[corrigir para x=2]**, gerando o que chamamos de singularidade, ou seja,
+Repare que a função não é definida no ponto :math:`x=2` , gerando o que chamamos de singularidade, ou seja,
 uma indeterminação no ponto.
 
 Podemos visualizar o exemplo acima dentro de um ambiente que tenha suporte a linguagem Python.
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Tente rodar o código abaixo em um ambiente Python e veja se o gráfico obtido é parecido com o apresentado abaixo.
 
@@ -227,7 +227,7 @@ Queremos estudar o comportamento da função :math:`f(x) = \frac{1}{x^2}` quando
 
 Como disponibilizamos de recursos computacionais, podemos plotar o gráfico em um ambiente Python.
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Entrada:
     
@@ -361,7 +361,7 @@ Vamos ilustrar as definições apresentadas acima através do exemplo abaixo:
 Encontre as assíntotas verticais da função a seguir :math:`f(x) = \frac{(x^2 + 1)}{3x - 2x^2}` e através dos recursos gráficos mostre 
 se o seu limite existe ou não, quando :math:`x \to 0` e quando :math:`x \to 1.5` .
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Entrada:
 
@@ -431,7 +431,7 @@ são diferentes e portanto o limite da função não existe em :math:`x = 1.5` .
 Encontre as assíntotas horizontais da função a seguir :math:`f(x) = \frac{(x^2 - 1)}{(x^2 + 1)}` e através dos recursos gráficos mostre 
 se o seu limite existe ou não, quando :math:`x \to \infty`  .
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Entrada:
 
@@ -481,20 +481,23 @@ se o seu limite existe ou não, quando :math:`x \to \infty`  .
 
 
 Repare que a função apresentada no exemplo acima possui uma assintotas horizontal em (:math:`y = 1`). 
-Podemos encontrar os limites laterais simplesmente ao analisarmos o gráfico e os limites laterais.
+Podemos encontrar o limite simplesmente ao analisarmos o gráfico.
 
-Quando :math:`x \to \infty^{-}` , :math:`f(x) \to 1` e quando :math:`x \to \infty^{+}` , :math:`f(x) \to 1` nos mostrando que os limites laterais
-são iguais e portanto o limite da função existe e é igual a 1. **[Léo, tem certeza que dá para aplicar o conceito pela esquerda e pela direita com o infinito? Pois o infinito não é um número. Vir pela esquerda e pela direita nesse caso é se distanciar cada vez mais um limite do outro. Faz sentido isso?]**
+Quando :math:`x \to \infty` , notamos que :math:`f(x) \to 1` , 
+indicando que o limite da função existe e é igual a 1.
 
 Podemos escrever que:
 
 .. math:: 
 
-    \displaystyle \lim_{x \to \infty} \frac{(x^2 - 1)}{(x^2 + 1)} = 1 
+    \begin{align}
+    &\displaystyle \lim_{x \to \infty} \frac{(x^2 - 1)}{(x^2 + 1)} = 1 \\ \\
+    \end{align}
 
 
 
-A importância de se encontrar as assíntotas verticais e horizontais se dá exatamente na análise gráfica de funções descontínuas e complexas, mas nem sempre é fácil de 
+
+A importância de se encontrar as assíntotas verticais e horizontais se dá exatamente na análise gráfica de funções descontínuas e complicadas, mas nem sempre é fácil de 
 plotarmos um gráfico. 
 Como você pode ter percebido, conforme as descontinuidades se tornam mais presentes, os gráficos vão se tornando mais elaborados devido à complexidade
 em se segmentar o domínio da função de forma coerente com a linguagem de programação utilizada.
@@ -571,7 +574,7 @@ Iremos definir abaixo as principais propriedades para cálculo de limites levand
 
 A fim de fixarmos as propriedades apresentadas acima, veremos alguns exemplos resolvidos abaixo.
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     1. Calcule o seguinte limite: :math:`\displaystyle \lim_{x \to 3}x^2`
 
@@ -848,7 +851,7 @@ Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`f(x)= 3x^2 + x - \sqrt{x}`
 
@@ -877,7 +880,7 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`f(x)= e^x - 2e^x`
 
@@ -963,7 +966,7 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`f(x)= 2e^{x}sen(x)`
 
@@ -995,7 +998,7 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`f(x)= \frac{x^2 + x - 2}{x^3 + 6}`
 
@@ -1037,7 +1040,7 @@ Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
 Vamos resolver um exemplo para fixarmos as regras apresentadas acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`F(x) = e^{sen(x)}`
 
@@ -1105,14 +1108,12 @@ Saída:
 
 
 
-
-    
 Na primeira parte deste material didático, exploramos os conceitos fundamentais de limites e derivadas. Esses conceitos nos 
 ajudam a entender como as coisas se comportam nos "instantes" — capturando a essência da taxa de variação e da inclinação de tangentes em funções contínuas. 
 
 
 Contudo, nem sempre possuímos de fórmulas fechadas que nos permitam aplicar diretamente as definições e regras do cálculo. Além disso, 
-em muitas situações, lidamos com dados discretos ou funções complexas **[use o termo "complicado" ao invés de "complexa", pois em matemática o termo "complexo" possui uma definição própria como sabemos]** onde a determinação exata das derivadas é desconhecida ou altamente 
+em muitas situações, lidamos com dados discretos ou funções complicadas, onde a determinação exata das derivadas é desconhecida ou altamente 
 complexa. É nesse contexto que a diferenciação numérica se torna uma ferramenta essencial.
 
 À medida que avançamos para a próxima fase do material, vamos construir uma ponte entre a teoria analítica das derivadas e a aplicação numérica desses 

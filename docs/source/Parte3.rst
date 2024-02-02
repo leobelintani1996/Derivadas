@@ -19,7 +19,7 @@ matemática que vai simbolizar a derivada da função. Podemos calcular a deriva
 Já a derivação numérica vai nos fornecer uma aproximação da derivada em um ponto, não nos fornecendo uma forma fechada da derivada, ou seja, estamos estimando o limite da função em um determinado ponto quando nosso passo
 :math:`h` tende a um valor estabelecido por nós.
 
-De acordo com :ref:`Baydin [2018]<4. Referências>`, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na área de machine learning).
+De acordo com :ref:`Baydin [2018]<ref3>`, a diferenciação automática não é um tipo de técnica simbólica nem numérica. Ela faz parte de um outro grupo de métodos de diferenciação, chamada de diferenciação automática ou autodiferenciação (termo mais utilizado na área de machine learning).
 A diferenciação automática baseia-se na decomposição de funções em operações básicas, cujas derivadas são conhecidas. Essas podem ser combinadas em um algoritmo para derivar a função em um determinado ponto. No resultado final vamos obter um valor 
 numérico da derivada em um determinado ponto, nunca uma forma fechada da derivada, como a diferenciação analítica. Por não se basear em cálculos utilizando diferenças finitas, a diferenciação automática não possui erros de aproximação significativos, melhorando  muito a precisão do cálculo executado, contudo ainda
 temos os erros de arredondamento presentes, visto que estes são inerentes aos cálculos computacionais.
@@ -168,7 +168,7 @@ Podemos ainda definir as regras de derivação por números duais para outras fu
         * - Logaritmo: :math:`ln(a) = ln((a,a'))=(ln(a),\frac{a'}{a})` 
           - Raiz quadrada: :math:`\sqrt{a}= \sqrt{((a,a'))}=(\sqrt{a},\frac{a'}{2\sqrt{a}})`     
   
-    Repare que a regra da cadeia já está embutida nas expressões acima, mas podemos a definir como 
+    Repare que a regra da cadeia apresentada no capítulo 1 deste material, já está embutida nas expressões acima, mas podemos a definir como 
 
     .. math::
 
@@ -176,7 +176,6 @@ Podemos ainda definir as regras de derivação por números duais para outras fu
         &g(a) = g((a,a'))=(g(a,a'g'(a)))
         \end{align}
 
-**[Não lembro se você já introduziu a regra da cadeia nas seções anteriores. Se não, é importante dizer aqui que a regra da cadeia é uma propriedade básica da derivada das funções analíticas que continua válida na derivação automática. Senão fica parecendo que é algo novo que surgiu somente com a derivação automática.]**
 
 Podemos, por fim, resolver um exemplo um pouco mais elaborado afim de fixarmos as definições apresentadas acima.
 
@@ -406,111 +405,13 @@ Podemos observar que o resultado obtido com o uso do nosso algoritmo para difere
 
 Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato :math:`f(x,y) = y(x^5 + 1)` , onde buscamos encontrar o gradiente da função, ou seja, :math:`\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}` nos pontos :math:`x = 1 e y = 3`.
 
-O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis. **[Léo, não vejo sentido em repetir a criação da classe Dif. Ela continua a mesma. Você só está aplicando ela em um caso novo. Portanto, é interessante mostrar o código somente a partir de #Função de exemplo que aceita múltiplas ...]**
+O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis. 
 
 Entrada:
 
 .. code::
 
-    import math  # Importa o módulo math para acessar funções matemáticas.
-
-    class Dif:
-    # Classe Dif para representar e operar com variáveis diferenciais.
-    def __init__(self, p, d):
-        self.p = p  # Valor primal: valor da função no ponto de interesse.
-        self.d = d  # Primeira derivada: derivada da função no ponto de interesse.
-
-    # Sobrecarrega o operador de adição.
-    def __add__(self, other):
-        if isinstance(other, Dif):
-            # Soma os valores primais e as derivadas se 'other' for uma instância de Dif.
-            return Dif(self.p + other.p, self.d + other.d)
-        else:
-            # Soma um número real ao valor primal se 'other' for um número.
-            return Dif(self.p + other, self.d)
-
-    # Sobrecarrega o operador de adição para permitir adição comutativa (número + objeto Dif).
-    def __radd__(self, other):
-        if isinstance(other, Dif):
-            # Soma os valores primais e as derivadas se 'other' for uma instância de Dif.
-            return Dif(self.p + other.p, self.d + other.d)
-        else:
-            # Soma um número real ao valor primal se 'other' for um número.
-            return Dif(self.p + other, self.d)
-
-    # Sobrecarrega o operador de multiplicação.
-    def __mul__(self, other):
-        if isinstance(other, Dif):
-            # Aplica a regra do produto para multiplicação.
-            return Dif(self.p * other.p, self.p * other.d + self.d * other.p)
-        else:
-            # Multiplica um número real pelo valor primal e pela derivada.
-            return Dif(self.p * other, self.d * other)
-
-    # Sobrecarrega o operador de multiplicação para permitir multiplicação comutativa.
-    def __rmul__(self, other):
-        if isinstance(other, Dif):
-            # Aplica a regra do produto para multiplicação.
-            return Dif(self.p * other.p, self.p * other.d + self.d * other.p)
-        else:
-            # Multiplica um número real pelo valor primal e pela derivada.
-            return Dif(self.p * other, self.d * other)
-
-    # Sobrecarrega o operador de subtração.
-    def __sub__(self, other):
-        if isinstance(other, Dif):
-            # Subtrai os valores primais e as derivadas se 'other' for uma instância de Dif.
-            return Dif(self.p - other.p, self.d - other.d)
-        else:
-            # Subtrai um número real do valor primal.
-            return Dif(self.p - other, self.d)
-
-    # Sobrecarrega o operador de subtração para permitir subtração comutativa (número - objeto Dif).
-    def __rsub__(self, other):
-        if isinstance(other, Dif):
-            # Subtrai os valores primais e as derivadas se 'other' for uma instância de Dif.
-            return Dif(self.p - other.p, self.d - other.d)
-        else:
-            # Subtrai um número real do valor primal.
-            return Dif(self.p - other, self.d)
-
-    # Sobrecarrega o operador de divisão.
-    def __truediv__(self, other):
-        if isinstance(other, Dif):
-            # Aplica a regra da divisão para a divisão de Difs.
-            return Dif(self.p / other.p, (self.d * other.p - self.p * other.d) / (other.p ** 2))
-        else:
-            # Divide um número real pelo valor primal e pela derivada.
-            return Dif(self.p / other, self.d / other)
-
-    # Sobrecarrega o operador de divisão para permitir divisão comutativa (número / objeto Dif).
-    def __rtruediv__(self, other):
-        if isinstance(other, Dif):
-            # Aplica a regra da divisão para a divisão de Difs.
-            return Dif(self.p / other.p, (self.d * other.p - self.p * other.d) / (other.p ** 2))
-        else:
-            # Divide um número real pelo valor primal e pela derivada.
-            return Dif(self.p / other, self.d / other)
-
-    # Sobrecarrega o operador de potência '**'.
-    def __pow__(self, other):
-        if isinstance(other, int):
-            # Verifica se o expoente é um inteiro.
-            # Calcula x^other, onde 'x' é o valor primal do objeto Dif e 'other' é o expoente.
-            new_primal = self.p ** other
-            new_derivative = other * (self.p ** (other - 1)) * self.d
-            return Dif(new_primal, new_derivative)
-        else:
-            # Lança um erro se o expoente não for um inteiro.
-            raise TypeError("Potência só suportada para expoentes inteiros.")
-
-
-    # Funções auxiliares para criar uma variável diferencial como uma constante ou uma variável.
-    def constante(a):
-        return Dif(a, 0)  # Retorna um objeto Dif com derivada 0.
-
-    def variavel(x):
-        return Dif(x, 1)  # Retorna um objeto Dif com derivada 1.
+    [...]
 
     # Função de exemplo que aceita múltiplas variáveis diferenciais.
     def f(x, y):
@@ -563,7 +464,7 @@ Este modo funciona de maneira oposta ao modo direto. A diferenciação é realiz
 
 Em resumo, a escolha entre o modo direto e o modo reverso depende da estrutura da função e do número de variáveis independentes. O modo direto é mais eficiente para funções com poucas variáveis independentes, enquanto o modo reverso é mais adequado para funções com muitas variáveis independentes.
 
-A grande maioria das bibliotecas de diferenciação automática escolhem por conta própria (automaticamente) se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências :ref:`4 e 5<4. Referências>` **[o link para essas seções não está funcionando]** que tratam de forma mais aprofundada a implementação do modo reverso e direto.
+A grande maioria das bibliotecas de diferenciação automática escolhem por conta própria (automaticamente) se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências :ref:`4 e 5<ref4>` que tratam de forma mais aprofundada a implementação do modo reverso e direto.
 
 
 3.5. **Bibliotecas de diferenciação automática**
@@ -682,7 +583,7 @@ Se estivermos tratando de 3 variáveis por exemplo, utilizaríamos
     jax.grad(f, argnums = (0, 1, 2))
 
 
-Uma vez que entendemos como a técnica da diferenciação automática funciona e como podemos utilizar a biblioteca JAX para o cálculo de gradientes, podemos de fato mostrar suas aplicações dentro da área do machine learning, onde eu e meus orientadores **[acho válido citar explicitamente o nome do Daniel, caso ele concorde, pois não aparece o nome dele na página inicial]**, durante a minha graduação utilizamos destas ferramentas para resolver alguns conhecidos problemas da Física.
+Uma vez que entendemos como a técnica da diferenciação automática funciona e como podemos utilizar a biblioteca JAX para o cálculo de gradientes, podemos de fato mostrar suas aplicações dentro da área do machine learning, onde eu e meus orientadores (Daniel Silva e João Teles), durante a minha graduação utilizamos destas ferramentas para resolver alguns conhecidos problemas da Física.
 
 A próxima sessão surge com a ideia de tocarmos de forma suave na definição de redes neurais artificiais e de algumas propriedades que a tangem, como: 
 função custo, taxa de aprendizagem, pesos sinápticos, bias, etc,  e então apresentar um exemplo menos sofisticado, onde vamos de fato poder enxergar o potencial desta
@@ -710,7 +611,9 @@ O processo de atualização em cada iteração é dado por:
     &b_{novo} = b_{antigo} -\alpha \frac{\partial }{\partial b} L \tag{81} \\ \\
     \end{align}
 
-Aqui, :math:`\alpha` representa o learning rate, um hiperparâmetro que controla o tamanho do passo na atualização dos parâmetros. Um learning rate muito alto pode causar oscilações em torno do mínimo da função custo, enquanto um learning rate muito baixo pode resultar em um processo de treinamento lento.
+Aqui, :math:`\alpha` representa o learning rate, um hiperparâmetro que controla o tamanho do passo na atualização dos parâmetros. 
+Um learning rate muito alto pode causar oscilações em torno do mínimo da função custo, enquanto um learning rate muito baixo pode resultar em um processo de treinamento lento. 
+Caso o leitor se interesse pelas expressões acima, fica como leitura complementar a referência :ref:`[6]<ref6>` .
 
 A autodiferenciação, como já apresentado, é uma técnica matemática que permite calcular automaticamente as derivadas e os gradientes de funções, sendo essencial no processo da otimização via uso do gradiente descendente. 
 Ela facilita o cálculo dos gradientes da função custo em relação a cada peso :math:`w` e :math:`b`, permitindo a atualização eficiente desses parâmetros.
@@ -732,7 +635,7 @@ Logo, se trata de um problema um pouco mais complexo, uma vez que estamos de fat
 PINNS (Physics Informed Neural Networks) , ou seja, "informamos" a Física do problema via função custo para a rede neural afim de que após o treinamento ela possa nos dar uma solução para a equação diferencial apresentada.
 
 Não estamos interessados em tratar de equações diferenciais, nem de criarmos nenhuma rede neural artificial neste trabalho, visto que a abordagem teórica adotada nos capítulos anteriores não trata de fato de equações diferenciais, contudo, podemos trazer um exemplo em que simulamos o processo
-de aprendizado de uma rede neural artificial, com o objetivo de elucidarmos o uso da autodiferenciação para minimizar uma função custo. (Entretanto, caso haja interesse pelo tema, fica a cargo do leitor o estudo das referências :ref:`6 e 7<4. Referências>` ).
+de aprendizado de uma rede neural artificial, com o objetivo de elucidarmos o uso da autodiferenciação para minimizar uma função custo. (Entretanto, caso haja interesse pelo tema, fica a cargo do leitor o estudo das referências :ref:`6 e 7<ref7>` ).
 
 
 Através de um algoritmo em Python e da biblioteca JAX, iremos minimizar uma função custo que vai depender do peso sináptico (:math:`w` ) e do bias (:math:`b` ).
@@ -817,6 +720,4 @@ O foco está em mostrar como os pesos influenciam o valor da função custo e co
 esse custo. Embora o exemplo seja simplificado e não esteja ligado a uma aplicação de aprendizado de máquina específica, ele fornece uma base 
 conceitual para entender a otimização de parâmetros em contextos mais complexos.
 
-
-#Falar sobre objetivo didático e ressalva sobre o aprofundamento do tema. link :ref:`Aqui<4. Referências>`
 
