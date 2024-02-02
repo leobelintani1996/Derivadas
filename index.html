@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="no-js" >
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>Derivadas: do básico ao avançado. &mdash; Página Inicial</title>
+    
+    <link rel="stylesheet" type="text/css" href="_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css" />
+            <link rel="index" title="Index" href="genindex.html" />
+            <link rel="search" title="Search" href="search.html" />
+            <link rel="top" title="Página Inicial" href="#" />
+            <link rel="next" title="1. Derivadas analíticas e definições" href="Parte1.html" />
+    </head>
+<body>
+    <script type="text/javascript" src="_static/dist/blocking.js"></script>
+    <header class="container-fluid bg-primary">
+        <a class="btn btn-sm btn-light skip-to-content-link" href="#main">Skip to content</a>
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="#"
+                        
+                        class="logo navbar-brand"
+                    >
+                        <img src="_static/Logomarca_UFSCAR.svg" width="150" height="150"
+                            class="logo-img"
+                        />
+                        TCC - Leonardo Belintani
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-6 px-1" role="search">
+    <form id="search-form" action="search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="Parte1.html">1. <strong>Derivadas analíticas e definições</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parte2.html">2. <strong>Diferenciação Numérica</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parte3.html">3. <strong>Diferenciação Automática</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parte4.html">4. <strong>Referências</strong></a></li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="#">Docs</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><strong>Derivadas: do básico ao avançado.</strong></li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/leobelintani1996/Derivadasindex.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="_sources/index.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="derivadas-do-basico-ao-avancado">
+<h1><strong>Derivadas: do básico ao avançado.</strong><a class="headerlink" href="#derivadas-do-basico-ao-avancado" title="Permalink to this headline">¶</a></h1>
+<p>Trabalho de conclusão de curso abordando os temas de derivadas analíticas, numéricas e diferenciação automática.</p>
+<p>Autor: Leonardo Cardoso Belintani</p>
+<p>Orientador: João Teles de Carvalho Neto</p>
+<p>Instituição: UFSCar Araras</p>
+<p>Curso: Física Licenciatura</p>
+<hr class="docutils" />
+<section id="motivacao-inicial">
+<h2><strong>Motivação inicial</strong><a class="headerlink" href="#motivacao-inicial" title="Permalink to this headline">¶</a></h2>
+<p>O presente trabalho, desenvolvido utilizando a plataforma Sphinx, surge no formato de um material didático online e computacional, entrelaçando os conhecimentos
+da matemática, física e computação. Um dos objetivos principais deste trabalho é fornecer o ferramental teórico necessário para o leitor se aproximar das novas
+tecnologias e métodos matemáticos computacionais, que estão sendo amplamente utilizados nos principais algoritmos de machine learning e deep learning ao redor
+do mundo. Destacamos que o material aqui apresentado está disponível em formato acessível, onde ao clicar em “View Source”, os interessados podem explorar e utilizar
+os recursos em Python e RST(reStructuredText) como exemplo para o desenvolvimento de outros projetos.</p>
+<p>O crescimento relacionado à área de machine learning e deep learning muito se deve aos constantes esforços tecnológicos das iniciativas público e privadas
+de diversas esferas da sociedade. Estes esforços não poderiam resultar em algo diferente a não ser um grandioso sucesso dos envolvidos. Podemos atribuir boa parte deste sucesso aos algoritmos de otimização teorizados e implementados,
+e por trás destes algoritmos temos uma peça central e fundamental que faz com que cálculos computacionais sejam realizados de uma forma extremamente rápida e precisa. Algoritmos de machine learning voltados para o estudo de redes neurais artificiais
+por exemplo, buscam minimizar uma função conhecida como custo e esta função é minimizada através de técnicas como o gradiente descendente (utilizado para atualizar os parâmetros de uma rede neural artificial) e a retro propagação (utilizado para retro propagar a função custo),
+por exemplo. Um fator central por trás de todas estas técnicas é a utilização do método da diferenciação automática. Quando buscamos minimizar algo, seja na física, engenharia ou na matemática, estamos falando em derivar uma determinada função e igualarmos o resultado
+a zero. Logo, se temos um algoritmo que busca minimizar a função custo, estamos falando do cálculo de derivadas.
+Por fim, este trabalho chega com a proposta de se criar uma base sólida envolvendo um estudo teórico/aplicado sob o escopo do cálculo analítico/simbólico,
+percorrendo temas como limites e derivadas, apresentando recursos computacionais e bibliotecas conhecidas na esfera do cálculo e então um estudo
+teórico a respeito das principais técnicas de diferenças finitas envolvendo as diferenças avançadas, atrasadas e centrais – assim como um entendimento do erro numérico
+associado a estas técnicas, a apresentação da elegante técnica da diferenciação automática incluindo como se dá seu funcionamento e implementação, contabilizando os
+3 pilares da derivação – analítica/simbólica, numérica e automática. Por fim, o material apresentado não busca em sua essência tratar a fundo ou definir conceitos primordiais sobre redes neurais artificiais. O objetivo é aproximar o leitor
+o máximo possível do conceito de diferenciação automática e mostrar como as derivadas de fato se relacionam com a área do machine learning.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sumario">
+<h1>Sumário<a class="headerlink" href="#sumario" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Parte1.html">1. <strong>Derivadas analíticas e definições</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Parte1.html#a-definicao-de-limite-e-suas-propriedades">1.1. <strong>A definição de limite e suas propriedades</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#limites-laterais">1.1.1. <strong>Limites laterais</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#limites-infinitos">1.1.2. <strong>Limites infinitos</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#limites-no-infinito">1.1.3. <strong>Limites no infinito</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#propriedades-de-limites">1.1.4. <strong>Propriedades de limites</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Parte1.html#definicao-de-derivadas">1.2. <strong>Definição de derivadas</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#taxa-de-variacao-e-inclinacao-da-reta-tangente">1.2.1. <strong>Taxa de variação e inclinação da reta tangente</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parte1.html#regras-de-derivacao">1.2.2. <strong>Regras de derivação</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Parte2.html">2. <strong>Diferenciação Numérica</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Parte2.html#motivacao">2.1. <strong>Motivação</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parte2.html#diferenca-finita">2.2. <strong>Diferença Finita</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Parte2.html#metodo-da-diferenca-avancada-e-atrasada">2.2.1. <strong>Método da Diferença Avançada e Atrasada</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parte2.html#metodo-da-diferenca-central">2.2.3. <strong>Método da Diferença Central</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Parte2.html#pontos-em-uma-grade">2.3. <strong>Pontos em uma grade</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Parte3.html">3. <strong>Diferenciação Automática</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#motivacao">3.1. <strong>Motivação</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#numeros-duais">3.2. <strong>Números duais</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#implementando-a-autodiferenciacao">3.3. <strong>Implementando a autodiferenciação</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#modo-direto-e-reverso">3.4. <strong>Modo direto e reverso</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#bibliotecas-de-diferenciacao-automatica">3.5. <strong>Bibliotecas de diferenciação automática</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Parte3.html#jax">3.5.1. <strong>JAX</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Parte3.html#aplicacao-em-redes-neurais-artificiais">3.6. <strong>Aplicação em Redes Neurais Artificiais</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Parte4.html">4. <strong>Referências</strong></a></li>
+</ul>
+</div>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-right" href="Parte1.html" title="Next">
+        1. <strong>Derivadas analíticas e definições</strong> <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#"><strong>Derivadas: do básico ao avançado.</strong></a><ul>
+<li><a class="reference internal" href="#motivacao-inicial"><strong>Motivação inicial</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sumario">Sumário</a></li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/features/">Features</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/about-wagtail/"> About Wagtail</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/services/"> Services</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/blog/"> Blog</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/packages/"> Packages</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/developers/"> Developers</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Wagtail Sphinx Theme 6.1.1
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Sphinx
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/dist/theme.js"></script>
+        <script type="text/javascript" src="_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="_static/searchtools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() { Search.loadIndex("searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>
