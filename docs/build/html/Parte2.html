@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html class="no-js" >
+<head>
+    <meta charset="utf-8" />
+        <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>2. Diferenciação Numérica &mdash; Página Inicial</title>
+    
+    <link rel="stylesheet" type="text/css" href="_static/dist/fontawesome.css" />
+      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css" />
+            <link rel="index" title="Index" href="genindex.html" />
+            <link rel="search" title="Search" href="search.html" />
+            <link rel="top" title="Página Inicial" href="#" />
+            <link rel="next" title="3. Diferenciação Automática" href="Parte3.html" />
+            <link rel="prev" title="1. Derivadas analíticas e definições" href="Parte1.html" />
+    </head>
+<body>
+    <script type="text/javascript" src="_static/dist/blocking.js"></script>
+    <header class="container-fluid bg-primary">
+        <a class="btn btn-sm btn-light skip-to-content-link" href="#main">Skip to content</a>
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                    <a href="index.html"
+                        
+                        class="logo navbar-brand"
+                    >
+                        <img src="_static/Logomarca_UFSCAR.svg" width="150" height="150"
+                            class="logo-img"
+                        />
+                        TCC - Leonardo Belintani
+                    </a>
+                
+                
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-6 px-1" role="search">
+    <form id="search-form" action="search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Parte1.html">1. <strong>Derivadas analíticas e definições</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. <strong>Diferenciação Numérica</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parte3.html">3. <strong>Diferenciação Automática</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parte4.html">4. <strong>Referências</strong></a></li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="index.html">Docs</a></li>
+        <li class="breadcrumb-item active" aria-current="page">2. <strong>Diferenciação Numérica</strong></li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/leobelintani1996/DerivadasParte2.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+    <a class="btn btn-sm btn-light text-decoration-none" href="_sources/Parte2.rst.txt" rel="nofollow">
+        <span class="btn-icon"><span class="fas fa-code"></span></span>
+        <span class="btn-text">View source</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="diferenciacao-numerica">
+<h1>2. <strong>Diferenciação Numérica</strong><a class="headerlink" href="#diferenciacao-numerica" title="Permalink to this headline">¶</a></h1>
+<section id="motivacao">
+<h2>2.1. <strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
+<p>Em diversos cenários somos capazes de derivar funções analiticamente para entender seu comportamento.
+No entanto, na prática encontramos situações onde a função não é conhecida, e o que temos são conjuntos de pontos discretos, a função não é diferenciável
+em algum ponto, por exemplo, ou a sua derivada não é trivial.
+É aqui que as derivadas numéricas nos auxiliam, servindo como uma ferramenta para aproximar numericamente a derivada
+de uma função quando não podemos determiná-la analiticamente.</p>
+<p>As derivadas numéricas são baseadas na ideia de aproximar a inclinação de uma função em um ponto usando os valores da função em pontos próximos.
+Em vez de considerar o limite de uma taxa de variação conforme a diferença entre os pontos se aproxima de zero (o que fizemos no capítulo anterior),
+usamos uma diferença finita para estimar essa taxa.</p>
+<p>Existem vários métodos para realizar a diferenciação numérica, cada um com suas vantagens e limitações. As técnicas mais comuns incluem a diferença para
+a frente(avançada), a diferença para trás(atrasada), a diferença central e técnicas um pouco mais avançadas como a extrapolação de Richardson. A escolha do método e o tamanho
+do passo de diferenciação, ou o intervalo entre os pontos de dados usados, são parâmetros críticos e influenciam na precisão do resultado estimado.</p>
+<p>Além disso, duas fontes principais de erro são intrínsecas à diferenciação numérica: o erro de aproximação(ou truncamento), que surge da própria
+aproximação da derivada, e o erro de arredondamento, que resulta das limitações(números de dígitos significativos) de cada máquina.
+O equilíbrio entre esses erros apresenta um papel importante na determinação de um passo ótimo para a diferenciação numérica.</p>
+<p>À medida que avançamos para um estudo mais detalhado da diferenciação numérica vamos explorar esses métodos, aprender a otimizar os erros e aplicar
+essas técnicas.</p>
+</section>
+<section id="diferenca-finita">
+<h2>2.2. <strong>Diferença Finita</strong><a class="headerlink" href="#diferenca-finita" title="Permalink to this headline">¶</a></h2>
+<p>A técnica de diferença finita é amplamente utilizada para aproximar a derivada de uma função quando a abordagem analítica é impraticável
+ou impossível. Ao invés de depender de incrementos infinitesimais, que são conceituais e não computacionalmente viáveis, a diferença finita
+utiliza incrementos finitos para calcular uma aproximação da taxa de variação.</p>
+<div class="admonition-passo admonition">
+<p class="admonition-title">Passo</p>
+<p>O “passo”, denotado por <span class="math notranslate nohighlight">\(h\)</span>, é a distância entre os pontos no domínio da função usados para calcular a derivada. Na diferenciação analítica,
+a derivada <span class="math notranslate nohighlight">\(f'(x)\)</span> é definida como o limite quando <span class="math notranslate nohighlight">\(h\)</span> tende a zero, da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \tag{38} \\ \\
+\end{align}\end{split}\]</div>
+<p>No contexto da diferença finita, <span class="math notranslate nohighlight">\(h\)</span> é um valor finito positivo que escolhemos com base em um compromisso entre precisão e estabilidade numérica. Um
+<span class="math notranslate nohighlight">\(h\)</span> muito pequeno pode aumentar o erro de arredondamento devido à precisão finita dos cálculos computacionais, enquanto um <span class="math notranslate nohighlight">\(h\)</span> muito grande pode
+aumentar o erro de truncamento da nossa aproximação. O objetivo é utilizar um <span class="math notranslate nohighlight">\(h\)</span> que minimize o erro total.</p>
+</div>
+<div class="admonition-erro-total admonition">
+<p class="admonition-title">Erro total</p>
+<p>Quando aplicamos métodos numéricos, como a diferenciação por diferenças finitas, é crucial entender que os resultados são aproximações e, como tais,
+estão sujeitos a erros. Esses erros podem ser categorizados e analisados para melhorar a precisão das nossas aproximações.</p>
+<p><strong>1. Erro de truncamento</strong></p>
+<p>O erro de aproximação, ou erro de truncamento, ocorre quando uma série infinita é substituída por uma soma finita. Na diferenciação numérica,
+isso acontece quando expressamos a derivada usando diferenças finitas. Por exemplo, a expressão da diferença finita avançada é uma aproximação que
+pode ser expressa como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f'(x) \approx \frac{f(x+h)-f(x)}{h} + O(h) \tag{39} \\ \\
+\end{align}\end{split}\]</div>
+<p>A notação <span class="math notranslate nohighlight">\(O(h)\)</span> representa os termos de erro de ordem superior que são negligenciados na aproximação.
+Geralmente, estes termos são proporcionais a potências mais altas de <span class="math notranslate nohighlight">\(h\)</span> , como <span class="math notranslate nohighlight">\(O(h) = Ah + \frac{Ah^2}{2} + \frac{Ah^2}{3} + \frac{Ah^2}{4} + ...\)</span></p>
+<p>À medida que <span class="math notranslate nohighlight">\(h\)</span> se torna menor, espera-se que o erro de truncamento também diminua. No entanto, deve-se ter cuidado com o erro de arredondamento,
+que pode se tornar significativo para valores muito pequenos de <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p><strong>2. Erro de arredondamento</strong></p>
+<p>Este erro é o resultado das limitações na precisão com que os números são representados e calculados em computadores. Devido à precisão finita, quando as
+operações  são realizadas, os resultados muitas vezes precisam ser arredondados, introduzindo pequenos erros. Estes erros podem se acumular
+ao longo de cálculos repetidos e se tornar significativos. Interessantemente, se <span class="math notranslate nohighlight">\(h\)</span> for escolhido muito pequeno na tentativa de reduzir o erro de truncamento
+, o erro de arredondamento pode se tornar dominante, anulando os benefícios de um <span class="math notranslate nohighlight">\(h\)</span> menor. Por exemplo, em cálculos de
+diferenciação numérica, um <span class="math notranslate nohighlight">\(h\)</span> excessivamente pequeno pode levar a uma perda de dígitos significativos, onde a subtração de dois números quase
+iguais resulta em um erro de arredondamento maior.</p>
+<p><strong>3. Erro total</strong></p>
+<p>Podemos então dizer que o erro total relacionado a diferenças finitas vai ser dado por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\displaystyle E_{total} = E_{aprox} + E_{arred} \tag{40} \\ \\
+\end{align}\end{split}\]</div>
+<p>As expressões para os erros de truncamento e arredondamento serão apresentadas nas subseções abaixo. Os erros relacionados ao truncamento variam conforme mudamos
+o método de diferença finita, enquanto o erro de arredondamento não se altera.</p>
+</div>
+<section id="metodo-da-diferenca-avancada-e-atrasada">
+<h3>2.2.1. <strong>Método da Diferença Avançada e Atrasada</strong><a class="headerlink" href="#metodo-da-diferenca-avancada-e-atrasada" title="Permalink to this headline">¶</a></h3>
+<p>Os métodos apresentados abaixo podem ser chamados de métodos de diferenças não centrais, uma vez que são métodos em que se estima o limite um passo a frente(avançada)
+ou atrás(atrasado).</p>
+<div class="admonition-diferenca-avancada admonition">
+<p class="admonition-title">Diferença Avançada</p>
+<p>O método da diferença avançada, como o nome sugere, consiste em utilizarmos um ponto avançado ao calcularmos nosso limite. Em outras palavras:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{+}}}= \displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h} \tag{41} \\ \\
+\end{align}\end{split}\]</div>
+<p>A imagem abaixo ilustra a intuição da diferença avançada.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/image_9.png" src="_images/image_9.png" />
+<figcaption>
+<p><span class="caption-text">Figura 9</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Como não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span> (uma vez que nos resultaria em uma divisão por zero), podemos simplesmente dizer que <span class="math notranslate nohighlight">\(h\)</span> é um número tão pequeno o quanto quisermos, de modo que o limite apresentado se torna uma aproximação.
+Mas qual seria um valor ideal para <span class="math notranslate nohighlight">\(h\)</span> ?</p>
+<p>Não possuímos uma expressão analítica que envolva os erros e o parâmetro <span class="math notranslate nohighlight">\(h\)</span>, contudo, podemos encontrar tal expressão.</p>
+<p>Vamos começar utilizando a expansão em série de Taylor de <span class="math notranslate nohighlight">\(f(x_{0}+h)\)</span> em torno de <span class="math notranslate nohighlight">\(x_0\)</span> ,para de fato entendermos como <span class="math notranslate nohighlight">\(h\)</span>
+se comporta em função dos erros associados.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0}+h) = f(x_{0}) + hf'(x_{0}) + \frac{h^{2}}{2}f''(x_{0}) + \frac{h^{3}}{6}f'''(x_{0}) + ...  \tag{42} \\ \\
+\end{align}\end{split}\]</div>
+<p>Podemos isolar <span class="math notranslate nohighlight">\(f'(x_{0})\)</span> e rearranjar a expressão</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0})' = \frac{f(x_{0}+h)-f(x_{0})}{h} - \frac{h}{2}f''(x_{0}) - \frac{h^{2}}{6}f'''(x_{0}) + ... \tag{43} \\ \\
+\end{align}\end{split}\]</div>
+<p>Vamos então fazer uma aproximação de primeira ordem para <span class="math notranslate nohighlight">\(O(h)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0})' \approx \frac{f(x_{0}+h)-f(x_{0})}{h} + O(h) \tag{44} \\ \\
+\end{align}\end{split}\]</div>
+<p>Ou seja, o erro de primeira ordem O(h) para a diferença avançada, é</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{aprox} = O(h) \approx - \frac{h}{2}f''(x_{0}) \tag{45}\\ \\
+\end{align}\end{split}\]</div>
+</div>
+<p>Faremos o mesmo processo para o método da diferença atrasada, discutiremos o erro de arredondamento para ambos os casos e então encontraremos um erro total que irá nos indicar
+valores ótimos para <span class="math notranslate nohighlight">\(h\)</span> .</p>
+<div class="admonition-diferenca-atrasada admonition">
+<p class="admonition-title">Diferença Atrasada</p>
+<p>O método da diferença atrasada, como o nome sugere, consiste em utilizarmos um ponto atrasado ao calcularmos nosso limite. Em outras palavras:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{-}}}= \displaystyle \lim_{h \to 0}\frac{f(x_{0})-f(x_{0} - h)}{h} \tag{46} \\ \\
+\end{align}\end{split}\]</div>
+<p>A imagem abaixo ilustra a intuição da diferença atrasada.</p>
+<figure class="align-default" id="id2">
+<img alt="_images/image_10.png" src="_images/image_10.png" />
+<figcaption>
+<p><span class="caption-text">Figura 10</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Como não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span>, podemos simplesmente dizer que <span class="math notranslate nohighlight">\(h\)</span> é um número tão pequeno o quanto quisermos de modo que o limite se torna uma aproximação.</p>
+<p>Não possuímos uma expressão analítica que envolva os erros e o parâmetro <span class="math notranslate nohighlight">\(h\)</span>, contudo, podemos encontrar tal expressão.</p>
+<p>Vamos começar utilizando a expansão em série de Taylor de <span class="math notranslate nohighlight">\(f(x_{0}-h)\)</span> em torno de <span class="math notranslate nohighlight">\(x_0\)</span> ,para de fato entendermos como <span class="math notranslate nohighlight">\(h\)</span>
+se comporta em função dos erros associados.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0}-h) = f(x_{0}) - hf'(x_{0}) + \frac{h^{2}}{2}f''(x_{0}) - \frac{h^{3}}{6}f'''(x_{0}) + ... \tag{47} \\ \\
+\end{align}\end{split}\]</div>
+<p>Podemos isolar <span class="math notranslate nohighlight">\(f'(x_{0})\)</span> e rearranjar a expressão:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0})' = \frac{f(x_{0})-f(x_{0}-h)}{h} + \frac{h}{2}f''(x_{0}) - \frac{h^{2}}{6}f'''(x_{0}) + ... \tag{48} \\ \\
+\end{align}\end{split}\]</div>
+<p>Vamos então fazer uma aproximação de primeira ordem para <span class="math notranslate nohighlight">\(O(h)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0})' \approx \frac{f(x_{0}-h)-f(x_{0})}{h}  + O(h) \tag{49} \\ \\
+\end{align}\end{split}\]</div>
+<p>Ou seja, o erro de primeira ordem <span class="math notranslate nohighlight">\(O(h)\)</span> para a diferença atrasada, é</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{aprox} = O(h) \approx  \frac{h}{2}f''(x_{0}) \tag{50} \\ \\
+\end{align}\end{split}\]</div>
+</div>
+<p>É importante notar que a aproximação de primeira ordem dos dois métodos acima possuem um erro de truncamento da ordem de <span class="math notranslate nohighlight">\(O(h)\approx \frac{h}{2}f''(x)\)</span> .
+O resultado acima nos induz a pensar que quanto menor o parâmetro <span class="math notranslate nohighlight">\(h\)</span> menor o erro associado e, por consequência, o resultado da derivada numérica tende a ser
+mais preciso, contudo, isso só é verdade até certo ponto. Isso ocorre devido ao erro de arredondamento compor o erro total.
+Vamos estimá-lo abaixo para os dois métodos apresentados.</p>
+<div class="admonition-arredondamento-em-diferencas-nao-centrais admonition">
+<p class="admonition-title">Arredondamento em diferenças não centrais</p>
+<p>O erro de arredondamento surge devido a sucessivas operações de subtração e divisão envolvidas na aproximação da diferença finita (seja ela avançada ou atrasada). O módulo deste erro é dado por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{arred} = \frac{2|f(x_0)|\epsilon_{m}}{h} \tag{51} \\ \\
+\end{align}\end{split}\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(\epsilon_{m}\)</span> é chamado de erro da máquina e é uma característica do hardware do computador e do software do sistema operacional, e é geralmente o mesmo para qualquer computador
+e vale cerca de <span class="math notranslate nohighlight">\(\epsilon_{m} = 2.220446049250313.10^{-16}\)</span> . Caso o leitor se interesse, a expressão acima é apresentada com mais detalhes em <a class="reference internal" href="Parte4.html#ref2"><span class="std std-ref">[2]</span></a> .</p>
+<p>Por fim, o que buscamos é estimar um valor razoável para <span class="math notranslate nohighlight">\(h\)</span> de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
+que existe um <span class="math notranslate nohighlight">\(h\)</span> que minimiza o erro total.</p>
+</div>
+<div class="admonition-minimizando-math-e-total admonition">
+<p class="admonition-title">Minimizando <span class="math notranslate nohighlight">\(E_{total}\)</span></p>
+<p>Podemos sintetizar os erros obtidos acima em uma única expressão:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{tot} = E_{aprox} + E_{arred} = \frac{h}{2}f''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \tag{52} \\ \\
+\end{align}\end{split}\]</div>
+<p>Mas o que buscamos de fato é um valor de <span class="math notranslate nohighlight">\(h\)</span> que minimiza o erro total. Podemos então derivar a expressão de <span class="math notranslate nohighlight">\(E_{tot}\)</span> em relação ao parâmetro <span class="math notranslate nohighlight">\(h\)</span>
+e a igualarmos a zero, da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dh}E_{tot} = \frac{d}{dh}\left[\frac{h}{2}f''(x_{0})\right] + \frac{d}{dh}\left[\frac{2|f(x_0)|\epsilon_{m}}{h}\right] = 0 \tag{53} \\ \\
+\end{align}\end{split}\]</div>
+<p>Logo, obtemos que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dh}\left[\frac{h}{2}f''(x_{0})\right] = - \frac{d}{dh}\left[\frac{2|f(x_0)|\epsilon_{m}}{h}\right] \tag{54} \\ \\
+\end{align}\end{split}\]</div>
+<p>Ao aplicarmos a derivada em relação a <span class="math notranslate nohighlight">\(h\)</span> ,iremos obter um <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> que minimiza o erro total</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{1}{2}|f''(x_0)| = \frac{2f(x_0)\epsilon_{m}}{h_{ótimo}^{2}} \tag{55} \\ \\
+\end{align}\end{split}\]</div>
+<p>Isolando <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> , obtemos que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;h_{ótimo} = \sqrt{4\epsilon{m}\frac{|f(x)|}{|f''(x)|}} \tag{56} \\ \\
+\end{align}\end{split}\]</div>
+<p>Logo, podemos substituir o valor de <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> na equação do <span class="math notranslate nohighlight">\(E_{total}\)</span> e obter o <span class="math notranslate nohighlight">\(E_{ótimo}\)</span> , da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{ótimo} = \frac{h_{ótimo}}{2}|f''(x)| + \frac{2|f(x)|\epsilon_{m}}{h_{ótimo}} \tag{57} \\ \\
+&amp;E_{ótimo} = \sqrt{4\epsilon_{m}|f(x)||f''(x)|} \tag{58} \\ \\
+\end{align}\end{split}\]</div>
+<p>Que é a expressão que minimiza o erro total na diferença avançada ou atrasada.</p>
+<p>Você deve se perguntar: Bom, temos os valores de <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> e <span class="math notranslate nohighlight">\(E_{ótimo}\)</span> , mas e agora? O que
+faremos com estes valores?</p>
+<p>A resposta é simples. Vamos “chutar” ordens de grandeza para <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f''(x)\)</span> de modo que iremos encontrar estimativas para <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> e <span class="math notranslate nohighlight">\(E_{ótimo}\)</span>
+tal que, quando de fato utilizarmos o método para calcular a derivada numérica por diferença finita, tenhamos de fato um ponto de partida para estes parâmetros.</p>
+<p>Surge a seguinte dúvida: Mas porque precisamos deste ponto de partida?</p>
+<p>Como foi apresentado, os métodos de diferença avançada e atrasada não possuem uma variação linear para  <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> e <span class="math notranslate nohighlight">\(E_{ótimo}\)</span> , na maioria das aplicações nós chutamos valores para estes
+parâmetros e observamos o comportamento do erro total. O objetivo aqui é mostrar que conhecendo <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f''(x)\)</span> podemos estimar estes parâmetros. A maioria das bibliotecas de diferenças finitas
+disponíveis em Python utilizam um valor padrão para o parâmetro <span class="math notranslate nohighlight">\(h\)</span> e não estão tão preocupadas com a precisão numérica.</p>
+<p>Por fim, se estimarmos que <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f''(x)\)</span> tem ordem <span class="math notranslate nohighlight">\(1\)</span> , podemos dizer que:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;h_{ótimo} = \sqrt{4\epsilon_{m}} = 10^{-8} \tag{59}\\ \\
+&amp;E_{ótimo} = \sqrt{4\epsilon_{m}} = 10^{-8} \tag{60}\\ \\
+\end{align}\end{split}\]</div>
+<p>Abaixo faremos uma estimativa no cálculo da derivada numérica de uma função com base nos resultados obtidos acima.</p>
+</div>
+<div class="admonition-aplicacao-diferenca-avancada admonition">
+<p class="admonition-title">Aplicação Diferença Avançada</p>
+<p>Dada a função <span class="math notranslate nohighlight">\(f(x) = x^{2}e^{(sen(2x)cos(2x))}\)</span> calcule sua derivada no ponto <span class="math notranslate nohighlight">\(x = 2\)</span> .</p>
+<p>Primeiro vamos encontrar a derivada analítica da função acima. Para isso podemos utilizar as técnicas de derivação ou podemos utilizar a biblioteca Sympy e derivar simbolicamente.</p>
+<p>Utilizando a biblioteca Sympy:</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span>
+
+<span class="c1"># Define a variável simbólica</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define as funções</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+
+<span class="c1"># Calcula as derivadas</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Avalia a derivada no ponto x = 2</span>
+<span class="n">df1_at_2</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Mostra os resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(x) = </span><span class="si">{</span><span class="n">df1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(2) = </span><span class="si">{</span><span class="n">df1_at_2</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id3">
+<img alt="_images/image_11.png" src="_images/image_11.png" />
+<figcaption>
+<p><span class="caption-text">Figura 11</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Agora vamos calcular a derivada numérica utilizando o método da diferença avançada. Iremos utilizar o resultado de que <span class="math notranslate nohighlight">\(h_{ótimo} = \sqrt{4\epsilon_{m}} = 10^{-8}\)</span> .</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define a função e sua derivada analítica</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">df_analytic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Ponto de interesse e valor de h</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1e-8</span>
+
+<span class="c1"># Calcula a derivada usando a diferença avançada</span>
+<span class="n">df_forward</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+
+<span class="c1"># Calcula o resultado da derivada analítica</span>
+<span class="n">df_analytic_result</span> <span class="o">=</span> <span class="n">df_analytic</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+
+<span class="c1"># Mostra o resultado da derivada aproximada</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(</span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">) aproximado = </span><span class="si">{</span><span class="n">df_forward</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostra o resultado da derivada analítica</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(</span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">) analítico = </span><span class="si">{</span><span class="n">df_analytic_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcula e mostra o erro absoluto</span>
+<span class="n">erro</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df_forward</span> <span class="o">-</span> <span class="n">df_analytic_result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro absoluto = </span><span class="si">{</span><span class="n">erro</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id4">
+<img alt="_images/image_12.png" src="_images/image_12.png" />
+<figcaption>
+<p><span class="caption-text">Figura 12</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>É importante notar que o valor esperado para o erro era da ordem de <span class="math notranslate nohighlight">\(10^{-8}\)</span> para um valor de <span class="math notranslate nohighlight">\(h_{ótimo} = 10^{-8}\)</span> . O erro absoluto encontrado foi da ordem de
+<span class="math notranslate nohighlight">\(10^{-7}\)</span> nos indicando que os chutes para <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f''(x)\)</span> não foram precisos, contudo, o erro encontrado está relativamente próximo da estimativa feita, nos dando
+um indício positivo em relação a teoria apresentada até então.</p>
+</div>
+<p>A depender do tipo de precisão que sua aplicação exigir, um erro absoluto da ordem de <span class="math notranslate nohighlight">\(10^{-7}\)</span> não é algo tão bom quanto parece. Afim de melhoramos isso,
+iremos apresentar abaixo o método da diferença central, que traz em sua proposição a ideia de se utilizar um valor médio para o cálculo numérico da derivada.</p>
+</section>
+<section id="metodo-da-diferenca-central">
+<h3>2.2.3. <strong>Método da Diferença Central</strong><a class="headerlink" href="#metodo-da-diferenca-central" title="Permalink to this headline">¶</a></h3>
+<p>O método apresentado abaixo pode ser chamado de método da diferença central, uma vez que estamos tratando de um método
+em que se estima o limite um passo a frente de  <span class="math notranslate nohighlight">\(h\)</span> e em um passo atrás de <span class="math notranslate nohighlight">\(h\)</span> .
+Em outras palavras, esta técnica é a combinação do método da diferença avançada com o método da diferença atrasada que foram demonstradas na subseção acima.</p>
+<div class="admonition-diferenca-central admonition">
+<p class="admonition-title">Diferença Central</p>
+<p>O método da diferença central, consiste em se tirar a média aritmética de duas diferenças finitas, a avançada e a atrasada. Sabemos que a diferença avançada pode ser escrita como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{+}}}= \displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h} \tag{61} \\ \\
+\end{align}\end{split}\]</div>
+<p>E a diferença atrasada pode ser expressa da seguinte maneira:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{-}}} = \displaystyle \lim_{h \to 0}\frac{f(x_{0})-f(x_{0}-h)}{h} \tag{62} \\ \\
+\end{align}\end{split}\]</div>
+<p>Podemos tirar a média dos dois métodos e definir a diferença central da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{\pm}}} = \frac{1}{2}\left[\frac{d}{dx}f(x)\bigg|_{x_{0^{+}}} + \frac{d}{dx}f(x)\bigg|_{x_{0^{-}}}\right]=  \displaystyle \frac{1}{2} \displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0})}{h} + \lim_{h \to 0}\frac{f(x_{0})-f(x_{0}-h)}{h} \\ \\
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{\pm}}} = \displaystyle \frac{1}{2} \displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0}) + f(x_{0})-f(x_{0}-h)}{h}  \\ \\
+&amp;\frac{d}{dx}f(x)\bigg|_{x_{0^{\pm}}} = \displaystyle \lim_{h \to 0}\frac{f(x_{0}+h)-f(x_{0}-h)}{2h} \tag{63}  \\ \\
+\end{align}\end{split}\]</div>
+<p>A imagem abaixo ilustra a intuição da diferença central.</p>
+<figure class="align-default" id="id5">
+<img alt="_images/image_13.png" src="_images/image_13.png" />
+<figcaption>
+<p><span class="caption-text">Figura 13</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Como já discutido anteriormente, não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span> (com isso podemos tomar uma aproximação para o limite) e também
+não possuímos uma expressão analítica que envolva os erros e o parâmetro <span class="math notranslate nohighlight">\(h\)</span> , vamos adotar a mesma estratégia anterior e deduzir as expressões.</p>
+<p>Vamos começar utilizando a expansão em série de Taylor para <span class="math notranslate nohighlight">\(f(x_{0}+h)\)</span> em torno de <span class="math notranslate nohighlight">\(x_0\)</span> e
+para <span class="math notranslate nohighlight">\(f(x_{0}-h)\)</span> em torno de <span class="math notranslate nohighlight">\(x_0\)</span>  para para de fato entendermos
+como <span class="math notranslate nohighlight">\(h\)</span> se comporta em função dos erros associados.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0}+h) = f(x_{0}) + hf'(x_{0}) + \frac{h^{2}}{2}f''(x_{0}) + \frac{h^{3}}{6}f'''(x_{0}) + ... \\ \\
+&amp;f(x_{0}-h) = f(x_{0}) - hf'(x_{0}) + \frac{h^{2}}{2}f''(x_{0}) - \frac{h^{3}}{6}f'''(x_{0}) + ... \\ \\
+\end{align}\end{split}\]</div>
+<p>Ao observarmos as equações acima, podemos notar que ao subtrairmos uma da outra, podemos encontrar um padrão interessantemente
+uma vez que os termos de derivadas pares se cancelam. Vamos subtrair <span class="math notranslate nohighlight">\(f(x_{0}+h)\)</span> de <span class="math notranslate nohighlight">\(f(x_{0}-h)\)</span> da seguinte forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0}+h) - f(x_{0}-h) =  2hf'(x_{0}) + f'''(x_{0})\frac{h^{3}}{6} + ...  \\ \\
+\end{align}\end{split}\]</div>
+<p>Vamos isolar <span class="math notranslate nohighlight">\(f'(x_{0})\)</span> e rearranjar a expressão acima:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f'(x_{0}) = \frac{f(x_{0}+h)-f(x_{0}-h)}{2h} + O(h^{2}) \tag{64} \\ \\
+\end{align}\end{split}\]</div>
+<p>Logo, podemos dizer que o erro de aproximação de primeira ordem é igual a:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{aprox} = O(h^{2}) \approx -f'''(x_{0})\frac{h^{2}}{12} \tag{65}\\ \\
+\end{align}\end{split}\]</div>
+</div>
+<p>É importante notar que a aproximação de primeira ordem da diferença central possui um erro de aproximação da ordem de <span class="math notranslate nohighlight">\(O(h^{2}) \approx -f'''(x_{0})\frac{h^{2}}{12}\)</span> .
+Como discutido nas subseções acima, o erro de arredondamento também possui sua componente no cálculo do erro total e não deve ser desprezado.
+Vamos estimá-lo abaixo para o método da diferença central.</p>
+<div class="admonition-arredondamento-em-diferencas-centrais admonition">
+<p class="admonition-title">Arredondamento em diferenças centrais</p>
+<p>O erro de arredondamento surge devido a sucessivas operações de subtração e divisão envolvidas na aproximação da diferença finita (seja ela avançada, atrasada ou central). O módulo deste erro é dado por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{arred} = \frac{2|f(x_0)|\epsilon_{m}}{h} \tag{66} \\ \\
+\end{align}\end{split}\]</div>
+<p>Por fim, o que buscamos é estimar um valor razoável para <span class="math notranslate nohighlight">\(h\)</span> de modo que o erro de aproximação seja pequeno e o erro de arredondamento também. Podemos dizer então
+que existe um <span class="math notranslate nohighlight">\(h\)</span> que minimiza o erro total.</p>
+</div>
+<div class="admonition-minimizando-math-e-total admonition">
+<p class="admonition-title">Minimizando <span class="math notranslate nohighlight">\(E_{total}\)</span></p>
+<p>Podemos sintetizar os erros obtidos acima em uma única expressão:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{tot} = E_{aprox} + E_{arred} = \frac{h^{2}}{12}f'''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \tag{67} \\ \\
+\end{align}\end{split}\]</div>
+<p>Mas o que buscamos de fato é um valor de <span class="math notranslate nohighlight">\(h\)</span> que minimiza o erro total. Ao derivarmos a expressão do erro total em relação a <span class="math notranslate nohighlight">\(h\)</span> igual a zero, seguirmos o mesmo caminho algébrico dos outros métodos apresentados acima e assumirmos que <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f'''(x)\)</span> são de ordem 1,
+obtemos a seguinte expressão para <span class="math notranslate nohighlight">\(h_{ótimo}\)</span> e <span class="math notranslate nohighlight">\(E_{ótimo}\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;h_{ótimo} = (12\epsilon_{m})^{1/3} \approx 10^{-5} \tag{67} \\ \\
+&amp;E_{ótimo} = \left(\frac{9}{16}\epsilon_{m}^{2}\right)^{1/3} \approx 10^{-11} \tag{68} \\ \\
+\end{align}\end{split}\]</div>
+<p>Que ao compararmos com o resultado da diferença avançada, de fato se mostra um resultado mais preciso e ainda mais: um resultado em que o passo <span class="math notranslate nohighlight">\(h\)</span> pode ser maior, ou seja,
+o custo computacional (tempo gasto pelo computador ao executar um programa) será menor uma vez que o valor do passo é maior.</p>
+<p>A tabela abaixo sintetiza os resultados.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Diferença avançada/atrasada</p></td>
+<td><p>Diferença central</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(h_{ótimo} \approx 10^{-8}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(h_{ótimo} \approx 10^{-5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E_{ótimo} \approx 10^{-8}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(E_{ótimo} \approx 10^{-11}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Podemos resolver a aplicação que resolvemos anteriormente com o método da diferença central e comparar os resultados.</p>
+<div class="admonition-aplicacao-diferenca-central admonition">
+<p class="admonition-title">Aplicação Diferença Central</p>
+<p>Dada a função <span class="math notranslate nohighlight">\(f(x) = x^{2}e^{(sen(2x)cos(2x))}\)</span> calcule sua derivada no ponto <span class="math notranslate nohighlight">\(x = 2\)</span> .</p>
+<p>Primeiro vamos encontrar a derivada analítica da função acima. Para isso, podemos utilizar as técnicas de derivação ou podemos utilizar a biblioteca Sympy e derivar simbolicamente.
+Logo depois podemos utilizar a técnica da diferença central e comparar os resultados através do erro absoluto.</p>
+<p>Utilizando a biblioteca Sympy:</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define a função e sua derivada analítica</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">df_analytic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Ponto de interesse e valor de h</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">1e-5</span>
+
+<span class="c1"># Calcula a derivada usando a diferença central</span>
+<span class="n">df_central</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Calcula o resultado da derivada analítica</span>
+<span class="n">df_analytic_result</span> <span class="o">=</span> <span class="n">df_analytic</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+<span class="c1"># Mostra o resultado da derivada aproximada</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(</span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">) aproximado = </span><span class="si">{</span><span class="n">df_central</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostra o resultado da derivada analítica</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(</span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2">) analítico = </span><span class="si">{</span><span class="n">df_analytic_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcula e mostra o erro absoluto</span>
+<span class="n">erro</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">df_central</span> <span class="o">-</span> <span class="n">df_analytic_result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro absoluto = </span><span class="si">{</span><span class="n">erro</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id6">
+<img alt="_images/image_14.png" src="_images/image_14.png" />
+<figcaption>
+<p><span class="caption-text">Figura 14</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>É importante notar que o valor esperado para o erro era da ordem de <span class="math notranslate nohighlight">\(10^{-11}\)</span> para um valor de <span class="math notranslate nohighlight">\(h_{ótimo} = 10^{-5}\)</span> e isso não ocorreu exatamente como o esperado.
+Muito se deve a estimativa que fizemos de <span class="math notranslate nohighlight">\(f'''(x)\)</span> e <span class="math notranslate nohighlight">\(f(x)\)</span> . Contudo, o valor do erro encontrado não está longe <span class="math notranslate nohighlight">\(10^{-9}\)</span> nos mostrando
+que a teoria se alinha com os resultados obtidos frente as estimativas que fizemos.</p>
+</div>
+<p>Por fim, podemos comparar os resultados através da imagem abaixo. O gráfico apresentado advém de um algoritmo em Python que percorre os valores
+de <span class="math notranslate nohighlight">\(h = 10^{-18}\)</span> até <span class="math notranslate nohighlight">\(h = 1\)</span> e os erros são plotados em função de <span class="math notranslate nohighlight">\(h\)</span> para a derivada da função <span class="math notranslate nohighlight">\(f(x) = x^{2}e^{(sen(2x)cos(2x))}\)</span> no ponto <span class="math notranslate nohighlight">\(x = 2\)</span>
+para o método da diferença central e avançada.</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Define a função e sua derivada analítica</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">df_analytic</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Ponto de interesse</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># Valores de h</span>
+<span class="n">h_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Listas para armazenar erros</span>
+<span class="n">errors_forward</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">errors_central</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Calcula as derivadas e erros para cada h</span>
+<span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">h_values</span><span class="p">:</span>
+    <span class="n">df_forward</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>
+    <span class="n">df_central</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+    <span class="n">errors_forward</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">df_forward</span> <span class="o">-</span> <span class="n">df_analytic</span><span class="p">(</span><span class="n">x0</span><span class="p">)))</span>
+    <span class="n">errors_central</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">df_central</span> <span class="o">-</span> <span class="n">df_analytic</span><span class="p">(</span><span class="n">x0</span><span class="p">)))</span>
+
+<span class="c1"># Plotando o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h_values</span><span class="p">,</span> <span class="n">errors_forward</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Erro Diferença Avançada&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h_values</span><span class="p">,</span> <span class="n">errors_central</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Erro Diferença Central&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Erro Absoluto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Erro Absoluto da Derivada Numérica em Função de h&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<blockquote>
+<div><figure class="align-default" id="id7">
+<img alt="_images/image_15.png" src="_images/image_15.png" />
+<figcaption>
+<p><span class="caption-text">Figura 15</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>É importante analisarmos que o erro cai com <span class="math notranslate nohighlight">\(h\)</span> até certo ponto (repare que a escala adotada é a dilog). Essa diminuição se da devido ao erro de aproximação que é diretamente proporcional a <span class="math notranslate nohighlight">\(h\)</span>.
+A partir deste valor mínimo do erro, o mesmo começa a subir devido a contribuição do erro de arredondamento que é inversamente proporcional ao parâmetro <span class="math notranslate nohighlight">\(h\)</span> .</p>
+<p>Mais uma vez, a depender da sua aplicação, o valor do erro ser aceitável ou não vai depender do rigor numérico que você busca em seus resultados.
+Você pode seguir o mesmo caminho algébrico apresentado nesta seção e encontrar erros de ordens superiores simplesmente truncando a série infinita proveniente da expansão em série de Taylor nos próximos termos.
+Isso vai nos fornecer erros menores, contudo o custo computacional vai aumentar significativamente. Um caminho algébrico similar pode ser adotado para o cálculo numérico de derivadas de segunda ou terceira ordem.</p>
+<p>Por fim, podemos discutir o método de pontos em uma grade, que leva em consideração o cenário em que não temos a função <span class="math notranslate nohighlight">\(f(x)\)</span> para calcularmos sua derivada, o que temos
+são apenas conjuntos de pontos <span class="math notranslate nohighlight">\((x_{i}, y_{i})\)</span> onde <span class="math notranslate nohighlight">\(y_{i}\)</span> é o valor da função no ponto <span class="math notranslate nohighlight">\(x_{i}\)</span> .</p>
+</section>
+</section>
+<section id="pontos-em-uma-grade">
+<h2>2.3. <strong>Pontos em uma grade</strong><a class="headerlink" href="#pontos-em-uma-grade" title="Permalink to this headline">¶</a></h2>
+<p>Em cenários experimentais, muitas vezes não possuímos expressões do tipo <span class="math notranslate nohighlight">\(f(x)\)</span> a nossa disposição para calcularmos a sua derivada em um ponto específico. O que de fato possuímos
+são os chamados pontos em uma grade (ou malha – quando estes pontos são igualmente espaçados) – que são essencialmente dados discretos do tipo <span class="math notranslate nohighlight">\((x_{i}, y_{i})\)</span> onde <span class="math notranslate nohighlight">\(y_{i}\)</span> é o valor da função no ponto <span class="math notranslate nohighlight">\(x_{i}\)</span> .</p>
+<div class="admonition-grade-igualmente-espacada admonition">
+<p class="admonition-title">Grade igualmente espaçada</p>
+<p>Quando esta grade é igualmente espaçada, podemos definir nosso domínio como</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;x_{i} = x_{0} + ih \tag{69} \\ \\
+\end{align}\end{split}\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(h=\frac{x_{f}-x_{0}}{n-1}\)</span> e <span class="math notranslate nohighlight">\(x_{i}\)</span> é o seu domínio,  <span class="math notranslate nohighlight">\(x_{0}\)</span> é seu ponto inicial,  <span class="math notranslate nohighlight">\(x_{f}\)</span> é seu ponto final,  <span class="math notranslate nohighlight">\(i\)</span> é um número inteiro que vai de
+<span class="math notranslate nohighlight">\(0\)</span> até <span class="math notranslate nohighlight">\(n-1\)</span> ,  <span class="math notranslate nohighlight">\(h\)</span> é o passo e  <span class="math notranslate nohighlight">\(n\)</span> é o número total de pontos disponíveis.</p>
+<p>Já os pontos relacionados à imagem da função, são os pontos discretos obtidos na sua aplicação (seja ela experimental ou não).</p>
+<p>Vamos demonstrar um exemplo para fixarmos o conceito.</p>
+<p>Imagine que realizamos diversas medidas em um laboratório e obtivemos os seguintes dados:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_i\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_i\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_1 = -0.9905465359667132\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_1 = 4.85\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_2 = -0.9824526126243325\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_2 = 4.90\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_3 = -0.9719030694018208\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_3 = 4.95\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_4 = -0.9589242746631385\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_4 = 5.00\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Ou seja, nossos pontos estão discretizados da seguinte maneira: <span class="math notranslate nohighlight">\(n = 4\)</span> ,  <span class="math notranslate nohighlight">\(x_{0} = 4.85\)</span> e <span class="math notranslate nohighlight">\(x_{f} = 5\)</span> , ou seja, temos 4 pontos dispostos de 4.85 até 5. Para encontrarmos nosso passo <span class="math notranslate nohighlight">\(h\)</span> precisamos utilizar a expressão
+que foi apresentada acima. Perceba que diferentemente das técnicas apresentadas nesta seção, agora, o passo <span class="math notranslate nohighlight">\(h\)</span> é variável e depende de como nossos pontos são apresentados.</p>
+<p>Podemos calcular <span class="math notranslate nohighlight">\(h\)</span> da seguinte forma</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;h=\frac{x_{f}-x_{0}}{n-1} \\ \\
+&amp;h = \frac{5-4.85}{4-1} = 0.05 \\ \\
+\end{align}\end{split}\]</div>
+<p>Nosso objetivo é calcular a primeira derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> no ponto  <span class="math notranslate nohighlight">\(f(4.90)\)</span> onde <span class="math notranslate nohighlight">\(f(x)\)</span> não é fornecida explicitamente, apenas seus pontos discretizados.</p>
+<p>Os métodos da diferença avançada, atrasada e central suprem nossas necessidades neste caso. Podemos simplesmente utilizar algum destes métodos para estimar a derivada no ponto
+específico, com base no ponto anterior, posterior ou central.</p>
+</div>
+<div class="admonition-diferenca-avancada-atrasada-e-central-em-grades admonition">
+<p class="admonition-title">Diferença avançada, atrasada e central em grades</p>
+<p>Podemos simplesmente utilizar as mesmas expressões dos métodos de diferenças finitas utilizados neste capitulo.</p>
+<p><strong>Para a diferença avançada:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0^{+}})' \approx \frac{f(x_{0}+h)-f(x_{0})}{h} \\ \\
+\end{align}\end{split}\]</div>
+<p>Onde o erro total é dado por</p>
+<div class="math notranslate nohighlight">
+\[E_{tot^{+}} = E_{aprox} + E_{arred} = \frac{h}{2}f''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h}\]</div>
+<p><strong>Para a diferença atrasada:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f(x_{0^{-}})' \approx \frac{f(x_{0}-h)-f(x_{0})}{h} \\ \\
+\end{align}\end{split}\]</div>
+<p>Onde o erro total é dado por</p>
+<div class="math notranslate nohighlight">
+\[E_{tot^{-}} = E_{aprox} + E_{arred} = \frac{h}{2}f''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h}\]</div>
+<p><strong>Para a diferença central:</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;f'(x_{0^{\pm}}) = \frac{f(x_{0}+h)-f(x_{0}-h)}{2h}  \\ \\
+\end{align}\end{split}\]</div>
+<p>Onde o erro total é dado por</p>
+<div class="math notranslate nohighlight">
+\[E_{tot^{\pm}} = E_{aprox} + E_{arred} = \frac{h^{2}}{12}f'''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h}\]</div>
+</div>
+<p>Podemos estimar o erro total para o exemplo apresentado através das expressões acima.
+Como sabemos que <span class="math notranslate nohighlight">\(h=0.05\)</span> , podemos simplesmente substituir o parâmetro na expressão de cada método e levando em conta que
+<span class="math notranslate nohighlight">\(f(x)\)</span> , <span class="math notranslate nohighlight">\(f'(x)\)</span> e <span class="math notranslate nohighlight">\(f''(x)\)</span> possuem ordem de grandeza igual a um, podemos fazer nossa estimativa para o erro total em cada método discutido.</p>
+<div class="admonition-estimativa-do-erro admonition">
+<p class="admonition-title">Estimativa do erro</p>
+<p>Para a diferença avançada e atrasada</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{tot^{+}} = \frac{h}{2}f''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \approx 10^{-2} \tag{70} \\ \\
+&amp;E_{tot^{-}} = \frac{h}{2}f''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \approx 10^{-2} \tag{71}
+\end{align}\end{split}\]</div>
+<p>Para a diferença central</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+&amp;E_{tot^{\pm}} = \frac{h^{2}}{12}f'''(x_{0}) + \frac{2|f(x_0)|\epsilon_{m}}{h} \approx 10^{-5} \tag{72} \\ \\
+\end{align}\end{split}\]</div>
+</div>
+<div class="admonition-aplicacao-de-diferencas-finitas-em-grades admonition">
+<p class="admonition-title">Aplicação de diferenças finitas em grades</p>
+<p>Afim de resolvermos o exemplo apresentado acima em que queremos calcular <span class="math notranslate nohighlight">\(f'(4.90)\)</span> onde nossos dados são discretos e estão dispostos no formato abaixo, podemos utilizar
+dos métodos das diferenças finitas em um ambiente Python. O Script abaixo mostra como se dá a implementação destes métodos no caso em que não possuímos a função explicitamente.</p>
+<p>Dados disponíveis:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_i\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_i\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_1 = -0.9905465359667132\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_1 = 4.85\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_2 = -0.9824526126243325\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_2 = 4.90\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(y_3 = -0.9719030694018208\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_3 = 4.95\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_4 = -0.9589242746631385\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_4 = 5.00\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>O código abaixo realiza o cálculo da derivada no ponto <span class="math notranslate nohighlight">\(f(4.90)\)</span> com base nos pontos fornecidos</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Pontos dados</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.85</span><span class="p">,</span> <span class="mf">4.90</span><span class="p">,</span> <span class="mf">4.95</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.9905465359667132</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9824526126243325</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9719030694018208</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9589242746631385</span><span class="p">]</span>
+
+<span class="c1"># Cálculo do passo h</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="c1"># Diferença Avançada</span>
+<span class="k">def</span> <span class="nf">diferenca_avancada</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span>
+
+
+<span class="c1"># Diferença Atrasada</span>
+<span class="k">def</span> <span class="nf">diferenca_atrasada</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">/</span> <span class="n">h</span>
+
+<span class="c1"># Diferença Central</span>
+<span class="k">def</span> <span class="nf">diferenca_central</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+
+<span class="c1"># Estimativas de derivada</span>
+<span class="n">derivada_avancada</span> <span class="o">=</span> <span class="n">diferenca_avancada</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">derivada_atrasada</span> <span class="o">=</span> <span class="n">diferenca_atrasada</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">derivada_central</span> <span class="o">=</span> <span class="n">diferenca_central</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># Mostra os resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diferença Avançada em f(4.90) = &quot;</span><span class="p">,</span> <span class="n">derivada_avancada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diferença Atrasada em f(4.90) = &quot;</span><span class="p">,</span> <span class="n">derivada_atrasada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Diferença Central em f(4.90) = &quot;</span><span class="p">,</span> <span class="n">derivada_central</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id8">
+<img alt="_images/image_16.png" src="_images/image_16.png" />
+<figcaption>
+<p><span class="caption-text">Figura 16</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Para fins didáticos e de comparação, os dados relacionados ao eixo <span class="math notranslate nohighlight">\(y\)</span> foram gerados utilizando-se a função <span class="math notranslate nohighlight">\(f(x)=sen(x)\)</span> de modo que no final possamos comparar
+o resultado analítico com o resultado obtido. Repare que na maioria das vezes isso não vai ser possível de ser feito, visto que nem sempre teremos a função em sua forma explícita à nossa disposição.</p>
+<p>Cientes do fato apresentado, podemos calcular o erro absoluto para cada método.</p>
+<p>Podemos diferenciar simbolicamente a função <span class="math notranslate nohighlight">\(f(x)=sen(x)\)</span> no ponto <span class="math notranslate nohighlight">\(x = 4.90\)</span> e compararmos os resultados.</p>
+<p>Diferenciando simbolicamente</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">diff</span><span class="p">,</span> <span class="n">sin</span>
+
+<span class="c1"># Define a variável simbólica</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a função</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Calcula a derivada</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Avalia a derivada no ponto x = 4.90</span>
+<span class="n">df_at_490</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">4.90</span><span class="p">)</span>
+
+<span class="c1"># Mostra os resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(x) = </span><span class="si">{</span><span class="n">df</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(4.90) = </span><span class="si">{</span><span class="n">df_at_490</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id9">
+<img alt="_images/image_17.png" src="_images/image_17.png" />
+<figcaption>
+<p><span class="caption-text">Figura 17</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Podemos, por fim, calcular o erro absoluto uma vez que conhecemos a função analítica – lembre-se que fizemos isso somente para fins didáticos e para mostrarmos que o erro absoluto é da ordem de grandeza do erro total. Em exemplos práticos
+a função não é fornecida e só teremos em mãos os dados discretizados.</p>
+<p>O Script abaixo faz o cálculo do erro absoluto com base nos métodos de diferença finitas em relação a derivada analítica.</p>
+<p>Entrada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Erro absoluto</span>
+<span class="n">erro_abs_avancada</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">derivada_avancada</span> <span class="o">-</span> <span class="mf">0.186512369422576</span><span class="p">)</span>
+<span class="n">erro_abs_atrasada</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">derivada_atrasada</span> <span class="o">-</span> <span class="mf">0.186512369422576</span><span class="p">)</span>
+<span class="n">erro_abs_central</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">derivada_central</span> <span class="o">-</span> <span class="mf">0.186512369422576</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro absoluto - Diferença Avançada: &quot;</span><span class="p">,</span> <span class="n">erro_abs_avancada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro absoluto - Diferença Atrasada: &quot;</span><span class="p">,</span> <span class="n">erro_abs_atrasada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro absoluto - Diferença Central: &quot;</span><span class="p">,</span> <span class="n">erro_abs_central</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<figure class="align-default" id="id10">
+<img alt="_images/image_18.png" src="_images/image_18.png" />
+<figcaption>
+<p><span class="caption-text">Figura 18</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Por fim, podemos comparar o erro absoluto com o erro total estimado. A tabela abaixo apresenta estes resultados.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Erro absoluto</p></td>
+<td><p>Erro total estimado</p></td>
+</tr>
+<tr class="row-even"><td><p>Diferença avançada e atrasada: <span class="math notranslate nohighlight">\(E_{abs} \approx 10^{-2}\)</span></p></td>
+<td><p>Diferença avançada e atrasada <span class="math notranslate nohighlight">\(E_{tot} \approx 10^{-2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Diferença central: <span class="math notranslate nohighlight">\(E_{abs}  \approx 10^{-4}\)</span></p></td>
+<td><p>Diferença central: <span class="math notranslate nohighlight">\(E_{tot}  \approx 10^{-5}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>O resultado apresentado acima nos sugere que nossa estimativa é boa, por mais que a diferença de 10x entre o erro absoluto e o total para o método da diferença central esteja evidente. Podemos atribuir
+a esta diferença o fato de assumirmos que <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(f'''(x)\)</span> possuem ordem de grandeza igual a um.</p>
+</div>
+<p>No segundo capítulo deste material, aprofundamos nosso conhecimento nos fundamentos das diferenças finitas. Exploramos as técnicas de diferença avançada, atrasada e
+central, compreendendo suas aplicações. Além disso, realizamos importantes estimativas a respeito dos erros numéricos, nos mostrando como cada tipo de erro se
+comporta em relação aos cálculos computacionais realizados.</p>
+<p>Ao estudarmos diferenciação numérica, torna-se nítido a relevância desta técnica em diversas aplicações. Ela é uma ferramenta muito útil para aplicações que envolvam o cálculo de derivadas de funções complicadas ou de pontos discretos, contudo, precisamos nos atentar para como o erro numérico se comporta em função do custo computacional envolvido.</p>
+<p>A capacidade de se estimar derivadas de funções complexas ou desconhecidas, trabalhando com dados discretos e deixando para trás as limitações dos métodos analíticos, nos introduz a uma importante área localizada na fronteira do conhecimento entre a matemática e a computação.
+Por fim, no capítulo seguinte, veremos que a diferenciação se torna ainda mais integrada devido aos avanços teóricos computacionais que possibilitaram o desenvolvimento de uma outro técnica, que impactou grandemente o cálculo numérico: a diferenciação automática.
+Essencial no universo da computação e aprendizado de máquina, essa técnica nos possibilita calcular derivadas de funções complicadas com grande precisão e eficácia, ultrapassando diversos obstáculos encontrados na diferenciação numérica.</p>
+<p>Assim, iremos introduzir  conceitos como números duais, gradientes numéricos, algoritmos de autodiferenciação e aplicações na area de machine learning.</p>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="Parte1.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>1. <strong>Derivadas analíticas e definições</strong>
+    </a>
+    <a class="float-right" href="Parte3.html" title="Next">
+        3. <strong>Diferenciação Automática</strong> <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">2. <strong>Diferenciação Numérica</strong></a><ul>
+<li><a class="reference internal" href="#motivacao">2.1. <strong>Motivação</strong></a></li>
+<li><a class="reference internal" href="#diferenca-finita">2.2. <strong>Diferença Finita</strong></a><ul>
+<li><a class="reference internal" href="#metodo-da-diferenca-avancada-e-atrasada">2.2.1. <strong>Método da Diferença Avançada e Atrasada</strong></a></li>
+<li><a class="reference internal" href="#metodo-da-diferenca-central">2.2.3. <strong>Método da Diferença Central</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pontos-em-uma-grade">2.3. <strong>Pontos em uma grade</strong></a></li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/features/">Features</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/about-wagtail/"> About Wagtail</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/services/"> Services</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/blog/"> Blog</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/packages/"> Packages</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="https://wagtail.org/developers/"> Developers</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Wagtail Sphinx Theme 6.1.1
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2023, Sphinx
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" src="_static/dist/theme.js"></script>
+        <script type="text/javascript" src="_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="_static/searchtools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() { Search.loadIndex("searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>
