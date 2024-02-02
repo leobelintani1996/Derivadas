@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js" >
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
-        <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
         <title>2. Diferenciação Numérica &mdash; Página Inicial</title>
     
     <link rel="stylesheet" type="text/css" href="_static/dist/fontawesome.css" />
-      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css?v=f85e6685" />
             <link rel="index" title="Index" href="genindex.html" />
             <link rel="search" title="Search" href="search.html" />
             <link rel="top" title="Página Inicial" href="#" />
@@ -114,9 +114,9 @@
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
                         <main role="main" id="main">
     <section id="diferenciacao-numerica">
-<h1>2. <strong>Diferenciação Numérica</strong><a class="headerlink" href="#diferenciacao-numerica" title="Permalink to this headline">¶</a></h1>
+<h1>2. <strong>Diferenciação Numérica</strong><a class="headerlink" href="#diferenciacao-numerica" title="Link to this heading">¶</a></h1>
 <section id="motivacao">
-<h2>2.1. <strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. <strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Link to this heading">¶</a></h2>
 <p>Em diversos cenários somos capazes de derivar funções analiticamente para entender seu comportamento.
 No entanto, na prática encontramos situações onde a função não é conhecida, e o que temos são conjuntos de pontos discretos, a função não é diferenciável
 em algum ponto, por exemplo, ou a sua derivada não é trivial.
@@ -135,7 +135,7 @@ O equilíbrio entre esses erros apresenta um papel importante na determinação 
 essas técnicas.</p>
 </section>
 <section id="diferenca-finita">
-<h2>2.2. <strong>Diferença Finita</strong><a class="headerlink" href="#diferenca-finita" title="Permalink to this headline">¶</a></h2>
+<h2>2.2. <strong>Diferença Finita</strong><a class="headerlink" href="#diferenca-finita" title="Link to this heading">¶</a></h2>
 <p>A técnica de diferença finita é amplamente utilizada para aproximar a derivada de uma função quando a abordagem analítica é impraticável
 ou impossível. Ao invés de depender de incrementos infinitesimais, que são conceituais e não computacionalmente viáveis, a diferença finita
 utiliza incrementos finitos para calcular uma aproximação da taxa de variação.</p>
@@ -184,7 +184,7 @@ iguais resulta em um erro de arredondamento maior.</p>
 o método de diferença finita, enquanto o erro de arredondamento não se altera.</p>
 </div>
 <section id="metodo-da-diferenca-avancada-e-atrasada">
-<h3>2.2.1. <strong>Método da Diferença Avançada e Atrasada</strong><a class="headerlink" href="#metodo-da-diferenca-avancada-e-atrasada" title="Permalink to this headline">¶</a></h3>
+<h3>2.2.1. <strong>Método da Diferença Avançada e Atrasada</strong><a class="headerlink" href="#metodo-da-diferenca-avancada-e-atrasada" title="Link to this heading">¶</a></h3>
 <p>Os métodos apresentados abaixo podem ser chamados de métodos de diferenças não centrais, uma vez que são métodos em que se estima o limite um passo a frente(avançada)
 ou atrás(atrasado).</p>
 <div class="admonition-diferenca-avancada admonition">
@@ -198,7 +198,7 @@ ou atrás(atrasado).</p>
 <figure class="align-default" id="id1">
 <img alt="_images/image_9.png" src="_images/image_9.png" />
 <figcaption>
-<p><span class="caption-text">Figura 9</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 9</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Como não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span> (uma vez que nos resultaria em uma divisão por zero), podemos simplesmente dizer que <span class="math notranslate nohighlight">\(h\)</span> é um número tão pequeno o quanto quisermos, de modo que o limite apresentado se torna uma aproximação.
@@ -239,7 +239,7 @@ valores ótimos para <span class="math notranslate nohighlight">\(h\)</span> .</
 <figure class="align-default" id="id2">
 <img alt="_images/image_10.png" src="_images/image_10.png" />
 <figcaption>
-<p><span class="caption-text">Figura 10</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 10</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Como não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span>, podemos simplesmente dizer que <span class="math notranslate nohighlight">\(h\)</span> é um número tão pequeno o quanto quisermos de modo que o limite se torna uma aproximação.</p>
@@ -363,7 +363,7 @@ disponíveis em Python utilizam um valor padrão para o parâmetro <span class="
 <figure class="align-default" id="id3">
 <img alt="_images/image_11.png" src="_images/image_11.png" />
 <figcaption>
-<p><span class="caption-text">Figura 11</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 11</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Agora vamos calcular a derivada numérica utilizando o método da diferença avançada. Iremos utilizar o resultado de que <span class="math notranslate nohighlight">\(h_{ótimo} = \sqrt{4\epsilon_{m}} = 10^{-8}\)</span> .</p>
@@ -403,7 +403,7 @@ disponíveis em Python utilizam um valor padrão para o parâmetro <span class="
 <figure class="align-default" id="id4">
 <img alt="_images/image_12.png" src="_images/image_12.png" />
 <figcaption>
-<p><span class="caption-text">Figura 12</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 12</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>É importante notar que o valor esperado para o erro era da ordem de <span class="math notranslate nohighlight">\(10^{-8}\)</span> para um valor de <span class="math notranslate nohighlight">\(h_{ótimo} = 10^{-8}\)</span> . O erro absoluto encontrado foi da ordem de
@@ -414,7 +414,7 @@ um indício positivo em relação a teoria apresentada até então.</p>
 iremos apresentar abaixo o método da diferença central, que traz em sua proposição a ideia de se utilizar um valor médio para o cálculo numérico da derivada.</p>
 </section>
 <section id="metodo-da-diferenca-central">
-<h3>2.2.3. <strong>Método da Diferença Central</strong><a class="headerlink" href="#metodo-da-diferenca-central" title="Permalink to this headline">¶</a></h3>
+<h3>2.2.3. <strong>Método da Diferença Central</strong><a class="headerlink" href="#metodo-da-diferenca-central" title="Link to this heading">¶</a></h3>
 <p>O método apresentado abaixo pode ser chamado de método da diferença central, uma vez que estamos tratando de um método
 em que se estima o limite um passo a frente de  <span class="math notranslate nohighlight">\(h\)</span> e em um passo atrás de <span class="math notranslate nohighlight">\(h\)</span> .
 Em outras palavras, esta técnica é a combinação do método da diferença avançada com o método da diferença atrasada que foram demonstradas na subseção acima.</p>
@@ -441,7 +441,7 @@ Em outras palavras, esta técnica é a combinação do método da diferença ava
 <figure class="align-default" id="id5">
 <img alt="_images/image_13.png" src="_images/image_13.png" />
 <figcaption>
-<p><span class="caption-text">Figura 13</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 13</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Como já discutido anteriormente, não podemos utilizar <span class="math notranslate nohighlight">\(h = 0\)</span> (com isso podemos tomar uma aproximação para o limite) e também
@@ -501,10 +501,10 @@ obtemos a seguinte expressão para <span class="math notranslate nohighlight">\(
 <p>Que ao compararmos com o resultado da diferença avançada, de fato se mostra um resultado mais preciso e ainda mais: um resultado em que o passo <span class="math notranslate nohighlight">\(h\)</span> pode ser maior, ou seja,
 o custo computacional (tempo gasto pelo computador ao executar um programa) será menor uma vez que o valor do passo é maior.</p>
 <p>A tabela abaixo sintetiza os resultados.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Diferença avançada/atrasada</p></td>
@@ -561,7 +561,7 @@ Logo depois podemos utilizar a técnica da diferença central e comparar os resu
 <figure class="align-default" id="id6">
 <img alt="_images/image_14.png" src="_images/image_14.png" />
 <figcaption>
-<p><span class="caption-text">Figura 14</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 14</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>É importante notar que o valor esperado para o erro era da ordem de <span class="math notranslate nohighlight">\(10^{-11}\)</span> para um valor de <span class="math notranslate nohighlight">\(h_{ótimo} = 10^{-5}\)</span> e isso não ocorreu exatamente como o esperado.
@@ -614,7 +614,7 @@ para o método da diferença central e avançada.</p>
 <div><figure class="align-default" id="id7">
 <img alt="_images/image_15.png" src="_images/image_15.png" />
 <figcaption>
-<p><span class="caption-text">Figura 15</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 15</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -628,7 +628,7 @@ são apenas conjuntos de pontos <span class="math notranslate nohighlight">\((x_
 </section>
 </section>
 <section id="pontos-em-uma-grade">
-<h2>2.3. <strong>Pontos em uma grade</strong><a class="headerlink" href="#pontos-em-uma-grade" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. <strong>Pontos em uma grade</strong><a class="headerlink" href="#pontos-em-uma-grade" title="Link to this heading">¶</a></h2>
 <p>Em cenários experimentais, muitas vezes não possuímos expressões do tipo <span class="math notranslate nohighlight">\(f(x)\)</span> a nossa disposição para calcularmos a sua derivada em um ponto específico. O que de fato possuímos
 são os chamados pontos em uma grade (ou malha – quando estes pontos são igualmente espaçados) – que são essencialmente dados discretos do tipo <span class="math notranslate nohighlight">\((x_{i}, y_{i})\)</span> onde <span class="math notranslate nohighlight">\(y_{i}\)</span> é o valor da função no ponto <span class="math notranslate nohighlight">\(x_{i}\)</span> .</p>
 <div class="admonition-grade-igualmente-espacada admonition">
@@ -643,10 +643,10 @@ são os chamados pontos em uma grade (ou malha – quando estes pontos são igua
 <p>Já os pontos relacionados à imagem da função, são os pontos discretos obtidos na sua aplicação (seja ela experimental ou não).</p>
 <p>Vamos demonstrar um exemplo para fixarmos o conceito.</p>
 <p>Imagine que realizamos diversas medidas em um laboratório e obtivemos os seguintes dados:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_i\)</span></p></td>
@@ -728,10 +728,10 @@ Como sabemos que <span class="math notranslate nohighlight">\(h=0.05\)</span> , 
 <p>Afim de resolvermos o exemplo apresentado acima em que queremos calcular <span class="math notranslate nohighlight">\(f'(4.90)\)</span> onde nossos dados são discretos e estão dispostos no formato abaixo, podemos utilizar
 dos métodos das diferenças finitas em um ambiente Python. O Script abaixo mostra como se dá a implementação destes métodos no caso em que não possuímos a função explicitamente.</p>
 <p>Dados disponíveis:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(y_i\)</span></p></td>
@@ -795,7 +795,7 @@ dos métodos das diferenças finitas em um ambiente Python. O Script abaixo most
 <figure class="align-default" id="id8">
 <img alt="_images/image_16.png" src="_images/image_16.png" />
 <figcaption>
-<p><span class="caption-text">Figura 16</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 16</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Para fins didáticos e de comparação, os dados relacionados ao eixo <span class="math notranslate nohighlight">\(y\)</span> foram gerados utilizando-se a função <span class="math notranslate nohighlight">\(f(x)=sen(x)\)</span> de modo que no final possamos comparar
@@ -827,7 +827,7 @@ o resultado analítico com o resultado obtido. Repare que na maioria das vezes i
 <figure class="align-default" id="id9">
 <img alt="_images/image_17.png" src="_images/image_17.png" />
 <figcaption>
-<p><span class="caption-text">Figura 17</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 17</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Podemos, por fim, calcular o erro absoluto uma vez que conhecemos a função analítica – lembre-se que fizemos isso somente para fins didáticos e para mostrarmos que o erro absoluto é da ordem de grandeza do erro total. Em exemplos práticos
@@ -848,14 +848,14 @@ a função não é fornecida e só teremos em mãos os dados discretizados.</p>
 <figure class="align-default" id="id10">
 <img alt="_images/image_18.png" src="_images/image_18.png" />
 <figcaption>
-<p><span class="caption-text">Figura 18</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 18</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Por fim, podemos comparar o erro absoluto com o erro total estimado. A tabela abaixo apresenta estes resultados.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Erro absoluto</p></td>
@@ -966,10 +966,9 @@ Essencial no universo da computação e aprendizado de máquina, essa técnica n
     </div>
         </div>
     </footer>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script type="text/javascript" src="_static/dist/theme.js"></script>
         <script type="text/javascript" src="_static/dist/vendor.js"></script>

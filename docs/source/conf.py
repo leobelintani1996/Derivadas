@@ -18,6 +18,12 @@ release = '1'
 
 extensions = ['sphinx.ext.mathjax']
 extensions = ['sphinx.ext.autosectionlabel']
+# Adicione sphinx.ext.githubpages à lista de extensões
+extensions = [
+    'sphinx.ext.githubpages',
+    # inclua aqui outras extensões que você já está usando
+]
+
 
 
 templates_path = ['_templates']

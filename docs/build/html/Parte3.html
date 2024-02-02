@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js" >
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
-        <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+        <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
         <title>3. Diferenciação Automática &mdash; Página Inicial</title>
     
     <link rel="stylesheet" type="text/css" href="_static/dist/fontawesome.css" />
-      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/dist/theme.css?v=f85e6685" />
             <link rel="index" title="Index" href="genindex.html" />
             <link rel="search" title="Search" href="search.html" />
             <link rel="top" title="Página Inicial" href="#" />
@@ -114,9 +114,9 @@
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
                         <main role="main" id="main">
     <section id="diferenciacao-automatica">
-<h1>3. <strong>Diferenciação Automática</strong><a class="headerlink" href="#diferenciacao-automatica" title="Permalink to this headline">¶</a></h1>
+<h1>3. <strong>Diferenciação Automática</strong><a class="headerlink" href="#diferenciacao-automatica" title="Link to this heading">¶</a></h1>
 <section id="motivacao">
-<h2>3.1. <strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. <strong>Motivação</strong><a class="headerlink" href="#motivacao" title="Link to this heading">¶</a></h2>
 <p>Como já vimos nos capítulos anteriores, podemos classificar os tipos de derivações em 2 grupos:</p>
 <ol class="arabic simple">
 <li><p>Diferenciação analítica ou simbólica.</p></li>
@@ -135,7 +135,7 @@ temos os erros de arredondamento presentes, visto que estes são inerentes aos c
 A base teórica por trás de todo o método se baseia em o que chamamos de números duais.</p>
 </section>
 <section id="numeros-duais">
-<h2>3.2. <strong>Números duais</strong><a class="headerlink" href="#numeros-duais" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. <strong>Números duais</strong><a class="headerlink" href="#numeros-duais" title="Link to this heading">¶</a></h2>
 <p>O conceito por trás da diferenciação automática parte da definição dos números duais. Através dos números duais podemos escrever o valor de uma função em um ponto e sua derivada no ponto.</p>
 <p>Os números duais são uma extensão dos números reais, similares aos números complexos, contudo possuem suas particularidades.
 Os números complexos, por exemplo, são expressos no seguinte formato:</p>
@@ -183,10 +183,10 @@ em um determinado ponto.</p>
 <div class="admonition-regra-de-derivacao-para-numeros-duais admonition">
 <p class="admonition-title">Regra de derivação para números duais</p>
 <p>Por fim, podemos sintetizar as operações mais básicas envolvendo os números duais como</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a + b = (a+b, a' + b')\)</span></p></td>
@@ -231,10 +231,10 @@ Para o caso da variável independente, a mesma lógica é utilizada.</p>
 <div class="admonition-regra-da-cadeia-e-funcoes-conhecidas admonition">
 <p class="admonition-title">Regra da cadeia e funções conhecidas</p>
 <p>Iremos definir abaixo a regra da cadeia assim como a derivada de outras funções conhecidas através do uso dos números duais.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Polinômios: <span class="math notranslate nohighlight">\(p(a) = ((p(a), a'p'(a)))\)</span></p></td>
@@ -279,13 +279,13 @@ Para o caso da variável independente, a mesma lógica é utilizada.</p>
 <p>Na seção apresentada a seguir iremos criar nosso algoritmo de diferenciação automática.</p>
 </section>
 <section id="implementando-a-autodiferenciacao">
-<h2>3.3. <strong>Implementando a autodiferenciação</strong><a class="headerlink" href="#implementando-a-autodiferenciacao" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. <strong>Implementando a autodiferenciação</strong><a class="headerlink" href="#implementando-a-autodiferenciacao" title="Link to this heading">¶</a></h2>
 <p>Podemos implementar um código em Python de forma que as operações das derivadas via números duais possam ser de fato automatizadas.
 A ideia central é “quebrar” uma determinada função matemática em várias partes cuja derivada possa ser escrita com as regras apresentadas acima.</p>
 <p>O código apresentado carrega consigo alguns conceitos um pouco mais avançados dentro da área da programação, como é o caso do uso de classes, objetos e sobrecarga de operadores (operators overloading).</p>
 <p>Uma tentativa de didatizar o conteúdo é através de comentários no corpo do código e de uma breve explicação ao final. De qualquer forma, não se preocupe caso tenha alguma dúvida. O objetivo deste material não é ensinar programação de fato.</p>
 <p>Por fim, podemos apresentar o algoritmo abaixo, onde a autodiferenciação foi implementada de fato.</p>
-<p>O primeiro exemplo se trata de calcularmos a derivada da função <span class="math notranslate nohighlight">\(f(x) = x^5 + 1 \)</span></p>
+<p>O primeiro exemplo se trata de calcularmos a derivada da função <span class="math notranslate nohighlight">\(f(x) = x^5 + 1 ` no ponto :math:`x = 1\)</span></p>
 <p>Entrada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># Importa o módulo math para acessar funções matemáticas.</span>
 
@@ -402,7 +402,7 @@ A ideia central é “quebrar” uma determinada função matemática em várias
 <figure class="align-default" id="id1">
 <img alt="_images/image_19.png" src="_images/image_19.png" />
 <figcaption>
-<p><span class="caption-text">Figura 19</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 19</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Repare que a classe Dif é projetada para trabalhar com variáveis diferenciais e realizar operações aritméticas básicas, mantendo o controle do valor da função (valor primal) e sua derivada em um ponto específico.</p>
@@ -451,7 +451,7 @@ valores específicos e calcula o valor da função <span class="math notranslate
 <figure class="align-default" id="id2">
 <img alt="_images/image_20.png" src="_images/image_20.png" />
 <figcaption>
-<p><span class="caption-text">Figura 20</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 20</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Podemos observar que o resultado obtido com o uso do nosso algoritmo para diferenciar automaticamente a função é exatamente o mesmo que a derivação simbólica nos fornece, nos mostrando que, de fato, ao calcularmos derivadas em pontos específicos, a autodiferenciação surge como uma forte alternativa para essa tarefa.</p>
@@ -477,7 +477,7 @@ valores específicos e calcula o valor da função <span class="math notranslate
 <figure class="align-default" id="id3">
 <img alt="_images/image_21.png" src="_images/image_21.png" />
 <figcaption>
-<p><span class="caption-text">Figura 21</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 21</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>É nítido que nosso algoritmo é uma implementação simplificada. Você pode notar que não definimos funções auxiliares como seno, cosseno, tangente, exponencial ou logaritmo, por exemplo, logo, estamos limitados dentro das possibilidades de funções existentes.</p>
@@ -488,7 +488,7 @@ valores específicos e calcula o valor da função <span class="math notranslate
 na seção abaixo iremos entender a diferença entre os modos direto e reverso e quais suas consequências.</p>
 </section>
 <section id="modo-direto-e-reverso">
-<h2>3.4. <strong>Modo direto e reverso</strong><a class="headerlink" href="#modo-direto-e-reverso" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. <strong>Modo direto e reverso</strong><a class="headerlink" href="#modo-direto-e-reverso" title="Link to this heading">¶</a></h2>
 <p>Existem dois modos principais de diferenciação automática: o modo direto (forward accumulation) e o modo reverso (reverse accumulation).</p>
 <p><strong>Modo Direto (Forward Accumulation)</strong>:</p>
 <p>Neste modo, a diferenciação é realizada da parte interna para a parte externa da função. Isso significa que as derivadas são calculadas seguindo a ordem das operações como elas aparecem no algoritmo. Por exemplo, se uma função é composta como
@@ -501,13 +501,13 @@ pois para cada variável independente é necessário uma aplicação do algoritm
 <p>A grande maioria das bibliotecas de diferenciação automática escolhem por conta própria (automaticamente) se o modo utilizado será o direto ou o reverso, logo, não é estritamente necessário um estudo rigoroso sobre os dois modos para se utilizar as biblioteca em si. Contudo, caso o leitor queira se aventurar, sugiro a leitura das referências <a class="reference internal" href="Parte4.html#ref4"><span class="std std-ref">4 e 5</span></a> que tratam de forma mais aprofundada a implementação do modo reverso e direto.</p>
 </section>
 <section id="bibliotecas-de-diferenciacao-automatica">
-<h2>3.5. <strong>Bibliotecas de diferenciação automática</strong><a class="headerlink" href="#bibliotecas-de-diferenciacao-automatica" title="Permalink to this headline">¶</a></h2>
+<h2>3.5. <strong>Bibliotecas de diferenciação automática</strong><a class="headerlink" href="#bibliotecas-de-diferenciacao-automatica" title="Link to this heading">¶</a></h2>
 <p>Como já discutido, a diferenciação automática é uma técnica crucial em aprendizado de máquina, especialmente em redes neurais artificiais,
 permitindo o cálculo eficiente de gradientes e derivadas.</p>
 <p>Podemos citar três bibliotecas populares que implementam essa técnica. São elas: TensorFlow, PyTorch e JAX. Cada qual possui características únicas que as tornam adequadas para diferentes tipos de tarefas e abordagens. O objetivo aqui é apresentar a sintaxe da biblioteca JAX, além
 de discorrer um pouco sobre as funcionalidades da mesma.</p>
 <section id="jax">
-<h3>3.5.1. <strong>JAX</strong><a class="headerlink" href="#jax" title="Permalink to this headline">¶</a></h3>
+<h3>3.5.1. <strong>JAX</strong><a class="headerlink" href="#jax" title="Link to this heading">¶</a></h3>
 <p>A biblioteca JAX, desenvolvida pela Google Research, é uma biblioteca que combina NumPy, Auto Diferenciação e aceleração de hardware.
 O que a torna especial é sua capacidade de transformar funções Python puras em funções que podem ser aceleradas em CPUs, GPUs e TPUs.</p>
 <p>A biblioteca particularmente trabalha analisando o código da função Python e o converte em um formato intermediário que pode ser otimizado.
@@ -545,7 +545,7 @@ queremos calcular <span class="math notranslate nohighlight">\(f'(x)\)</span> , 
 <figure class="align-default" id="id4">
 <img alt="_images/image_22.png" src="_images/image_22.png" />
 <figcaption>
-<p><span class="caption-text">Figura 22</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 22</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Repare que para o usuário final o que de fato importa é a sintaxe</p>
@@ -583,7 +583,7 @@ e exclusivamente para se calcular o gradiente da função fornecida.</p>
 <figure class="align-default" id="id5">
 <img alt="_images/image_23.png" src="_images/image_23.png" />
 <figcaption>
-<p><span class="caption-text">Figura 23</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 23</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>A diferença ao calcularmos o gradiente de funções de uma, duas ou até quantas variáveis quisermos, vai ser evidente na linha em que chamamos a função:</p>
@@ -601,7 +601,7 @@ poderosa técnica que está intimamente relacionada com a diferenciação autom�
 </section>
 </section>
 <section id="aplicacao-em-redes-neurais-artificiais">
-<h2>3.6. <strong>Aplicação em Redes Neurais Artificiais</strong><a class="headerlink" href="#aplicacao-em-redes-neurais-artificiais" title="Permalink to this headline">¶</a></h2>
+<h2>3.6. <strong>Aplicação em Redes Neurais Artificiais</strong><a class="headerlink" href="#aplicacao-em-redes-neurais-artificiais" title="Link to this heading">¶</a></h2>
 <p>Redes Neurais Artificiais (RNAs) são sistemas computacionais inspirados no funcionamento do cérebro humano, projetados para aprender e processar informações de maneira análoga
 aos seres humanos. Estas redes são formadas por unidades de processamento chamadas neurônios artificiais, que estão interconectados e trabalham em conjunto para resolver problemas
 específicos.</p>
@@ -628,7 +628,7 @@ A camada escondida possui 100 neurônios artificiais enquanto as outras duas ape
 <figure class="align-default" id="id6">
 <img alt="_images/image_24.png" src="_images/image_24.png" />
 <figcaption>
-<p><span class="caption-text">Figura 24</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 24</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Para essa rede neural em especifico, a função custo depende da equação diferencial e das condições de contorno do problema (poço de potencial infinito unidimensional).
@@ -688,7 +688,7 @@ de aprendizado de uma rede neural artificial, com o objetivo de elucidarmos o us
 <figure class="align-default" id="id7">
 <img alt="_images/image_25.png" src="_images/image_25.png" />
 <figcaption>
-<p><span class="caption-text">Figura 25</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Figura 25</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>O código acima ilustra o processo de otimização de parâmetros (pesos) de forma simplificada, usando gradiente descendente e a biblioteca JAX para autodiferenciação.</p>
@@ -797,10 +797,9 @@ conceitual para entender a otimização de parâmetros em contextos mais complex
     </div>
         </div>
     </footer>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+        <script src="_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script type="text/javascript" src="_static/dist/theme.js"></script>
         <script type="text/javascript" src="_static/dist/vendor.js"></script>
