@@ -16,7 +16,7 @@ A extensão dos conteúdos transcende os objetivos deste material, a imagem abai
 
 .. figure:: images/image_8.png
 
-    Figura 0 
+    Figura 1 
 
 1.1. **A definição de limite e suas propriedades**
 --------------------------------------------------
