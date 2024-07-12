@@ -55,6 +55,7 @@ html_theme_options = dict(
     logo_url = "",
     logo_width = 150,
     github_url = "https://github.com/leobelintani1996/Derivadas",
+    
 )
 
 
