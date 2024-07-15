@@ -169,14 +169,14 @@ Em outras palavras:</p>
 \[\lim_{{x \to a}} f(x) = L \Leftrightarrow \lim_{{x \to a^-}} f(x) = \lim_{{x \to a^+}} f(x) = L \tag{4}\]</div>
 </div>
 <p>Vamos considerar o exemplo abaixo para ilustrar o conceito.</p>
-<p>Imagine a função definida por:</p>
+<p>Observe a função definida por:</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}f(x) =
 \begin{cases}
     x^2 &amp; \text{se } x &lt; 2\\    4 &amp; \text{se } x &gt; 2
 \end{cases}\end{aligned}\end{align} \]</div>
-<p>Repare que a função não é definida no ponto <span class="math notranslate nohighlight">\(x=2\)</span> , gerando o que chamamos de singularidade, ou seja,
-uma indeterminação no ponto.</p>
+<p>Repare que a função não é definida no ponto <span class="math notranslate nohighlight">\(x=2\)</span> , gerando o que chamamos de descontinuidade. Neste caso, há uma indeterminação no ponto,
+pois o valor da função não é especificado para esse ponto.</p>
 <p>Podemos visualizar o exemplo acima dentro de um ambiente que tenha suporte a linguagem Python.</p>
 <div class="admonition-exemplo admonition">
 <p class="admonition-title">Exemplo</p>
@@ -190,7 +190,7 @@ uma indeterminação no ponto.</p>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># Se x for menor que 2, retorna o quadrado de x</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
     <span class="c1"># Caso contrário, retorna 4</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">4</span>
@@ -262,14 +262,14 @@ Nesses casos, dizemos que o limite da função é infinito naquele ponto especí
 <p class="admonition-title">Definição</p>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a} f(x) = \infty \tag{5}\]</div>
-<p>Podemos fazer os valores de <span class="math notranslate nohighlight">\(f(x)\)</span> ficarem tão grandes quanto quisermos de modo que <span class="math notranslate nohighlight">\(x\)</span> fique tão próximo, mas não igual a <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p>Dizemos que o limite de <span class="math notranslate nohighlight">\(f(x)\)</span> quando <span class="math notranslate nohighlight">\(x\)</span> tende à <span class="math notranslate nohighlight">\(a\)</span> é igual a <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
-<p>A mesma definição é válida para quando a função tende para um valor suficientemente pequeno:</p>
-<p>Suponha que a função <span class="math notranslate nohighlight">\(f(x)\)</span> seja bem definida em uma dada região próxima a vizinhança de <span class="math notranslate nohighlight">\(a\)</span> , exceto no próprio <span class="math notranslate nohighlight">\(a\)</span>, então</p>
+<p>Podemos fazer os valores de <span class="math notranslate nohighlight">\(f(x)\)</span> ficarem tão grandes quanto quisermos à medida que <span class="math notranslate nohighlight">\(x\)</span> se aproxima, mas não é igual a <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Dizemos que o limite de <span class="math notranslate nohighlight">\(f(x)\)</span> quando <span class="math notranslate nohighlight">\(x\)</span> tende a <span class="math notranslate nohighlight">\(a\)</span> é igual a <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>A mesma definição é válida para quando a função tende para um valor arbitrariamente pequeno:</p>
+<p>Suponha que a função <span class="math notranslate nohighlight">\(f(x)\)</span> seja bem definida em uma dada região próxima à vizinhança de <span class="math notranslate nohighlight">\(a\)</span>, exceto no próprio <span class="math notranslate nohighlight">\(a\)</span>. Então,</p>
 <div class="math notranslate nohighlight">
-\[\displaystyle \lim_{x \to a} f(x) = - \infty \tag{6}\]</div>
-<p>Podemos fazer os valores de <span class="math notranslate nohighlight">\(f(x)\)</span> ficarem tão pequenos quanto quisermos de modo que <span class="math notranslate nohighlight">\(x\)</span> fique tão próximo, mas não igual a <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p>Dizemos que o limite de <span class="math notranslate nohighlight">\(f(x)\)</span> quando <span class="math notranslate nohighlight">\(x\)</span> tende à <span class="math notranslate nohighlight">\(a\)</span> é igual a <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+\[\displaystyle \lim_{x \to a} f(x) = -\infty \tag{6}\]</div>
+<p>Podemos fazer os valores de <span class="math notranslate nohighlight">\(f(x)\)</span> ficarem tão pequenos quanto quisermos à medida que <span class="math notranslate nohighlight">\(x\)</span> se aproxima, mas não é igual a <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Dizemos que o limite de <span class="math notranslate nohighlight">\(f(x)\)</span> quando <span class="math notranslate nohighlight">\(x\)</span> tende a <span class="math notranslate nohighlight">\(a\)</span> é igual a <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
 </div>
 <p>Vamos considerar o exemplo abaixo para ilustrar o conceito.</p>
 <p>Queremos estudar o comportamento da função <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> quando <span class="math notranslate nohighlight">\(x\)</span> tende à <span class="math notranslate nohighlight">\(0\)</span>.</p>
@@ -495,7 +495,7 @@ se o seu limite existe ou não, quando <span class="math notranslate nohighlight
 </figcaption>
 </figure>
 </div>
-<p>Repare que a função apresentada no exemplo acima possui uma assintotas horizontal em (<span class="math notranslate nohighlight">\(y = 1\)</span>).
+<p>Repare que a função apresentada no exemplo acima possui uma assintota horizontal em (<span class="math notranslate nohighlight">\(y = 1\)</span>).
 Podemos encontrar o limite simplesmente ao analisarmos o gráfico.</p>
 <p>Quando <span class="math notranslate nohighlight">\(x \to \infty\)</span> , notamos que <span class="math notranslate nohighlight">\(f(x) \to 1\)</span> ,
 indicando que o limite da função existe e é igual a 1.</p>
@@ -504,7 +504,7 @@ indicando que o limite da função existe e é igual a 1.</p>
 \[\begin{split}\begin{align}
 &amp;\displaystyle \lim_{x \to \infty} \frac{(x^2 - 1)}{(x^2 + 1)} = 1 \\ \\
 \end{align}\end{split}\]</div>
-<p>A importância de se encontrar as assíntotas verticais e horizontais se dá exatamente na análise gráfica de funções descontínuas e complicadas, mas nem sempre é fácil de
+<p>A importância da analise gráfica é exatamente encontrar as assíntotas verticais e horizontais de funções descontínuas e complicadas, mas nem sempre é fácil de
 plotarmos um gráfico.
 Como você pode ter percebido, conforme as descontinuidades se tornam mais presentes, os gráficos vão se tornando mais elaborados devido à complexidade
 em se segmentar o domínio da função de forma coerente com a linguagem de programação utilizada.</p>
@@ -527,32 +527,32 @@ propriedades que regem o cálculo de limites, não nos deixando tão dependentes
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}f(x) = f(a) \tag{13}\]</div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Propriedade especial:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}c = c \tag{14}\]</div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>O limite da soma é a soma dos limites:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}[f(x) + g(x)] = \displaystyle \lim_{x \to a}[f(x)] + \displaystyle \lim_{x \to a}[g(x)] \tag{15}\]</div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="4">
 <li><p>O limite da diferença é a diferença dos limites:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}[f(x) - g(x)] = \displaystyle \lim_{x \to a}[f(x)] - \displaystyle \lim_{x \to a}[g(x)] \tag{16}\]</div>
-<ol class="arabic simple">
-<li><p>O limite de uma constante é a constante multiplicada pelo limite:</p></li>
+<ol class="arabic simple" start="5">
+<li><p>O produto entre uma constante e uma função:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}[cf(x)] = \displaystyle c\lim_{x \to a}[f(x)] \tag{17}\]</div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="6">
 <li><p>O limite de um produto é o produto dos limites:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[\displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)] \tag{18}\]</div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="7">
 <li><p>O limite de quocientes é o quociente dos limites (desde que o denominador não seja zero):</p></li>
 </ol>
 <div class="math notranslate nohighlight">
@@ -664,7 +664,7 @@ distância percorrida pelo tempo que levou, da seguinte maneira:</p>
 <p>Isso nos daria uma velocidade média. No entanto, essa métrica  não nos diz se o carro acelerou ou desacelerou em algum
 momento. Para obter essa informação, precisamos da velocidade instantânea.</p>
 <p>A velocidade instantânea é o que chamamos de taxa de variação instantânea. Em vez de perguntar “a que velocidade o carro estava se movendo durante uma hora?”, perguntamos “a que
-velocidade o carro estava se movendo exatamente neste segundo?”. Aqui, estamos diminuindo o intervalo de tempo até que ele se aproxime de um ponto instantâneo.</p>
+velocidade o carro estava se movendo exatamente neste instante?”. Aqui, estamos diminuindo o intervalo de tempo até que ele se aproxime de um ponto instantâneo.</p>
 <p>Isso nos leva ao limite de uma função, tópico abordado na seção anterior. Para encontrar a velocidade instantânea, calculamos a taxa de variação média em intervalos cada vez menores,
 chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimos isso como:</p>
 <div class="math notranslate nohighlight">
@@ -694,7 +694,6 @@ de uma função que associa a cada ponto da função original o valor da derivad
 <p>Aplicando a definição acima, temos:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
-&amp;f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}  \\
 &amp;f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \\
 &amp;f'(x) = \displaystyle \lim_{h \to 0}\frac{[(x+h)^2 - 8(x+h)+9]-(x^2 - 8x +9)}{h} \\
 &amp;f'(x) = \displaystyle \lim_{h \to 0}\frac{x^2 + 2xh + h^2 - 8x - 8h + 9 - x^2 + 8x -9}{h} \\
@@ -708,8 +707,13 @@ de uma função que associa a cada ponto da função original o valor da derivad
 <section id="regras-de-derivacao">
 <h3>1.2.2. <strong>Regras de derivação</strong><a class="headerlink" href="#regras-de-derivacao" title="Link to this heading">¶</a></h3>
 <p>Podemos calcular a derivada de uma função ou a derivada de uma função em um ponto específico, utilizando a definição formal de limite.
-Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculo mais simples, foram desenvolvidas várias
-regras de derivação. Estas regras são técnicas que nos permitem encontrar a derivada de funções de maneira mais direta e menos trabalhosa.</p>
+Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculos mais simples,
+foram desenvolvidas várias regras de derivação. <a class="reference internal" href="Parte4.html#ref1"><span class="std std-ref">[1]</span></a></p>
+<p>As regras de derivação foram desenvolvidas ao longo dos séculos por matemáticos que buscavam maneiras de simplificar e agilizar o processo de diferenciação.
+No século XVII, Isaac Newton e Gottfried Wilhelm Leibniz, trabalhando independentemente, desenvolveram o cálculo diferencial e integral.
+Eles introduziram conceitos fundamentais e notações que ainda são usadas hoje. A partir de seus trabalhos, várias técnicas e regras de derivação foram
+formuladas, como a regra do produto, a regra do quociente e a regra da cadeia. Estas regras permitem encontrar a derivada de funções de maneira mais
+direta e menos trabalhosa, transformando a diferenciação em uma ferramenta poderosa para a análise matemática.</p>
 <p>Antes de apresentarmos as principais regras de derivação existentes no cálculo, é essencial compreender que as funções analisadas devem ser
 diferenciáveis no intervalo de interesse.
 Uma função é diferenciável em um ponto se ela é contínua e a taxa de variação no ponto é bem definida,
@@ -734,8 +738,8 @@ da função nesses pontos.</p>
 \end{align}\end{split}\]</div>
 </div>
 <p>Vamos resolver um exemplo para fixarmos a regra apresentada acima:</p>
-<div class="admonition-do-it-yourself admonition">
-<p class="admonition-title">Do it yourself!</p>
+<div class="admonition-exemplo admonition">
+<p class="admonition-title">Exemplo</p>
 <p>Calcule a derivada da função <span class="math notranslate nohighlight">\(f(x)= 2\)</span></p>
 <p>Solução:</p>
 <p>Utilizando a regra da derivada de uma função constante, podemos escrever que:</p>

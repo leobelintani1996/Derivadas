@@ -83,7 +83,7 @@ determinado valor por um lado específico, seja pela esquerda ou pela direita. �
 
 Vamos considerar o exemplo abaixo para ilustrar o conceito.
 
-Imagine a função definida por:
+Observe a função definida por:
 
 .. math::
 
@@ -95,8 +95,8 @@ Imagine a função definida por:
         4 & \text{se } x > 2
     \end{cases}
 
-Repare que a função não é definida no ponto :math:`x=2` , gerando o que chamamos de singularidade, ou seja,
-uma indeterminação no ponto.
+Repare que a função não é definida no ponto :math:`x=2` , gerando o que chamamos de descontinuidade. Neste caso, há uma indeterminação no ponto,
+pois o valor da função não é especificado para esse ponto.
 
 Podemos visualizar o exemplo acima dentro de um ambiente que tenha suporte a linguagem Python.
 
@@ -116,7 +116,7 @@ Podemos visualizar o exemplo acima dentro de um ambiente que tenha suporte a lin
         def f(x):
             # Se x for menor que 2, retorna o quadrado de x
             if x < 2:
-            return x*x
+                return x*x
             # Caso contrário, retorna 4
             else:
                 return 4
@@ -203,22 +203,23 @@ Nesses casos, dizemos que o limite da função é infinito naquele ponto especí
             \displaystyle \lim_{x \to a} f(x) = \infty \tag{5}
 
 
-        Podemos fazer os valores de :math:`f(x)` ficarem tão grandes quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
+        Podemos fazer os valores de :math:`f(x)` ficarem tão grandes quanto quisermos à medida que :math:`x` se aproxima, mas não é igual a :math:`a`.
 
-        Dizemos que o limite de :math:`f(x)` quando :math:`x` tende à :math:`a` é igual a :math:`\infty`.
+        Dizemos que o limite de :math:`f(x)` quando :math:`x` tende a :math:`a` é igual a :math:`\infty`.
 
-        A mesma definição é válida para quando a função tende para um valor suficientemente pequeno:
+        A mesma definição é válida para quando a função tende para um valor arbitrariamente pequeno:
 
-        Suponha que a função :math:`f(x)` seja bem definida em uma dada região próxima a vizinhança de :math:`a` , exceto no próprio :math:`a`, então
+        Suponha que a função :math:`f(x)` seja bem definida em uma dada região próxima à vizinhança de :math:`a`, exceto no próprio :math:`a`. Então,
 
         .. math::
                 
-            \displaystyle \lim_{x \to a} f(x) = - \infty \tag{6}
+            \displaystyle \lim_{x \to a} f(x) = -\infty \tag{6}
 
 
-        Podemos fazer os valores de :math:`f(x)` ficarem tão pequenos quanto quisermos de modo que :math:`x` fique tão próximo, mas não igual a :math:`a`.
+        Podemos fazer os valores de :math:`f(x)` ficarem tão pequenos quanto quisermos à medida que :math:`x` se aproxima, mas não é igual a :math:`a`.
 
-        Dizemos que o limite de :math:`f(x)` quando :math:`x` tende à :math:`a` é igual a :math:`-\infty`.
+        Dizemos que o limite de :math:`f(x)` quando :math:`x` tende a :math:`a` é igual a :math:`-\infty`.
+
 
 
 Vamos considerar o exemplo abaixo para ilustrar o conceito.
@@ -480,7 +481,7 @@ se o seu limite existe ou não, quando :math:`x \to \infty`  .
 
 
 
-Repare que a função apresentada no exemplo acima possui uma assintotas horizontal em (:math:`y = 1`). 
+Repare que a função apresentada no exemplo acima possui uma assintota horizontal em (:math:`y = 1`). 
 Podemos encontrar o limite simplesmente ao analisarmos o gráfico.
 
 Quando :math:`x \to \infty` , notamos que :math:`f(x) \to 1` , 
@@ -497,7 +498,7 @@ Podemos escrever que:
 
 
 
-A importância de se encontrar as assíntotas verticais e horizontais se dá exatamente na análise gráfica de funções descontínuas e complicadas, mas nem sempre é fácil de 
+A importância da analise gráfica é exatamente encontrar as assíntotas verticais e horizontais de funções descontínuas e complicadas, mas nem sempre é fácil de 
 plotarmos um gráfico. 
 Como você pode ter percebido, conforme as descontinuidades se tornam mais presentes, os gráficos vão se tornando mais elaborados devido à complexidade
 em se segmentar o domínio da função de forma coerente com a linguagem de programação utilizada.
@@ -531,41 +532,41 @@ Iremos definir abaixo as principais propriedades para cálculo de limites levand
 
         \displaystyle \lim_{x \to a}f(x) = f(a) \tag{13}
 
-    1. Propriedade especial:
+    2. Propriedade especial:
     
     .. math::
         
         \displaystyle \lim_{x \to a}c = c \tag{14}
 
 
-    1. O limite da soma é a soma dos limites:
+    3. O limite da soma é a soma dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x) + g(x)] = \displaystyle \lim_{x \to a}[f(x)] + \displaystyle \lim_{x \to a}[g(x)] \tag{15}
 
     
-    1. O limite da diferença é a diferença dos limites:
+    4. O limite da diferença é a diferença dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x) - g(x)] = \displaystyle \lim_{x \to a}[f(x)] - \displaystyle \lim_{x \to a}[g(x)] \tag{16}
 
     
-    1. O limite de uma constante é a constante multiplicada pelo limite:
+    5. O produto entre uma constante e uma função:
 
     .. math::
         
         \displaystyle \lim_{x \to a}[cf(x)] = \displaystyle c\lim_{x \to a}[f(x)] \tag{17}
 
 
-    1. O limite de um produto é o produto dos limites:
+    6. O limite de um produto é o produto dos limites:
 
     .. math::
 
         \displaystyle \lim_{x \to a}[f(x)g(x)] = \displaystyle \lim_{x \to a}[f(x)]\displaystyle \lim_{x \to a}[g(x)] \tag{18}
 
-    1. O limite de quocientes é o quociente dos limites (desde que o denominador não seja zero):
+    7. O limite de quocientes é o quociente dos limites (desde que o denominador não seja zero):
 
     .. math::
 
@@ -693,7 +694,7 @@ Isso nos daria uma velocidade média. No entanto, essa métrica  não nos diz se
 momento. Para obter essa informação, precisamos da velocidade instantânea.
 
 A velocidade instantânea é o que chamamos de taxa de variação instantânea. Em vez de perguntar "a que velocidade o carro estava se movendo durante uma hora?", perguntamos "a que 
-velocidade o carro estava se movendo exatamente neste segundo?". Aqui, estamos diminuindo o intervalo de tempo até que ele se aproxime de um ponto instantâneo.
+velocidade o carro estava se movendo exatamente neste instante?". Aqui, estamos diminuindo o intervalo de tempo até que ele se aproxime de um ponto instantâneo.
 
 Isso nos leva ao limite de uma função, tópico abordado na seção anterior. Para encontrar a velocidade instantânea, calculamos a taxa de variação média em intervalos cada vez menores, 
 chegando ao limite quando esse intervalo tende a zero. Matematicamente, definimos isso como:
@@ -749,7 +750,6 @@ de uma função que associa a cada ponto da função original o valor da derivad
     .. math:: 
 
         \begin{align}
-        &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h}  \\
         &f'(x) = \displaystyle \lim_{h \to 0}\frac{f(x+h)-f(x)}{h} \\
         &f'(x) = \displaystyle \lim_{h \to 0}\frac{[(x+h)^2 - 8(x+h)+9]-(x^2 - 8x +9)}{h} \\
         &f'(x) = \displaystyle \lim_{h \to 0}\frac{x^2 + 2xh + h^2 - 8x - 8h + 9 - x^2 + 8x -9}{h} \\
@@ -764,8 +764,14 @@ de uma função que associa a cada ponto da função original o valor da derivad
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Podemos calcular a derivada de uma função ou a derivada de uma função em um ponto específico, utilizando a definição formal de limite. 
-Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculo mais simples, foram desenvolvidas várias 
-regras de derivação. Estas regras são técnicas que nos permitem encontrar a derivada de funções de maneira mais direta e menos trabalhosa.
+Contudo, esta técnica pode não ser tão eficiente devido ao custo matemático que isso nos traz. Para tornar estes cálculos mais simples, 
+foram desenvolvidas várias regras de derivação. :ref:`[1]<ref1>`
+
+As regras de derivação foram desenvolvidas ao longo dos séculos por matemáticos que buscavam maneiras de simplificar e agilizar o processo de diferenciação. 
+No século XVII, Isaac Newton e Gottfried Wilhelm Leibniz, trabalhando independentemente, desenvolveram o cálculo diferencial e integral. 
+Eles introduziram conceitos fundamentais e notações que ainda são usadas hoje. A partir de seus trabalhos, várias técnicas e regras de derivação foram 
+formuladas, como a regra do produto, a regra do quociente e a regra da cadeia. Estas regras permitem encontrar a derivada de funções de maneira mais 
+direta e menos trabalhosa, transformando a diferenciação em uma ferramenta poderosa para a análise matemática.
 
 Antes de apresentarmos as principais regras de derivação existentes no cálculo, é essencial compreender que as funções analisadas devem ser 
 diferenciáveis no intervalo de interesse. 
@@ -798,7 +804,7 @@ da função nesses pontos.
 
 Vamos resolver um exemplo para fixarmos a regra apresentada acima:
 
-.. admonition:: Do it yourself!
+.. admonition:: Exemplo
 
     Calcule a derivada da função :math:`f(x)= 2`
 
