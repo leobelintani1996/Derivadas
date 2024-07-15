@@ -172,7 +172,7 @@ Os números complexos, por exemplo, são expressos no seguinte formato:</p>
 <p>Podemos notar que a primeira componente se comporta como a função avaliada no ponto e a segunda componente se comporta como a derivada
 da função em um determinado ponto.</p>
 </div>
-<p>A essa altura podemos passar a escrever os números duas e suas operações em um formato de pares ordenados de números reais,
+<p>A essa altura podemos passar a escrever os números duais e suas operações em um formato de pares ordenados de números reais,
 deixando a variável dual <span class="math notranslate nohighlight">\(d\)</span> de lado, uma vez que ela serve apenas para nos guiar a respeito de qual parcela da equação é responsável por representar a derivada de uma função
 em um determinado ponto.</p>
 <p>Logo podemos escrever</p>
@@ -269,7 +269,7 @@ Para o caso da variável independente, a mesma lógica é utilizada.</p>
 \end{align}\end{split}\]</div>
 </div>
 <p>Podemos ainda extrapolar o cálculo de uma variável praticado até o presente momento justificado por fins didáticos. Vamos considerar uma função de várias variáveis do tipo <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> e, ao aplicarmos as mesmas regras apresentadas, obtemos os mesmos resultados discutidos.</p>
-<p>A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que pode ser definido como:</p>
+<p>A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que podem ser definido como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 &amp;\vec{\nabla} f(x,y,z) = \frac{\partial}{\partial x}f(x,y,z) \hat{x} + \frac{\partial}{\partial y}f(x,y,z) \hat{y} + \frac{\partial}{\partial z}f(x,y,z) \hat{z} \tag{79} \\ \\
@@ -285,7 +285,7 @@ A ideia central é “quebrar” uma determinada função matemática em várias
 <p>O código apresentado carrega consigo alguns conceitos um pouco mais avançados dentro da área da programação, como é o caso do uso de classes, objetos e sobrecarga de operadores (operators overloading).</p>
 <p>Uma tentativa de didatizar o conteúdo é através de comentários no corpo do código e de uma breve explicação ao final. De qualquer forma, não se preocupe caso tenha alguma dúvida. O objetivo deste material não é ensinar programação de fato.</p>
 <p>Por fim, podemos apresentar o algoritmo abaixo, onde a autodiferenciação foi implementada de fato.</p>
-<p>O primeiro exemplo se trata de calcularmos a derivada da função <span class="math notranslate nohighlight">\(f(x) = x^5 + 1 ` no ponto :math:`x = 1\)</span></p>
+<p>O primeiro exemplo se trata de calcularmos a derivada da função <span class="math notranslate nohighlight">\(f(x) = x^5 + 1\)</span> no ponto <span class="math notranslate nohighlight">\(x = 1\)</span></p>
 <p>Entrada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># Importa o módulo math para acessar funções matemáticas.</span>
 
@@ -455,7 +455,7 @@ valores específicos e calcula o valor da função <span class="math notranslate
 </figcaption>
 </figure>
 <p>Podemos observar que o resultado obtido com o uso do nosso algoritmo para diferenciar automaticamente a função é exatamente o mesmo que a derivação simbólica nos fornece, nos mostrando que, de fato, ao calcularmos derivadas em pontos específicos, a autodiferenciação surge como uma forte alternativa para essa tarefa.</p>
-<p>Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato <span class="math notranslate nohighlight">\(f(x,y) = y(x^5 + 1)\)</span> , onde buscamos encontrar o gradiente da função, ou seja, <span class="math notranslate nohighlight">\(\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}\)</span> nos pontos <span class="math notranslate nohighlight">\(x = 1 e y = 3\)</span>.</p>
+<p>Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato <span class="math notranslate nohighlight">\(f(x,y) = y(x^5 + 1)\)</span> , onde buscamos encontrar o gradiente da função, ou seja, <span class="math notranslate nohighlight">\(\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}\)</span> nos pontos <span class="math notranslate nohighlight">\(x = 1\)</span> e <span class="math notranslate nohighlight">\(y = 3\)</span>.</p>
 <p>O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis.</p>
 <p>Entrada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">...</span><span class="p">]</span>

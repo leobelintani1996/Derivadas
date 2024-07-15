@@ -89,7 +89,7 @@ Os números complexos, por exemplo, são expressos no seguinte formato:
     Podemos notar que a primeira componente se comporta como a função avaliada no ponto e a segunda componente se comporta como a derivada 
     da função em um determinado ponto.
 
-A essa altura podemos passar a escrever os números duas e suas operações em um formato de pares ordenados de números reais, 
+A essa altura podemos passar a escrever os números duais e suas operações em um formato de pares ordenados de números reais, 
 deixando a variável dual :math:`d` de lado, uma vez que ela serve apenas para nos guiar a respeito de qual parcela da equação é responsável por representar a derivada de uma função 
 em um determinado ponto.
 
@@ -198,7 +198,7 @@ Podemos, por fim, resolver um exemplo um pouco mais elaborado afim de fixarmos a
 
 Podemos ainda extrapolar o cálculo de uma variável praticado até o presente momento justificado por fins didáticos. Vamos considerar uma função de várias variáveis do tipo :math:`f(x,y,z)` e, ao aplicarmos as mesmas regras apresentadas, obtemos os mesmos resultados discutidos.
 
-A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que pode ser definido como:
+A diferença é que não estamos mais calculando derivadas totais sob as parcelas de cada eixo, e sim derivadas parciais. Isso se torna útil em um contexto voltado ao machine learning, onde muitas vezes vamos calcular gradientes de funções, que podem ser definido como:
 
 .. math::
 
@@ -224,7 +224,7 @@ Uma tentativa de didatizar o conteúdo é através de comentários no corpo do c
 
 Por fim, podemos apresentar o algoritmo abaixo, onde a autodiferenciação foi implementada de fato.
 
-O primeiro exemplo se trata de calcularmos a derivada da função :math:`f(x) = x^5 + 1 ` no ponto :math:`x = 1`
+O primeiro exemplo se trata de calcularmos a derivada da função :math:`f(x) = x^5 + 1` no ponto :math:`x = 1` 
 
 Entrada:
 
@@ -403,7 +403,7 @@ Saída:
 
 Podemos observar que o resultado obtido com o uso do nosso algoritmo para diferenciar automaticamente a função é exatamente o mesmo que a derivação simbólica nos fornece, nos mostrando que, de fato, ao calcularmos derivadas em pontos específicos, a autodiferenciação surge como uma forte alternativa para essa tarefa.
 
-Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato :math:`f(x,y) = y(x^5 + 1)` , onde buscamos encontrar o gradiente da função, ou seja, :math:`\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}` nos pontos :math:`x = 1 e y = 3`.
+Vamos ainda resolver outro exemplo, onde a função a ser derivada é uma função de duas variáveis, no formato :math:`f(x,y) = y(x^5 + 1)` , onde buscamos encontrar o gradiente da função, ou seja, :math:`\vec{\nabla} f(x,y) = \frac{\partial }{\partial x} f(x,y) \hat{x} + \frac{\partial }{\partial y} f(x,y) \hat{y}` nos pontos :math:`x = 1` e :math:`y = 3`.
 
 O algoritmo apresentado abaixo segue o mesmo processo do exemplo anterior, contudo estamos considerando mais variáveis. 
 
