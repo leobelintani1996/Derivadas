@@ -20,10 +20,9 @@ do passo de diferenciação, ou o intervalo entre os pontos de dados usados, sã
 
 Além disso, duas fontes principais de erro são intrínsecas à diferenciação numérica: o erro de aproximação(ou truncamento), que surge da própria 
 aproximação da derivada, e o erro de arredondamento, que resulta das limitações(números de dígitos significativos) de cada máquina. 
-O equilíbrio entre esses erros apresenta um papel importante na determinação de um passo ótimo para a diferenciação numérica.
+O equilíbrio entre esses erros apresenta um papel importante na determinação de um passo ótimo para a diferenciação numérica, o qual varia para cada técnica.
 
-À medida que avançamos para um estudo mais detalhado da diferenciação numérica vamos explorar esses métodos, aprender a otimizar os erros e aplicar 
-essas técnicas.
+À medida que avançamos para um estudo mais detalhado da diferenciação numérica vamos explorar e aprender a aplica e otimizar essas técnicas.
 
 
 2.2. **Diferença Finita**
@@ -68,8 +67,8 @@ utiliza incrementos finitos para calcular uma aproximação da taxa de variaçã
         \end{align}
     
 
-    A notação :math:`O(h)` representa os termos de erro de ordem superior que são negligenciados na aproximação. 
-    Geralmente, estes termos são proporcionais a potências mais altas de :math:`h` , como :math:`O(h) = Ah + \frac{Ah^2}{2} + \frac{Ah^2}{3} + \frac{Ah^2}{4} + ...`
+    A notação :math:`O(h)` representa o erro de truncamento e informa os termos de n-ésima ordem em :math:`h`  são negligenciados na aproximação. 
+    
 
     À medida que :math:`h` se torna menor, espera-se que o erro de truncamento também diminua. No entanto, deve-se ter cuidado com o erro de arredondamento, 
     que pode se tornar significativo para valores muito pequenos de :math:`h`.
@@ -143,7 +142,7 @@ ou atrás(atrasado).
         &f(x_{0})' = \frac{f(x_{0}+h)-f(x_{0})}{h} - \frac{h}{2}f''(x_{0}) - \frac{h^{2}}{6}f'''(x_{0}) + ... \tag{43} \\ \\
         \end{align}
 
-    Vamos então fazer uma aproximação de primeira ordem para :math:`O(h)`
+    Adotando uma aproximação, podemos escrever:
 
     .. math::
 
@@ -151,7 +150,7 @@ ou atrás(atrasado).
         &f(x_{0})' \approx \frac{f(x_{0}+h)-f(x_{0})}{h} + O(h) \tag{44} \\ \\
         \end{align}
 
-    Ou seja, o erro de primeira ordem O(h) para a diferença avançada, é
+    Ou seja, o erro O(h) para a diferença avançada, é
 
     .. math::
 
@@ -206,7 +205,7 @@ valores ótimos para :math:`h` .
         &f(x_{0})' = \frac{f(x_{0})-f(x_{0}-h)}{h} + \frac{h}{2}f''(x_{0}) - \frac{h^{2}}{6}f'''(x_{0}) + ... \tag{48} \\ \\
         \end{align}
     
-    Vamos então fazer uma aproximação de primeira ordem para :math:`O(h)`
+    Adotando uma aproximação, podemos escrever:
     
     .. math::
 
@@ -214,7 +213,7 @@ valores ótimos para :math:`h` .
         &f(x_{0})' \approx \frac{f(x_{0}-h)-f(x_{0})}{h}  + O(h) \tag{49} \\ \\
         \end{align}
     
-    Ou seja, o erro de primeira ordem :math:`O(h)` para a diferença atrasada, é
+    Ou seja, o erro :math:`O(h)` para a diferença atrasada, é
 
     .. math::
 
